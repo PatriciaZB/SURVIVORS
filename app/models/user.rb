@@ -10,5 +10,6 @@ class User < ApplicationRecord
   has_many :answers
   has_many :bookings
 
-  validates :nickname, presence: true, uniqueness: true
+  # validates :nickname, presence: true, uniqueness: true
+  # validates :email, presence: true, uniqueness: true
 end
