@@ -1,8 +1,10 @@
 class Activity < ApplicationRecord
-  belongs_to :user
-
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
+
+  belongs_to :user
+
+  has_one_attached :image
 
   validates :name, presence: true
   validates :description, presence: true

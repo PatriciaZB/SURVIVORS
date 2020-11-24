@@ -1,5 +1,32 @@
 .btn-primary {
   background: transparent;
-  // border: $pink;
-  padding: 15px 50px;
+  border-color: $pink;
+  border-width: 2px;
+  // padding: 15px 30px;
+  color: $pink;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.btn-success {
+  background: $pink;
+  border-color: $pink;
+  border-width: 2px;
+  // padding: 15px 30px;
+  color: $beige;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.btn-primary:hover {
+  color: $beige;
+  border-color: #c4604d;
+}
+
+.btn-success:hover {
+  background: #c4604d;
+  color: $beige;
+  border-color: #c4604d;
 }

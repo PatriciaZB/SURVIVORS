@@ -1,5 +1,4 @@
 class ActivitiesController < ApplicationController
-
   def index
     @activities = Activity.all
     # if params[:query].present?
@@ -9,11 +8,11 @@ class ActivitiesController < ApplicationController
     #   @activities = Activity.all
     # end
   end
-  
+
   def show
     @activity = Activity.find(params[:id])
   end
-  
+
   def new
     @activity = Activity.new
   end
@@ -31,6 +30,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :address, :start_at, :end_at)
+    params.require(:activity).permit(:name, :description, :address, :start_at, :end_at, :image)
   end
 end
