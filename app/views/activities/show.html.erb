@@ -1,3 +1,39 @@
 <div class="container">
-  <%= @activity.name %>
+  <div class="row">
+    <div class="col-12 mb-3">
+      <h1 class="activity-title">He<i class="activity-title-white">ali</i>ng yoga</h1>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <div class="title-ratings d-flex justify-content-between pr-5 mb-3">
+        <h2>How it can help you </h2>
+        <p>(🖤 4.6/5)</p>
+      </div>
+      <div class="description text-justify pr-5">
+        <%= @activity.description %>
+      </div>
+
+      <div class="address d-flex mt-3 mb-3">
+        <div class="icon-map">
+          <%= image_tag("icon-map.png", :alt => "map") %>
+        </div>
+        <div class="address col-6">
+          <%= @activity.address %>
+          <br>
+          <p> <%= @activity.start_at.strftime("%b %e, %l:%M")%> <strong>-</strong> <%= @activity.end_at.strftime("%l:%M %p") %> </p>
+        </div>
+      </div>
+
+      <div class="button mt-3">
+        <%= link_to "Book Now", bookings_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+      <h2>Reviews</h2>
+    </div>
+  </div>
 </div>
