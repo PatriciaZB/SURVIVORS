@@ -1,0 +1,17 @@
+.footer-container {
+  border-top: 1px solid $pink;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-media {
+  font-size: 24px;
+  color: $black;
+  display: flex;
+}
+
+.footer-link {
+  font-family: "Montserrat";
+  color: $black;
+  font-size: 16px;
+}

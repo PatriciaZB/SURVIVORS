@@ -1,12 +1,44 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // background: $beige;
+  background: transparent;
+  border-bottom: 1px solid $pink;
+  padding-bottom: 0px;
 }
+
+// .navbar-container {
+//   border-bottom: 1px solid $pink;
+// }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
+}
+
+.navbar-title {
+  font-size: 20px;
+  padding-top: 8px;
+}
+
+.nav-link {
+  font-family: "Fjalla One";
+  font-size: 18px;
+  color: $black;
+}
+
+.logo-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $black;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $pink;
 }

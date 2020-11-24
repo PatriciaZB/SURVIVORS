@@ -1,3 +1,18 @@
-.card-index {
+.card {
+  background: transparent;
+  border-top: none;
+  border-bottom: 1px solid $pink;
+  border-left: none;
+  border-right: none;
+  display: flex;
 
+}
+
+.card-body {
+  display: wrap;
+  padding-top: 1px;
+}
+
+.card-text {
+  display:flex;
 }
