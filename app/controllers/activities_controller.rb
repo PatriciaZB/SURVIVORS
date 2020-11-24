@@ -11,6 +11,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @review = Review.new
     @booking = Booking.new
   end
 
