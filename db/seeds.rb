@@ -32,8 +32,8 @@ puts 'Activities created'
 
 puts 'Creating bookings'
 
-booking1 = Booking.create(user_id: user1, activity_id: lotus_dance)
+booking1 = Booking.create(user: user1, activity: lotus_dance)
 
-booking2 = Booking.create(user_id: user1, activity_id: self_defence_training)
+booking2 = Booking.create(user: user1, activity: self_defence_training)
 
 puts 'Bookings created'

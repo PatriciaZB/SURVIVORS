@@ -6,7 +6,9 @@
     <div class="col-8">
         <%= @bookings.each do |booking| %>
           <div class="row">
-            <%= booking.activity.name %>
+            <h3><%= booking.activity.name %></h3>
+            <br>
+            <p><%= booking.activity.start_at %></p>
           </div>
         <% end %>
     </div>
