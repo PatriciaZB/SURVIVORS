@@ -1,0 +1,36 @@
+.activity-title-white {
+  position: relative;
+  color: white;
+  font-style: normal;
+  &:before {
+    content: '';
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: $black;
+    z-index: -1;
+    top: -13px;
+    left: -9px;
+  }
+}
+
+.activity-title {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+  position: relative;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  &:before {
+    content: '';
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: $pink;
+    z-index: -1;
+    top: -35px;
+    left: -20px;
+  }
+
+}
