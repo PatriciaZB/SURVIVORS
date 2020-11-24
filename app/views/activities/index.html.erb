@@ -1,0 +1,19 @@
+<% @activities.each do |activity| %>
+ <div class="card" style="width: 288px;">
+      <div class="card-image-pet">
+        <% if activity.picture.attached? %>
+          <%= cl_image_tag activity.picture.key, height: 200, width: 200, crop: :fill %>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h3 class="pl-2"> <%= activity.name.capitalize %></h3>
+        <div class="card-text-pet">
+          <p class="card-text"> <strong>Species</strong>: <%= activity.description %> </p>
+          <p class="card-text"> <strong>City</strong>: <%= pet.address %> </p>
+          <p class="card-text"> <strong>City</strong>: <%= pet.start_at %> </p>
+        </div>
+      </div>
+    <%= link_to "", activity_path(activity), class: 'card-link' %>
+  </div>
+<% end %>
+

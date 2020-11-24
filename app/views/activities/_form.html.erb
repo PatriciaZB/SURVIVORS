@@ -1,0 +1,14 @@
+<div class="container">
+  <!-- <div class="form mt-3"> -->
+    <h1 class="mb-3">Create an activity</h1>
+    <%= simple_form_for(@activity) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :start_at %>
+      <%= f.input :end_at %>
+      <%= f.input :description %>
+      <%= f.input :image, as: :file %>
+      <%= f.submit "Create", class: "btn btn-block mt-3" %>
+    <% end %>
+  <!-- </div> -->
+</div>
