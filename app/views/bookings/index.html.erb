@@ -4,18 +4,22 @@
   </div>
   <div class="row">
     <div class="col-8">
-      <div class="row">
-        <p>Healing Yoga</p>
-      </div>
-      <div class="row">
-        <p>Dance</p>
-      </div>
+        <%= @bookings.each do |booking| %>
+          <div class="row">
+            <%= booking.activity.name %>
+          </div>
+        <% end %>
     </div>
     <div class="col-4">
       <p>Picture</p>
     </div>
   </div>
   <div class="btn btn-primary">
+    Submit
+  </div>
+  <br>
+  <br>
+  <div class="btn btn-success">
     Submit
   </div>
 </div>
