@@ -29,3 +29,11 @@ self_defence_training = Activity.create(name: 'My Self Defence', description: 'M
 lotus_dance = Activity.create(name: 'Lotus Dance', description: "Lotus Dance is a dancing class based on specific body's movement that will help to find a healthier equilibrium, both physiologically and emotionally. It improves hormonal and nervous-system regulation, and it helps people connect with their bodies, which expands their capacity to counter dysregulation and to trust themselves. We truly believe that movements also make people more resilient physically and emotionally.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,1,4,3), end_at: DateTime.new(2021,12,5,5,3), user: user3)
 
 puts 'Activities created'
+
+puts 'Creating bookings'
+
+booking1 = Booking.create(user_id: user1, activity_id: lotus_dance)
+
+booking2 = Booking.create(user_id: user1, activity_id: self_defence_training)
+
+puts 'Bookings created'
