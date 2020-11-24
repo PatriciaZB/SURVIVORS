@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+
   def index
     @activities = Activity.all
     # if params[:query].present?
@@ -7,6 +8,10 @@ class ActivitiesController < ApplicationController
     # else
     #   @activities = Activity.all
     # end
+  end
+  
+  def show
+    @activity = Activity.find(params[:id])
   end
   
   def new
