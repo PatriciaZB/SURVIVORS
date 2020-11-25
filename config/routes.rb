@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :delete]
   resources :reviews, only: [:destroy]
+  get '/dashboard', to: 'pages#dashboard'
 end
