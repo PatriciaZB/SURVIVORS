@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>MY AGENDA</h2>
+
+  <div class="dashboard-content">
+    <div class="row">
+      <% @activities.each do |activity| %>
+      <div class="col-3">
+        <%= cl_image_tag activity.image.key, width: 70, crop: :fill %>
+      </div>
+      <div class="col-3">
+        <%= activity.name %>
+      </div>
+      <div class="col-2">
+        <%= activity.address %>
+      </div>
+      <div class="col-2">
+        <%= activity.start_at.strftime('%A, %e %b - %l %p') %>
+      </div>
+      <div class="col-2">
+        Links
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
