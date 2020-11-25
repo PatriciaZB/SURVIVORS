@@ -1,22 +1,10 @@
 
 <div class="container">
+
   <%= form_tag activities_path, method: :get do %>
-    <%= select_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an Activity"
-    %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an Activity"
-    %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an Activity"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= select_tag :category, options_for_select(Activity::CATEGORIES) %>
+  <%= text_field_tag :address %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
   <div class="row">
     <div class="col-12 mb-3">
