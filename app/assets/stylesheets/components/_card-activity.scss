@@ -5,9 +5,11 @@
   border-right: none;
   display: flex;
   justify-content: space-between;
-    .card-image {
-    width: 150px;
-    height: 150px;
+  align-items: center;
+    .card-image img {
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
   }
 }
 
