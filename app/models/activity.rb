@@ -4,11 +4,13 @@ class Activity < ApplicationRecord
 
   belongs_to :user
 
-  # has_one_attached :image
+  has_one_attached :image
 
   validates :name, presence: true
   validates :description, presence: true
   validates :address, presence: true
   validates :start_at, presence: true
   validates :end_at, presence: true
+  validates :category, presence: true
+  validates :presence, presence: true
 end
