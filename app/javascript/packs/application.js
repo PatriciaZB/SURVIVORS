@@ -25,6 +25,8 @@ require("channels")
 // External imports
 import "bootstrap";
 
+import "../plugins/flatpickr"
+
 import { initMapbox } from '../plugins/map';
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,3 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  flatpickr('.your-selector');
+})

@@ -34,6 +34,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'geocoder'
 
+gem 'flatpickr'
+
 gem 'pg_search', '~> 2.3.0'
 
 gem 'devise'
