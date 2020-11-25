@@ -5,35 +5,41 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 require 'date'
+
+
 
 Booking.destroy_all
 Activity.destroy_all
 User.destroy_all
 
-puts 'Creating an user'
+puts 'Creating users'
 
-user1 = User.create(nickname: 'Rebecca Buendia', email: 'rebeccabuendia@gmail.com', password:'123456')
+user1 = User.create(nickname: 'Rebeca Buendia', email: 'rebecabuendia@gmail.com', password:'123456')
 user2 = User.create(nickname: 'Pilar Ternera', email: 'pilarternera@gmail.com', password:"654321")
 user3 = User.create(nickname: 'Amaranta', email: 'amaranta@gmail.com', password:"1234567")
 
-puts 'User created'
+puts 'Users created'
 
 
 puts 'Creating activities'
 
-kundalini_yoga = Activity.create(name: 'Kundalini Yoga', description: 'Kundalini Yoga is a magical science that uses sound, mantra, energy healing, exercises and meditations to release trauma from the energetic body, which surrounds the physical body. It is this field, known as the aura, that holds wounds. When those wounds are healed, radiance can occur. Radiance is the magnetic frequency that draws in beauty, love, and light. Attracting abundance into your life starts in the subtle (energetic) body–not the mind.', address: 'Lübbener Str. 9, 10997 Berlin', start_at: DateTime.new(2020,12,5,4,0), end_at: DateTime.new(2020,12,5,5,30), user: user1)
+image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606305299/healingyoga.jpg')
+yoga1 = Activity.create(name: 'Healing Yoga', description: 'Most experts agree that trauma’s effects live in the body, and that’s why yoga works. Yoga’s ability to touch us on every level of our being—physical, mental, emotional, and spiritual—makes it a powerful and effective means for trauma victims to reinhabit their bodies safely, calm their minds, experience emotions directly, and begin to feel a sense of strength and control.', address: 'Lübbener Str. 9, 10997 Berlin', start_at: DateTime.new(2020,12,5,16,0), end_at: DateTime.new(2020,12,5,17,0), category: 'yoga', presence: 'in-presence', user: user1)
+yoga1.image.attach(io: image, filename: "healingyoga.jpg", content_type: "image/jpg")
 
-self_defence_training = Activity.create(name: 'My Self Defence', description: 'My Self Defense will help you to gain set of awareness, assertiveness, verbal confrontation skills, safety strategies, and physical techniques that will enable you to escape, resist, and survive violent attacks. It will provides psychological awareness and verbal skills, not just physical training.', address: 'Bredowstraße 18, 10551 Dortmund', start_at: DateTime.new(2020,12,8,4,0), end_at: DateTime.new(2020,12,8,6,0), user: user2)
 
-lotus_dance = Activity.create(name: 'Lotus Dance', description: "Lotus Dance is a dancing class based on specific body's movement that will help to find a healthier equilibrium, both physiologically and emotionally. It improves hormonal and nervous-system regulation, and it helps people connect with their bodies, which expands their capacity to counter dysregulation and to trust themselves. We truly believe that movements also make people more resilient physically and emotionally.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,5,4,0), end_at: DateTime.new(2020,12,5,5,3), user: user3)
+# activity = Activity.create(name: 'Pretty Deadly Self Defense', description: 'Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care.', address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,8,19,0), end_at: DateTime.new(2020,12,8,21,0), category: "self-defense", presence: "in-presence", user: user2)
+
+# activity = Activity.create(name: 'Lotus Dance', description: "As we tap into the deep sources of bodily wisdom through creative art expression, we dance the renewal, recreation, and healing of ourselves and our world. We truly believe that movement makes people more resilient physically and emotionally.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,8,20,0), end_at: DateTime.new(2020,12,5,21,30), category: "dance", presence: "in-presence", user: user3)
 
 puts 'Activities created'
 
-puts 'Creating bookings'
+# puts 'Creating bookings'
 
-booking1 = Booking.create(user: user1, activity: lotus_dance)
+# booking1 = Booking.create(user: user1, activity: lotus_dance)
 
-booking2 = Booking.create(user: user1, activity: self_defence_training)
+# booking2 = Booking.create(user: user1, activity: self_defense)
 
-puts 'Bookings created'
+# puts 'Bookings created'
