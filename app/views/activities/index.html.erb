@@ -16,28 +16,21 @@
     <div class="col-sm-12 col-md-8">
       <% @activities.each do |activity| %>
 
-        <div class="card-activity">
+       <div class="card-activity">
           <div class="card-image">
-            <%= image_tag("logo2.png", :alt => "map") %>
-
-       <div class="card">
-          <div class="card-body">
             <%= cl_image_tag activity.image.key, height: 300, width: 400, crop: :fill %>
           </div>
 
-          <div class="card-body">
-            <h3 class="pl-2"> <%= activity.name.capitalize %></h3>
-          </div>
-          <div class="content mt-3">
+          <div class="content mt-4">
             <div class="card-body">
-              <h3 class="pl-2"> <%= activity.name.capitalize %></h3>
+              <h3> <%= activity.name.capitalize %></h3>
               <p> <%= activity.description.first(80) %> </p>
             </div>
-            <div class="card-address ">
+            <div class="card-address d-flex ml-3 ">
               <div class="icon-map">
                 <%= image_tag("icon-map.png", :alt => "map") %>
               </div>
-              <div class="address">
+              <div class="address pl-3">
                 <%= activity.address %>
                 <br>
                 <p> <%= activity.start_at.strftime("%b %e, %l:%M")%> <strong>-</strong> <%= activity.end_at.strftime("%l:%M %p") %> </p>
