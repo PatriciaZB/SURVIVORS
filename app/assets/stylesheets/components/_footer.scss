@@ -4,14 +4,23 @@
   justify-content: space-between;
 }
 
-.social-media {
-  font-size: 24px;
-  color: $black;
+.footer-links {
   display: flex;
 }
 
-.footer-link {
-  font-family: "Montserrat";
+.footer-links a {
+  font-family: "Fjalla One";
   color: $black;
   font-size: 16px;
+  padding: 0px 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: none;
+  color: $pink;
+}
+
+.copyright {
+ font-family: "Fjalla One";
+ font-size: 16px;
 }
