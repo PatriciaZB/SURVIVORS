@@ -1,15 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-12 mb-3">
-      <h1 class="activity-title">He<i class="activity-title-white">ali</i>ng yoga</h1>
-
+      <h1 class="activity-title"><%= title(@activity.name)%></h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-12 col-md-8">
-      <div class="title-ratings d-flex justify-content-between pr-5 mb-3">
-        <h2>How it can help you </h2>
+      <div class="title-ratings d-flex justify-content-between pr-5 mb-2">
+        <h2>How <%= @activity.name %> can help you </h2>
         <p>(🖤 4.6/5)</p>
       </div>
       <div class="description text-justify pr-5">
