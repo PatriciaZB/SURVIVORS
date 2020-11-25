@@ -3,6 +3,7 @@ class Activity < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   belongs_to :user
+  geocoded_by :address
 
   # has_one_attached :image
 
@@ -11,4 +12,5 @@ class Activity < ApplicationRecord
   validates :address, presence: true
   validates :start_at, presence: true
   validates :end_at, presence: true
+  after_validation :geocode, if: :will_save_change_to_address?
 end
