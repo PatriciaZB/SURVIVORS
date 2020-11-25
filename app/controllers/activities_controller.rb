@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
 
     if params[:query].present?
-      sql_query = "name ILIKE :query OR address ILIKE :query"
+      sql_query = "name ILIKE :query OR address ILIKE :query OR start_at ILIKE :query"
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
     else
       @activities = Activity.all
