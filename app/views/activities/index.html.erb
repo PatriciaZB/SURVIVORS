@@ -23,6 +23,7 @@
       <% @activities.each do |activity| %>
        <div class="card">
           <div class="card-body">
+            <%= cl_image_tag activity.image.key, height: 300, width: 400, crop: :fill %>
           </div>
 
           <div class="card-body">
