@@ -5,7 +5,13 @@
   border-left: none;
   border-right: none;
   display: flex;
-
+  justify-content: space-between;
+  height: 150px;
+}
+.card-image img {
+  width: 150px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-body {
@@ -13,6 +19,3 @@
   padding-top: 1px;
 }
 
-.card-text {
-  display:flex;
-}

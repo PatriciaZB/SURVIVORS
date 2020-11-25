@@ -1,0 +1,18 @@
+.card-activity {
+  background: transparent;
+  border-bottom: 1px solid $pink;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  justify-content: space-between;
+    .card-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+// .card-body {
+//   display: wrap;
+//   padding-top: 1px;
+// }
+

@@ -1,31 +1,44 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-7">
+    <div class="col-12 mb-3">
+      <h1 class="activity-title"> <%= title("Activities") %> </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
       <% @activities.each do |activity| %>
-       <div class="card">
-          <div class="card-body">
-            Image
+        <div class="card-activity">
+          <div class="card-image">
+            <%= image_tag("logo2.png", :alt => "map") %>
           </div>
-          <div class="card-body">
-            <h3 class="pl-2"> <%= activity.name.capitalize %></h3>
-          </div>
-            <div class="col-12">
-              <p > <%= activity.description %> </p>
-              <div class="card-body">
-                <div class="col-6">
-                  <p class="card-text"> <%= activity.address %> </p>
-                </div>
-                <div class="col-6">
-                  <p class="card-text"> <%= activity.start_at %> </p>
-                </div>
+          <div class="content mt-3">
+            <div class="card-body">
+              <h3 class="pl-2"> <%= activity.name.capitalize %></h3>
+              <p> <%= activity.description.first(80) %> </p>
+            </div>
+            <div class="card-address ">
+              <div class="icon-map">
+                <%= image_tag("icon-map.png", :alt => "map") %>
+              </div>
+              <div class="address">
+                <%= activity.address %>
+                <br>
+                <p> <%= activity.start_at.strftime("%b %e, %l:%M")%> <strong>-</strong> <%= activity.end_at.strftime("%l:%M %p") %> </p>
               </div>
             </div>
-          <%= link_to "", activity_path(activity), class: 'card-link' %>
+          </div>
         </div>
       <% end %>
+
+          <%#= link_to "", activity_path(activity), class: 'card-link' %>
     </div>
-    <p>Hello</p>
+
+    <div class="col-sm-12 col-md-4">
+      <h2>MAP</h2>
+    </div>
+
   </div>
 </div>
 
