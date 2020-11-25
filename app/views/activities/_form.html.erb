@@ -14,16 +14,15 @@
         <%= f.input :end_at, label: 'End' %>
         <%= f.input :description, label: 'Description' %>
         <%= f.input :category, collection: Activity::CATEGORIES, label: 'Category' %>
-        <%= f.input :presence, label: 'In-presence / Online' %>
+        <%= f.input :presence, collection: Activity::PRESENCE, label: 'In-presence / Online' %>
+        <%= f.input :image, as: :file, label: 'UPLOAD IMAGE' %>
         <%= f.submit "Create event", class: "btn btn-block btn-success" %>
       <% end %>
     </div>
 
-    <div class="form-picture col-4">
-        <%= simple_form_for(@activity) do |f| %>
-          <%= f.input :image, as: :file, label: 'UPLOAD IMAGE' %>
-        <% end %>
-    </div>
+   <!--  <div class="form-picture col-4">
+
+    </div> -->
   </div>
 </div>
 

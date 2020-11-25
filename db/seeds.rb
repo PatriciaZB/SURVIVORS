@@ -9,6 +9,7 @@ require 'open-uri'
 require 'date'
 
 Booking.destroy_all
+Review.destroy_all
 Activity.destroy_all
 User.destroy_all
 
@@ -40,21 +41,29 @@ kundalini = Activity.create(name: 'Kundalini Yoga', description: "Kundalini Yoga
 kundalini.image.attach(io: image, filename: "kunda.jpg", content_type: "image/jpg")
 
 image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606313807/exp.jpg')
-dance_movement= Activity.create(name: 'Dance Movement Therapy', description: "This kind of therapy can be particularly useful in the area of physical trauma, physical abuse, and body-image disturbances or in conditions where certain physical or sensory limitations inhibit the realization of emotional or social needs. Namely, in various traumas body is often the victim of injuries, ailments and disasters and because of that it can be associated with pain, trauma, hurt, helplessness and fear. In those cases it is logical that body should be involved in the therapeutic process.", address: 'Friedrichstraße 47, 10117 Berlin', start_at: DateTime.new(2020,12,4,18,30), end_at: DateTime.new(2020,12,4,20,0), category: 'Dance', presence: "in-presence", user: user3)
+dance_movement = Activity.create(name: 'Dance Movement Therapy', description: "This kind of therapy can be particularly useful in the area of physical trauma, physical abuse, and body-image disturbances or in conditions where certain physical or sensory limitations inhibit the realization of emotional or social needs. Namely, in various traumas body is often the victim of injuries, ailments and disasters and because of that it can be associated with pain, trauma, hurt, helplessness and fear. In those cases it is logical that body should be involved in the therapeutic process.", address: 'Friedrichstraße 47, 10117 Berlin', start_at: DateTime.new(2020,12,4,18,30), end_at: DateTime.new(2020,12,4,20,0), category: 'Dance', presence: "in-presence", user: user3)
 dance_movement.image.attach(io: image, filename: "exp.jpg", content_type: "image/jpg")
 
 image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606314334/move.jpg')
-transformative_dance= Activity.create(name: 'Transformative Dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "in-presence", user: user3)
+transformative_dance = Activity.create(name: 'Transformative Dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "in-presence", user: user3)
 transformative_dance.image.attach(io: image, filename: "move.jpg", content_type: "image/jpg")
 
 puts 'Activities created'
 
 
 
+puts 'Creating bookings'
+
+booking1 = Booking.create(user: user1, activity: yoga1)
+
+puts 'Bookings created'
 
 
-# puts 'Creating bookings'
 
-# booking1 = Booking.create(user: user1, activity: yoga1)
 
-# puts 'Bookings created'
+
+puts 'Creating reviews'
+
+review1 = Review.create(user: user1, activity: yoga1, description:'Comforted. Supported. Beautiful community of women healing together.', rating: 5)
+
+puts 'Reviews created'
