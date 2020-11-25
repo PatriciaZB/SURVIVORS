@@ -4,11 +4,19 @@ class Activity < ApplicationRecord
 
   belongs_to :user
 
-  # has_one_attached :image
+  CATEGORIES = ["Yoga", "Art", "Dance", "Painting", "Self defense", "Group therapy", "Talk", "Cooking", "Workshop", "Theater", "Movement", "Sports", "Other"]
+
+  geocoded_by :address
+
+  has_one_attached :image
 
   validates :name, presence: true
   validates :description, presence: true
   validates :address, presence: true
   validates :start_at, presence: true
   validates :end_at, presence: true
+  validates :category, presence: true, inclusion: { in: CATEGORIES }
+  validates :presence, presence: true
+
+  after_validation :geocode, if: :will_save_change_to_address?
 end

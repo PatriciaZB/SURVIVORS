@@ -1,5 +1,23 @@
 
 <div class="container">
+  <%= form_tag activities_path, method: :get do %>
+    <%= select_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an Activity"
+    %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an Activity"
+    %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an Activity"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
   <div class="row">
     <div class="col-12 mb-3">
       <h1 class="activity-title"> <%= title("Activities") %> </h1>
@@ -9,9 +27,18 @@
   <div class="row">
     <div class="col-sm-12 col-md-8">
       <% @activities.each do |activity| %>
+
         <div class="card-activity">
           <div class="card-image">
             <%= image_tag("logo2.png", :alt => "map") %>
+
+       <div class="card">
+          <div class="card-body">
+            <%= cl_image_tag activity.image.key, height: 300, width: 400, crop: :fill %>
+          </div>
+
+          <div class="card-body">
+            <h3 class="pl-2"> <%= activity.name.capitalize %></h3>
           </div>
           <div class="content mt-3">
             <div class="card-body">
@@ -34,11 +61,17 @@
 
           <%#= link_to "", activity_path(activity), class: 'card-link' %>
     </div>
-
     <div class="col-sm-12 col-md-4">
       <h2>MAP</h2>
     </div>
 
+    <div class="col-5">
+      <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
 </div>
 
