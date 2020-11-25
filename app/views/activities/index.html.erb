@@ -16,9 +16,11 @@
     <div class="col-sm-12 col-md-8">
       <% @activities.each do |activity| %>
 
-       <div class="card-activity">
-          <div class="card-image">
-            <%= cl_image_tag activity.image.key, height: 300, width: 400, crop: :fill %>
+       <div class="card">
+          <div class="card-body">
+            <% if activity.image.attached? %>
+              <%= cl_image_tag activity.image.key, height: 200, width: 200, crop: :fill %>
+            <% end %>
           </div>
 
           <div class="content mt-4">
