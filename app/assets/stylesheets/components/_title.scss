@@ -4,23 +4,25 @@
   font-style: normal;
   &:before {
     content: '';
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     position: absolute;
     border-radius: 50%;
-    background-color: $black;
+    background-color: #0C151D;
     z-index: -1;
-    top: -13px;
-    left: -9px;
+    top: -16px;
+    left: -6px;
   }
 }
 
 .activity-title {
   font-family: 'Oxygen', sans-serif;
+  font-size: 36px;
   font-weight: 300;
   position: relative;
-  letter-spacing: 7px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  margin: 30px 0px 30px 10px;
   &:before {
     content: '';
     width: 110px;
