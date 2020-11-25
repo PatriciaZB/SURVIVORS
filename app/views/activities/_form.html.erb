@@ -2,24 +2,24 @@
 
   <div class="container d-flex flex-row justify-content-between mb-4 mt-4">
     <h1>New activity</h1>
-    <%= simple_form_for(@activity) do |f| %>
-        <%= f.submit "Create event", class: "btn btn-primary" %>
-    <% end%>
   </div>
 
   <div class="container d-flex flex-row justify-content-between">
 
-    <div class="form-text">
+    <div class="form-text col-6">
       <%= simple_form_for(@activity) do |f| %>
-        <%= f.input :name, label: 'ACTIVITY NAME' %>
-        <%= f.input :address, label: 'ADDRESS' %>
-        <%= f.input :start_at, label: 'START' %>
-        <%= f.input :end_at, label: 'END' %>
-        <%= f.input :description, label: 'DESCRIPTION' %>
+        <%= f.input :name, label: 'Activity Name' %>
+        <%= f.input :address, label: 'Address' %>
+        <%= f.input :start_at, label: 'Start' %>
+        <%= f.input :end_at, label: 'End' %>
+        <%= f.input :description, label: 'Description' %>
+        <%= f.input :category, label: 'Category' %>
+        <%= f.input :presence, label: 'In-presence / Online' %>    
+        <%= f.submit "Create event", class: "btn btn-block btn-success" %>
       <% end %>
     </div>
 
-    <div class="form-picture">
+    <div class="form-picture col-4">
         <%= simple_form_for(@activity) do |f| %>
           <%= f.input :image, as: :file, label: 'UPLOAD IMAGE' %>
         <% end %>
@@ -28,4 +28,3 @@
 </div>
 
 
-<!-- container-form  -->
