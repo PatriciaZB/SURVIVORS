@@ -5,10 +5,6 @@
   padding-bottom: 0px;
 }
 
-// .navbar-container {
-//   border-bottom: 1px solid $pink;
-// }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -42,3 +38,18 @@
 .navbar-light .navbar-nav .nav-link:hover {
   color: $pink;
 }
+
+.dropdown-menu {
+  background-color: #f7f6f4;
+  color: $black;
+  font-family: "Montserrat";
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+a.dropdown-item:hover {
+  background-color: transparent;
+  color: $pink;
+}
+
+
