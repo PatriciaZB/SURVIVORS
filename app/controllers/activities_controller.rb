@@ -1,18 +1,22 @@
 class ActivitiesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @activities = Activity.all
 
-    # if params[:category].present?
-    #   # sql_query = "name ILIKE :query OR address ILIKE :query OR start_at ILIKE :query OR start_at ILIKE :category"
-    #   @activities = Activity.where(:category "%#{params[:category]}%")
-    # else
-    #   @activities = Activity.all
-    # end
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @activities = Activity.all
+    end
+
 
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
+        lng: activity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
       }
     end
   end
@@ -37,9 +41,19 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # updated
-  # delete
-  # authorizations
+  def update
+    @activity = Activity.find(params[:id])
+    @activity.update(activity_params)
+    redirect_to activity_path(@activity)
+  end
+
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to activities_path
+  end
+
+  # authentication
 
   private
 
