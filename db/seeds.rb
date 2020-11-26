@@ -18,6 +18,9 @@ puts 'Creating users'
 user1 = User.create(nickname: 'Rebeca Buendia', email: 'rebecabuendia@gmail.com', password:'123456')
 user2 = User.create(nickname: 'Pilar Ternera', email: 'pilarternera@gmail.com', password:"654321")
 user3 = User.create(nickname: 'Amaranta', email: 'amaranta@gmail.com', password:"1234567")
+user4 = User.create(nickname: 'Aureliana', email: 'aureliana@gmail.com', password:"12345678")
+user5 = User.create(nickname: 'Ursula', email: 'Ursula@gmail.com', password:"123456789")
+
 
 puts 'Users created'
 
@@ -48,6 +51,12 @@ dance_movement = Activity.create(name: 'Dance Movement Therapy', description: "T
 transformative_dance = Activity.create(name: 'Transformative Dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606314334/move.jpg')
 # transformative_dance.image.attach(io: image, filename: "move.jpg", content_type: "image/jpg")
 
+
+painting = Activity.create!(name: 'Painting to Heal', description: 'This activity is an opportunity for self discovery by tapping into your creativity as a way of healing yourself and others. It is a sacred space to thrive and explore expressions of creativity in a small, supportive community.', address: 'Okerstraße 42, 12049 Berlin', start_at: DateTime.new(2020,12,4,17,0), end_at: DateTime.new(2020,12,4,20,0), category: 'Painting', presence: 'In-presence', user: user1, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606399166/paint.jpg')
+
+art = Activity.create!(name: 'Art therapy', description: "Art therapy allows people to externalize what is occurring inside of them. As they put together the pieces of their trauma story their physical experience starts to change. Just as art therapy bridges feelings and words it also can bridge back into feeling grounded and safe in one's body.", address: 'Sonnenallee 106', start_at: DateTime.new(2020,12,4,19,0), end_at: DateTime.new(2020,12,4,21,30), category: 'Art', presence: 'In-presence', user: user2, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606400695/art.jpg')
+
+
 puts 'Activities created'
 
 
@@ -55,6 +64,11 @@ puts 'Activities created'
 puts 'Creating bookings'
 
 booking1 = Booking.create(user: user1, activity: yoga1)
+booking2 = Booking.create(user: user1, activity: dance_movement)
+booking3 = Booking.create(user: user1, activity: painting)
+booking4 = Booking.create(user: user2, activity: yoga1)
+booking5 = Booking.create(user: user3, activity: yoga1)
+booking6 = Booking.create(user: user3, activity: yoga1)
 
 puts 'Bookings created'
 
@@ -64,5 +78,12 @@ puts 'Bookings created'
 puts 'Creating reviews'
 
 review1 = Review.create(user: user1, activity: yoga1, description:'Comforted. Supported. Beautiful community of women healing together.', rating: 5)
+review2 = Review.create(user: user3, activity: yoga1, description:'The best yoga session of my life. Highly recommended!', rating: 5)
+review3 = Review.create(user: user2, activity: yoga1, description:'Beautiful healing session where I could really reconnect with my body.', rating: 5)
+review4 = Review.create(user: user2, activity: defense, description:'The best part of Pretty Deadly Self Defense this is having found a community of women helping each other.', rating: 5)
+review5 = Review.create(user: user3, activity: defense, description:'I finally feel more confident and secure in my daily life. It is an impressive class!', rating: 5)
+review6 = Review.create(user: user3, activity: kundalini, description:'Relaxed, down to earth and welcoming. Class was challenging but with different options to suit different people.', rating: 5)
+review7 = Review.create(user: user4, activity: yoga1, description:'Everyone is so wonderful and supportive. I love it!', rating: 5)
+review8 = Review.create(user: user5, activity: yoga1, description:'Healing Yoga has done a lot for me in a few weeks. Staff is great and the classes never the same', rating: 5)
 
 puts 'Reviews created'
