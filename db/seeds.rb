@@ -9,7 +9,7 @@ require 'open-uri'
 require 'date'
 
 Booking.destroy_all
-Review.destroy_all
+
 Activity.destroy_all
 User.destroy_all
 
@@ -52,18 +52,18 @@ puts 'Activities created'
 
 
 
-puts 'Creating bookings'
+# puts 'Creating bookings'
 
-booking1 = Booking.create(user: user1, activity: yoga1)
+# booking1 = Booking.create(user: user1, activity: yoga1)
 
-puts 'Bookings created'
-
-
+# puts 'Bookings created'
 
 
 
-puts 'Creating reviews'
 
-review1 = Review.create(user: user1, activity: yoga1, description:'Comforted. Supported. Beautiful community of women healing together.', rating: 5)
 
-puts 'Reviews created'
+# puts 'Creating reviews'
+
+# review1 = Review.create(user: user1, activity: yoga1, description:'Comforted. Supported. Beautiful community of women healing together.', rating: 5)
+
+# puts 'Reviews created'

@@ -2,24 +2,38 @@
   <h2>MY AGENDA</h2>
 
   <div class="dashboard-content">
-    <div class="row">
-      <% @activities.each do |activity| %>
-      <div class="col-3">
-        <%= cl_image_tag activity.image.key, width: 70, crop: :fill %>
+    <div class="dashboard">
+      <div class="row my-3 align-items-center">
+        <% @activities.each do |activity| %>
+
+          <div class="col-3 py-2">
+            <div class="column-item">
+              <%= cl_image_tag activity.image.key, width: 90, height: 90, crop: :fill %>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="column-item">
+              <%= activity.name %>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="column-item">
+              <%= activity.address %>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="column-item">
+              <%= activity.start_at.strftime('%a, %e %b - %l %p') %>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="column-item">
+              Links
+            </div>
+          </div>
+          <hr>
+          <% end %>
       </div>
-      <div class="col-3">
-        <%= activity.name %>
-      </div>
-      <div class="col-2">
-        <%= activity.address %>
-      </div>
-      <div class="col-2">
-        <%= activity.start_at.strftime('%A, %e %b - %l %p') %>
-      </div>
-      <div class="col-2">
-        Links
-      </div>
-      <% end %>
     </div>
   </div>
 </div>

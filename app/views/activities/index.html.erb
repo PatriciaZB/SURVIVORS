@@ -1,4 +1,5 @@
 
+
 <div class="container-index">
 
   <%= form_tag activities_path, method: :get do %>
@@ -27,7 +28,7 @@
             <div class="card-body">
               <!-- create a link to in the name -->
               <h3> <%= activity.name.capitalize %></h3>
-              <p> <%= activity.description.first(80) %> </p>
+              <p> <%= activity.description.first(80) %>... </p>
             </div>
             <div >
               <div class="card-body">
@@ -40,8 +41,6 @@
               </div>
             </div>
           </div>
-
-
         </div>
       <% end %>
     </div>
