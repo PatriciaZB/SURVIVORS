@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @activity = Activity.find(params[:activity_id])
     @booking.activity = @activity
     if @booking.save!
+      flash[:notice] = "Booking confirmed!"
       redirect_to dashboard_path
     else
       render "activities/show"
