@@ -11,7 +11,6 @@ class ActivitiesController < ApplicationController
       @activities = Activity.all
     end
 
-
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
