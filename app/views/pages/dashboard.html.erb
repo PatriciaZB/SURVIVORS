@@ -1,7 +1,13 @@
 <div class="container">
-  <h2>My Bookings</h2>
+  <div class="activity-title">
+    <div> <h1 class="black pl-3">My Agenda</h1> </div>
+    <div> <h1 class="white pl-3">My Agenda</h1> </div>
+    <div> <h1 class="white2 pl-3">My Agenda</h1> </div>
+  </div>
+
 
   <div class="dashboard-content">
+    <h2 class="mb-3">My Bookings</h2>
     <div class="dashboard">
       <div class="row align-items-center">
         <% @bookings.each do |booking| %>
@@ -44,10 +50,8 @@
     </div>
   </div>
 
-
-  <h2>My Activities</h2>
-
   <div class="dashboard-content">
+    <h2 class="mb-3">My Activities</h2>
     <div class="dashboard">
       <div class="row align-items-center">
         <% @activities.each do |activity| %>
