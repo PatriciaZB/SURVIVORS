@@ -1,5 +1,10 @@
 
 <div class="container">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <h1 class="activity-title"> <%= title("Activities") %> </h1>
+    </div>
+  </div>
 
   <%= form_tag activities_path, method: :get do %>
   <%= select_tag :category, options_for_select(Activity::CATEGORIES) %>
@@ -7,11 +12,6 @@
   <%= date_field_tag :start_at %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-  <div class="row">
-    <div class="col-12 mb-3">
-      <h1 class="activity-title"> <%= title("Activities") %> </h1>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-sm-12 col-md-8">
@@ -27,7 +27,7 @@
           <div class="content mt-4">
             <div class="card-body">
               <h3> <%= activity.name.capitalize %></h3>
-              <p> <%= activity.description.first(80) %> </p>
+              <p> <%= activity.description.first(80) %>... </p>
             </div>
             <div class="card-address d-flex ml-3 ">
               <div class="icon-map">
