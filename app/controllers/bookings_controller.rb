@@ -8,8 +8,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @activity = Activity.find(params[:activity_id])
     @booking.activity = @activity
-    if @activity.save
-      redirect_to bookings_path
+    if @booking.save!
+      flash[:notice] = "Booking confirmed!"
+      redirect_to dashboard_path
     else
       render "activities/show"
     end
@@ -18,6 +19,6 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_path
   end
 end

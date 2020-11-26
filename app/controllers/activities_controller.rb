@@ -41,6 +41,10 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def edit
+    @activity = Activity.find(params[:id])
+  end
+
   def update
     @activity = Activity.find(params[:id])
     @activity.update(activity_params)
@@ -50,7 +54,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    redirect_to activities_path
+    redirect_to dashboard_path
   end
 
   # authentication

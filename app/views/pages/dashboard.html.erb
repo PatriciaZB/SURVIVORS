@@ -1,14 +1,64 @@
 <div class="container">
-  <h2>MY AGENDA</h2>
+  <h2>My Bookings</h2>
 
   <div class="dashboard-content">
     <div class="dashboard">
-      <div class="row my-3 align-items-center">
+      <div class="row align-items-center">
+        <% @bookings.each do |booking| %>
+
+          <div class="col-3">
+            <div class="column-item">
+              <% if booking.activity.image.attached? %>
+                <%= cl_image_tag booking.activity.image.key, class: "dashboard-image", crop: :fill %>
+                <% else %>
+                <%= image_tag booking.activity.Altimage, class: "dashboard-image", crop: :fill %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="column-item">
+              <%= booking.activity.name %>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="column-item">
+              <%= booking.activity.address %>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="column-item">
+              <%= booking.activity.start_at.strftime('%a, %e %b - %l %p') %>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="column-item">
+              <ul>
+                <a href=""><li><%= link_to '<i class="far fa-eye"></i>'.html_safe, activity_path(booking.activity), method: :get %>  </li></a>
+                <a href=""><li><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, activity_path(booking.activity), method: :delete %></li></a>
+              </ul>
+            </div>
+          </div>
+          <hr>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <h2>My Activities</h2>
+
+  <div class="dashboard-content">
+    <div class="dashboard">
+      <div class="row align-items-center">
         <% @activities.each do |activity| %>
 
-          <div class="col-3 py-2">
+          <div class="col-3">
             <div class="column-item">
-              <%= cl_image_tag activity.image.key, width: 90, height: 90, crop: :fill %>
+              <% if activity.image.attached? %>
+                <%= cl_image_tag activity.image.key, class: "dashboard-image", crop: :fill %>
+                <% else %>
+                <%= image_tag activity.Altimage, class: "dashboard-image", crop: :fill %>
+              <% end %>
             </div>
           </div>
           <div class="col-2">
@@ -28,7 +78,12 @@
           </div>
           <div class="col-2">
             <div class="column-item">
-              Links
+              <ul>
+                <a href=""><li><%= link_to '<i class="far fa-eye"></i>'.html_safe, activity_path(activity), method: :get %>  </li></a>
+                <a href=""><li><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_activity_path(activity), method: :get %></li></a>
+                <a href=""><li><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, activity_path(activity), method: :delete %></li></a>
+
+              </ul>
             </div>
           </div>
           <hr>

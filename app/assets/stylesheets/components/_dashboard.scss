@@ -1,13 +1,47 @@
 .dashboard-content {
-  width: 100%;
+  padding: 30px 0;
+  width: 80%;
+  margin: auto;
 }
 
 .column-item {
   margin: auto;
   display: block;
+  font-size: 13px;
 }
 
+.column-item .title {
+  font-weight: bold;
+}
+
+.column-item > ul {
+  list-style-type: none;
+  font-size: 15px;
+  margin: 0;
+  padding-inline-start: 30px;
+  line-height: 1.75;
+
+}
+
+// .column-item > ul > a {
+//   color: $black;
+// }
+
+// .column-item > ul > a:hover {
+//   color: $pink;
+// }
+
 hr {
-  border: 0.3px solid $pink;
+  border: 0.1px solid $pink;
   width: 100%;
 }
+
+.dashboard-image {
+  max-height: 70px;
+  max-width: 100px;
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-left: 8px;
+}
+
