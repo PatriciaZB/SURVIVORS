@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @activities = Activity.all
 
@@ -45,12 +47,12 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    @activity = Activity.new(params[:id])
+    @activity = Activity.find(params[:id])
     @activity.destroy
     redirect_to activities_path
   end
 
-  # authorizations
+  # authentication
 
   private
 
