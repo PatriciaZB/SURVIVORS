@@ -8,6 +8,7 @@ class Activity < ApplicationRecord
   PRESENCE = ["In-presence", "Online"]
 
   geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   has_one_attached :image
 
@@ -18,6 +19,4 @@ class Activity < ApplicationRecord
   validates :end_at, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :presence, presence: true, inclusion: { in: PRESENCE }
-
-  after_validation :geocode, if: :will_save_change_to_address?
 end
