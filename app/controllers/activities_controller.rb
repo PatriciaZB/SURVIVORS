@@ -1,8 +1,8 @@
 class ActivitiesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @activities = Activity.all
-
-
     # if params[:category].present?
     #   # sql_query = "name ILIKE :query OR address ILIKE :query OR start_at ILIKE :query OR start_at ILIKE :category"
     #   # @activities = Activity.where(:category "%#{params[:category]}%")
@@ -45,12 +45,12 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    @activity = Activity.new(params[:id])
+    @activity = Activity.find(params[:id])
     @activity.destroy
     redirect_to activities_path
   end
 
-  # authorizations
+  # authentication
 
   private
 
