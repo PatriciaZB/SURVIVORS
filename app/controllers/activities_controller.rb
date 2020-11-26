@@ -50,7 +50,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    redirect_to activities_path
+    redirect_to dashboard_path
   end
 
   # authentication
