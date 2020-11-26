@@ -32,40 +32,19 @@
     </div>
 
     <div class="reviews col-sm-12 col-md-4">
-      <div class="profile-image">
+      <% @activity.reviews.each do |review| %>
+        <div class="profile-image">
         <%= image_tag("autumn-woman.png", :alt => "woman") %>
-      </div>
-      <div class="reviews-info">
-        <h3 class="nickname">Anonymous</h3>
-        <p style="margin-bottom: 0;"><strong>Posted on Fri 23, Nov 2020</strong></p>
-      </div>
-      <div class="reviews-text">
-        <p>Nostrud ullamco quis sunt occaecat proident eu aliquip enim eu sunt id magna anim minim. Id sint est minim ipsum do voluptate enim duis cupidatat...</p>
-      </div>
-
-      <div class="profile-image">
-        <%= image_tag("autumn-woman.png", :alt => "woman") %>
-      </div>
-      <div class="reviews-info">
-        <h3 class="nickname">Anonymous</h3>
-        <p style="margin-bottom: 0;"><strong>Posted on Fri 23, Nov 2020</strong></p>
-      </div>
-      <div class="reviews-text">
-        <p>Nostrud ullamco quis sunt occaecat proident eu aliquip enim eu sunt id magna anim minim. Id sint est minim ipsum do voluptate enim duis cupidatat...</p>
-      </div>
-
-      <div class="profile-image">
-        <%= image_tag("autumn-woman.png", :alt => "woman") %>
-      </div>
-      <div class="reviews-info">
-        <h3 class="nickname">Anonymous</h3>
-        <p style="margin-bottom: 0;"><strong>Posted on Fri 23, Nov 2020</strong></p>
-      </div>
-      <div class="reviews-text">
-        <p>Nostrud ullamco quis sunt occaecat proident eu aliquip enim eu sunt id magna anim minim. Id sint est minim ipsum do voluptate enim duis cupidatat...</p>
-      </div>
+        </div>
+        <div class="reviews-info">
+          <h3 class="nickname"> <%= review.user.nickname %> </h3>
+          <p style="margin-bottom: 0;"><strong>Posted on Fri 23, Nov 2020</strong></p>
+        </div>
+        <div class="reviews-text mt-2">
+          <p> <%= review[:description] %> </p>
+        </div>
+      <% end %>
       <!-- connect the reviews with the show -->
-      <%= link_to "See more reviews" %>
     </div>
   </div>
 </div>
