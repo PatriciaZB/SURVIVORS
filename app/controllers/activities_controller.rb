@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+
     # if params[:category].present?
     #   # sql_query = "name ILIKE :query OR address ILIKE :query OR start_at ILIKE :query OR start_at ILIKE :category"
     #   # @activities = Activity.where(:category "%#{params[:category]}%")
@@ -13,7 +14,8 @@ class ActivitiesController < ApplicationController
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
+        lng: activity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
       }
     end
   end
