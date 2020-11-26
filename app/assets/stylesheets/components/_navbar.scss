@@ -16,6 +16,14 @@
 .navbar-title {
   font-size: 20px;
   padding-top: 8px;
+  font-family: "Fjalla One";
+  font-size: 18px;
+  color: $black;
+}
+
+.navbar-title:hover {
+  color: $pink;
+  text-decoration: none;
 }
 
 .nav-link {
