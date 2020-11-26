@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
 
     if params[:category].present?
       # sql_query = "name ILIKE :query OR address ILIKE :query OR start_at ILIKE :query OR start_at ILIKE :category"
-      @activities = Activity.where(:category "%#{params[:category]}%")
+      # @activities = Activity.where(:category "%#{params[:category]}%")
     else
       @activities = Activity.all
     end
