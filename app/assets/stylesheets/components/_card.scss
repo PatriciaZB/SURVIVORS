@@ -7,11 +7,14 @@
   display: flex;
   justify-content: space-between;
   height: 150px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 .card-image img {
-  width: 150px;
+  // width: 150px;
   height: 100%;
   object-fit: cover;
+  display:wrap;
 }
 
 .card-body {
@@ -19,3 +22,13 @@
   padding-top: 1px;
 }
 
+.card-text {
+  flex-wrap: wrap;
+}
+
+// .card-container {
+//   width: 100%;
+//   margin: 0px;
+//   flex-wrap: wrap;
+//   display: flex;
+// }

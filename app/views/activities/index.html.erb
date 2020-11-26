@@ -1,55 +1,52 @@
 
-<div class="container">
+<div class="container-index">
 
   <%= form_tag activities_path, method: :get do %>
-  <%= select_tag :category, options_for_select(Activity::CATEGORIES) %>
-  <%= text_field_tag :address %>
-  <%= date_field_tag :start_at %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= select_tag :category, options_for_select(Activity::CATEGORIES) %>
+    <%= text_field_tag :address %>
+    <%= date_field_tag :start_at %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
   <div class="row">
     <div class="col-12 mb-3">
       <h1 class="activity-title"> <%= title("Activities") %> </h1>
     </div>
   </div>
-
   <div class="row">
-    <div class="col-sm-12 col-md-8">
+    <div class="col-7">
       <% @activities.each do |activity| %>
-
-       <div class="card">
-          <div class="card-body">
-            <% if activity.image.attached? %>
-              <%= cl_image_tag activity.image.key, height: 200, width: 200, crop: :fill %>
-            <% end %>
+        <div class="card">
+          <div>
+            <div class="card-image">
+              <% if activity.image.attached? %>
+                <%= cl_image_tag activity.image.key, crop: :fill %>
+              <% end %>
+            </div>
           </div>
-
-          <div class="content mt-4">
+          <div class="card-text">
             <div class="card-body">
+              <!-- create a link to in the name -->
               <h3> <%= activity.name.capitalize %></h3>
               <p> <%= activity.description.first(80) %> </p>
             </div>
-            <div class="card-address d-flex ml-3 ">
-              <div class="icon-map">
+            <div >
+              <div class="card-body">
                 <%= image_tag("icon-map.png", :alt => "map") %>
               </div>
-              <div class="address pl-3">
+              <div >
                 <%= activity.address %>
                 <br>
                 <p> <%= activity.start_at.strftime("%b %e, %l:%M")%> <strong>-</strong> <%= activity.end_at.strftime("%l:%M %p") %> </p>
               </div>
             </div>
           </div>
+
+
         </div>
       <% end %>
-
-          <%#= link_to "", activity_path(activity), class: 'card-link' %>
     </div>
-    <div class="col-sm-12 col-md-4">
-      <h2>MAP</h2>
-    </div>
-
     <div class="col-5">
+      <h2>MAP</h2>
       <div id="map"
        style="width: 100%; height: 600px;"
        data-markers="<%= @markers.to_json %>"
