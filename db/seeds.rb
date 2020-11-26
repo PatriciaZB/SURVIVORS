@@ -60,7 +60,6 @@ painting = Activity.create!(name: 'Painting to Heal', description: 'This activit
 
 art = Activity.create!(name: 'Art therapy', description: "Art therapy allows people to externalize what is occurring inside of them. As they put together the pieces of their trauma story their physical experience starts to change. Just as art therapy bridges feelings and words it also can bridge back into feeling grounded and safe in one's body.", address: 'Sonnenallee 106', start_at: DateTime.new(2020,12,4,19,0), end_at: DateTime.new(2020,12,4,21,30), category: 'Art', presence: 'In-presence', user: user2, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606400695/art.jpg')
 
-
 puts 'Activities created'
 
 
@@ -95,9 +94,15 @@ review11 = Review.create(user: user7, activity: defense, description:'This is a 
 review12 = Review.create(user: user6, activity: defense, description:'They really make you feel like you are part of a tribe: supportive, loving, respectful, encouraging. I really needed this in my life and will soon be going back.', rating: 5)
 review13 = Review.create(user: user5, activity: defense, description:'My first class was amazing! This is exactly what I needed!', rating: 5)
 review14 = Review.create(user: user8, activity: yoga1, description:'Such a great place to heal and meet people. I always leave feeling calm and positive.', rating: 5)
+review15 = Review.create(user: user10, activity: defense, description:'I feel so much more confident walking at night now that I know how to defend myself. Susie was an incredibly knowledgeable and supportive teacher, and the class was so much fun!', rating: 5)
+review16 = Review.create(user: user10, activity: defense, description:'I would recommend this to any one I know. I primarily wanted to learn self defense to help me develop confidence and boundaries in my daily life, and I am already seeing the payoff.', rating: 5)
+review17 = Review.create(user: user6, activity: art, description:'Practical use of art to bring emotional healing. It is really helping me!', rating: 5)
+review18 = Review.create(user: user9, activity: art, description:"It's really helping me express emotions that I've been holding onto for a long time. I really recommend it!", rating: 5)
+review19 = Review.create(user: user2, activity: art, description:"Such an amazing and helpful experience. I am definitely doing it again.", rating: 5)
+review20 = Review.create(user: user4, activity: art, description:"Beautiful group of people helping each other heal and recover from trauma. Art definitely helps. Thank you!", rating: 5)
+
 
 puts 'Reviews created'
-
 
 
 
