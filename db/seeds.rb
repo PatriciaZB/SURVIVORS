@@ -19,8 +19,12 @@ user1 = User.create(nickname: 'Rebeca Buendia', email: 'rebecabuendia@gmail.com'
 user2 = User.create(nickname: 'Pilar Ternera', email: 'pilarternera@gmail.com', password:"654321")
 user3 = User.create(nickname: 'Amaranta', email: 'amaranta@gmail.com', password:"1234567")
 user4 = User.create(nickname: 'Aureliana', email: 'aureliana@gmail.com', password:"12345678")
-user5 = User.create(nickname: 'Ursula', email: 'Ursula@gmail.com', password:"123456789")
-
+user5 = User.create(nickname: 'Ursula', email: 'ursula@gmail.com', password:"123456789")
+user6 = User.create(nickname: 'Renata', email: 'renata@gmail.com', password:"123456789")
+user7 = User.create(nickname: 'Meme', email: 'meme@gmail.com', password:"123456789")
+user8 = User.create(nickname: 'Petra', email: 'petra@gmail.com', password:"123456789")
+user9 = User.create(nickname: 'Santa Sofía de la Piedad', email: 'santa@gmail.com', password:"123456789")
+user10 = User.create(nickname: 'F.C.', email: 'fernanda@gmail.com', password:"123456789")
 
 puts 'Users created'
 
@@ -85,5 +89,25 @@ review5 = Review.create(user: user3, activity: defense, description:'I finally f
 review6 = Review.create(user: user3, activity: kundalini, description:'Relaxed, down to earth and welcoming. Class was challenging but with different options to suit different people.', rating: 5)
 review7 = Review.create(user: user4, activity: yoga1, description:'Everyone is so wonderful and supportive. I love it!', rating: 5)
 review8 = Review.create(user: user5, activity: yoga1, description:'Healing Yoga has done a lot for me in a few weeks. Staff is great and the classes never the same', rating: 5)
+review9 = Review.create(user: user10, activity: yoga1, description:'I was nervous but the knowledgeable and compassionate teachers gave me the tools and encouragement I needed to develop a yoga practice that has helped me heal and regain my strength. I look forward to every class!', rating: 5)
+review10 = Review.create(user: user9, activity: yoga1, description:'This studio is fantastic! It has a great vibe and all the instructors are knowledgeable, as well as really care about guiding the participants in their classes.', rating: 5)
+review11 = Review.create(user: user7, activity: defense, description:'This is a great space. The staff and owners are very caring. They offer great classes and give a sense of acceptance so that you feel free to try things outside of your comfort zone. And isn’t that the best way to grow!', rating: 5)
+review12 = Review.create(user: user6, activity: defense, description:'They really make you feel like you are part of a tribe: supportive, loving, respectful, encouraging. I really needed this in my life and will soon be going back.', rating: 5)
+review13 = Review.create(user: user5, activity: defense, description:'My first class was amazing! This is exactly what I needed!', rating: 5)
+review14 = Review.create(user: user8, activity: yoga1, description:'Such a great place to heal and meet people. I always leave feeling calm and positive.', rating: 5)
 
 puts 'Reviews created'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
