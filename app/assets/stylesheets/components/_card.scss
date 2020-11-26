@@ -20,14 +20,6 @@
 .card-body {
   padding-top: 1px;
 
-
-  // h3 {
-  //   font-size: 18px;
-  // }
-
-  // p {
-  //   font-size: 16px;
-  // }
 }
 
 .card-body-text {
@@ -58,9 +50,8 @@
   padding-right: 10px;
 }
 
-// .card-container {
-//   width: 100%;
-//   margin: 0px;
-//   flex-wrap: wrap;
-//   display: flex;
-// }
+.cards-list {
+  max-height: 618px;
+  overflow: scroll;
+
+}
