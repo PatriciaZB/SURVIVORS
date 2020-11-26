@@ -1,6 +1,6 @@
 .activity-title-white {
   position: relative;
-  color: white;
+  color: $white;
   font-style: normal;
   &:before {
     content: '';
@@ -20,9 +20,10 @@
   font-size: 36px;
   font-weight: 300;
   position: relative;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   text-transform: uppercase;
   margin: 30px 0px 30px 10px;
+  text-decoration: none;
   &:before {
     content: '';
     width: 120px;
