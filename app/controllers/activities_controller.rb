@@ -4,12 +4,14 @@ class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
 
-    # if params[:category].present?
-    #   # sql_query = "name ILIKE :query OR address ILIKE :query OR start_at ILIKE :query OR start_at ILIKE :category"
-    #   # @activities = Activity.where(:category "%#{params[:category]}%")
-    # else
-    #   @activities = Activity.all
-    # end
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @activities = Activity.all
+    end
+
 
     @markers = @activities.geocoded.map do |activity|
       {
