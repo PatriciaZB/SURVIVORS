@@ -37,8 +37,18 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # updated
-  # delete
+  def update
+    @activity = Activity.find(params[:id])
+    @activity.update(activity_params)
+    redirect_to activity_path(@activity)
+  end
+
+  def destroy
+    @activity = Activity.new(params[:id])
+    @activity.destroy
+    redirect_to activities_path
+  end
+
   # authorizations
 
   private
