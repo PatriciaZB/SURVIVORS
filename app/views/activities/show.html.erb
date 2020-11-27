@@ -12,8 +12,8 @@
   </div>
     <div class="col-sm-12 col-md-8">
       <div class="title-ratings d-flex justify-content-between pr-5 mb-2">
-        <h2>How <%= @activity.name %> can help you </h2>
-        <p>(🖤 4.6/5)</p>
+        <h2>How it can help you </h2>
+        <p><i class="fas fa-heart"></i> <%= @activity.reviews.average(:rating) %> / 5</p>
       </div>
       <div class="description text-justify pr-5">
         <%= @activity.description %>
