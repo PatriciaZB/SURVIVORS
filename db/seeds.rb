@@ -72,7 +72,7 @@ talk2 = Activity.create!(name: 'How to help a friend who is being abused', descr
 
 talk3 = Activity.create!(name: 'Support group for victims of abuse', description: "Group that offers support for survivors of domestic and sexual assault. The purpose of the education classes is to create an understanding of the dynamics of domestic violence, to look at the self-esteem, self-confidence of victims, and to help victims realize that the abuse is not their fault.", address: 'Frankfurter Tor 5, 10243 Berlin', start_at: DateTime.new(2020,12,1,19,0), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user5, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_15_mkytwf.jpg')
 
-talk4 = Activity.create!(name: 'Workshop: Transcending Trauma', description: "This workshop examines trauma from a new and encouraging perspective—suggesting that post-traumatic growth (PTG) and even thriving are possible after experiencing painful events.", address: 'Tempelhofer Ufer 25, 10963 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user10, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_19_poxagr.jpg')
+talk4 = Activity.create!(name: 'Transcending Trauma', description: "This workshop examines trauma from a new and encouraging perspective—suggesting that post-traumatic growth (PTG) and even thriving are possible after experiencing painful events.", address: 'Tempelhofer Ufer 25, 10963 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user10, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_19_poxagr.jpg')
 
 puts 'Activities created'
 
@@ -95,7 +95,7 @@ puts 'Creating reviews'
 
 review1 = Review.create(user: user10, activity: yoga1, description:'Comforted. Supported. Beautiful community of women healing together.', rating: 5)
 review2 = Review.create(user: user3, activity: yoga1, description:'The best yoga session of my life. Highly recommended!', rating: 5)
-review3 = Review.create(user: user2, activity: yoga1, description:'Beautiful healing session where I could really reconnect with my body.', rating: 5)
+review3 = Review.create(user: user2, activity: yoga1, description:'Beautiful healing session where I could really reconnect with my body.', rating: 4)
 review4 = Review.create(user: user2, activity: defense, description:'The best part of Pretty Deadly Self Defense this is having found a community of women helping each other.', rating: 5)
 review5 = Review.create(user: user3, activity: defense, description:'I finally feel more confident and secure in my daily life. It is an impressive class!', rating: 5)
 review6 = Review.create(user: user3, activity: kundalini, description:'Relaxed, down to earth and welcoming. Class was challenging but with different options to suit different people.', rating: 5)
@@ -114,7 +114,7 @@ review18 = Review.create(user: user9, activity: art, description:"It's really he
 review19 = Review.create(user: user2, activity: art, description:"Such an amazing and helpful experience. I am definitely doing it again.", rating: 5)
 review20 = Review.create(user: user4, activity: art, description:"Beautiful group of people helping each other heal and recover from trauma. Art definitely helps. Thank you!", rating: 5)
 review21 = Review.create(user: user2, activity: kundalini, description:"I love this class! I now do yoga multiple times per week and feel a greater connection between my mind and body.", rating: 4)
-review22 = Review.create(user: user4, activity: kundalini, description:"Amazing experience! I totally recommend it!", rating: 5)
+review22 = Review.create(user: user4, activity: kundalini, description:"Amazing experience! I totally recommend it!", rating: 4)
 review23 = Review.create(user: user8, activity: kundalini, description:"Such a great place to heal and meet people. I always leave feeling calm and positive.", rating: 5)
 review24 = Review.create(user: user9, activity: kundalini, description:"I have finally found the community of women that I needed. Thanks a lot for this space!", rating: 5)
 review25 = Review.create(user: user10, activity: kundalini, description:"Beautiful group of people helping each other heal and recover from trauma.", rating: 4)
