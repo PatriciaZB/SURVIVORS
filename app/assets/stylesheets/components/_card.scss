@@ -27,12 +27,23 @@
   flex-wrap: wrap;
   padding-top: 1px;
   // font-size: 16px;
+
   h3 {
     font-size: 18px;
+    color: $black;
+    user-select: none;
+  }
+
+  a { color: $black;
+    text-decoration: none;
+    }
+
+  a:hover {
+    color: $pink;
   }
 
   p {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
