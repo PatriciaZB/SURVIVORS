@@ -1,8 +1,19 @@
 <div class="container">
-  <%= simple_form_for [@activity, @review] do |f| %>
-    <%= f.input :description, label: 'REVIEW' %>
-    <%= f.input :rating, collection: 0..5, label: 'RATING' %>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
-  <% end %>
+
+  <div class="container d-flex flex-row justify-content-between mb-4 mt-4">
+    <div class="activity-title">
+        <div> <h1 class="black pl-4">Add a review</h1> </div>
+        <div> <h1 class="white pl-4">Add a review</h1> </div>
+        <div> <h1 class="white2 pl-4">Add a review</h1> </div>
+      </div>
+  </div>
+
+  <div class="form-text d-flex flex-row justify-content-center">
+    <%= simple_form_for [@activity, @review] do |f| %>
+      <%= f.input :description, :as => :text, :input_html => {:rows => 5}, label: 'Review' %>
+      <%= f.input :rating, collection: 0..5, label: 'Rating' %>
+      <%= f.submit "Submit review", class: "btn btn-success" %>
+    <% end %>
+  </div>
 </div>
 

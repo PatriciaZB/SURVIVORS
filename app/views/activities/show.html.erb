@@ -13,7 +13,13 @@
     <div class="col-sm-12 col-md-8">
       <div class="title-ratings d-flex justify-content-between pr-5 mb-2">
         <h2>How it can help you </h2>
-        <p><i class="fas fa-heart"></i> <%= @activity.reviews.average(:rating) %> / 5</p>
+        <p>
+          <% if !@activity.reviews.empty? %>
+            <i class="fas fa-heart"></i> <%= @activity.reviews.average(:rating).round(1) %> / 5
+            <% else %>
+            <%= %>
+            <% end %>
+          </p>
       </div>
       <div class="description text-justify pr-5">
         <%= @activity.description %>
@@ -35,21 +41,30 @@
       </div>
     </div>
 
-    <div class="reviews col-sm-12 col-md-4">
-      <% @activity.reviews.each do |review| %>
-        <div class="profile-image">
-        <%= image_tag("autumn-woman.png", :alt => "woman") %>
-        </div>
-        <div class="reviews-info">
-          <h3 class="nickname"> <%= review.user.nickname %> </h3>
-          <p style="margin-bottom: 0;"><strong>Posted on Fri 23, Nov 2020</strong></p>
-        </div>
-        <div class="reviews-text mt-2">
-          <p> <%= review[:description] %> </p>
-        </div>
-      <% end %>
-      <!-- connect the reviews with the show -->
+    <div class="reviews-container col-sm-12 col-md-4">
+      <div class="reviews ">
+        <% @activity.reviews.each do |review| %>
+        <div class="d-flex align-items-center">
+          <div class="profile-image">
+            <%= image_tag("autumn-woman.png", :alt => "woman") %>
+          </div>
+          <div class="reviews-info">
+            <h3 class="nickname"> <%= review.user.nickname %> </h3>
+            <p style="margin-bottom: 0;"><strong>Posted on <%= review[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
+          </div>
+          </div>
+          <div class="reviews-text mt-2">
+            <p> <%= review[:description] %> </p>
+          </div>
+        <% end %>
+
+      </div>
+      <div class="button mt-3">
+        <%= link_to "Add a review", new_activity_review_path(@activity, Review.new), method: :get, class: "btn btn-primary" %>
+      </div>
     </div>
+      <!-- connect the reviews with the show -->
+
   </div>
 </div>
 
