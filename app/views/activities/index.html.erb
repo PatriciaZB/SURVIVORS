@@ -31,7 +31,15 @@
             </div>
             <div class="card-body">
               <div class="card-body-text" style="text-align: justify">
-                <h3> <%= link_to activity.name.capitalize, activity_path(activity) %> </h3>
+                <div class="d-flex justify-content-between w-100">
+                  <h3> <%= link_to activity.name.capitalize, activity_path(activity) %> </h3>
+                  <% if !activity.reviews.empty? %>
+                  <p style="text-align:left">
+                    <strong> <i class=“fas fa-heart”></i> <%= activity.reviews.average(:rating).round(1) %> / 5 </strong>
+                  </p>
+                  <% end %>
+                </div>
+
                 <p> <%= activity.description.first(100) %>... </p>
               </div>
 
