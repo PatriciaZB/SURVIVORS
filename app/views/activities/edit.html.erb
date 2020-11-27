@@ -1,10 +1,18 @@
 <div class="container">
 
   <div class="container d-flex flex-row justify-content-between mb-4 mt-4">
-    <h1>Activity update</h1>
+    <div class="row">
+    <div class="col-12 mb-3">
+      <div class="activity-title">
+        <div> <h1 class="black">Activity update</h1> </div>
+        <div> <h1 class="white">Activity update</h1> </div>
+        <div> <h1 class="white2">Activity update</h1> </div>
+      </div>
+    </div>
+  </div>
   </div>
 
-  <div class="container d-flex flex-row justify-content-between">
+  <div class="container d-flex flex-row justify-content-center">
 
     <div class="form-text col-6">
       <%= simple_form_for(@activity) do |f| %>
@@ -16,7 +24,7 @@
         <%= f.input :category, collection: Activity::CATEGORIES, label: 'Category' %>
         <%= f.input :presence, collection: Activity::PRESENCE, label: 'In-presence / Online' %>
         <%= f.input :image, as: :file, label: 'Upload Image' %>
-        <%= f.submit "Update event", class: "btn btn-block btn-success" %>
+        <%= f.submit "Update event", class: "btn btn-block btn-success mb-3" %>
       <% end %>
     </div>
 
