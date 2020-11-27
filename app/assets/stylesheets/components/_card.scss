@@ -66,3 +66,15 @@
   overflow: scroll;
 
 }
+
+@media(max-width: 767px) {
+  .card-image img {
+    max-height: 70px;
+    width: 70px;
+  }
+
+  .cards-list {
+    margin: 30px 0;
+    overflow: auto;
+  }
+}

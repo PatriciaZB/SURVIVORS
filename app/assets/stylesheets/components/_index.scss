@@ -11,3 +11,9 @@
 @import "dashboard";
 @import "card-activity";
 @import "home";
+
+@media(max-width: 767px) {
+  #map {
+    max-height: 400px;
+  }
+}
