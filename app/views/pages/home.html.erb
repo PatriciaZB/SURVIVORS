@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row d-flex justify-content-between">
-    <div class="col-5 mt-5 pl-3">
+    <div class="col-sm-12 col-lg-5 pl-3">
+      <div class="text-logo">
         <%= image_tag("survivors.png", class: "homepage-logo", :alt => "map") %>
+
       <div class="title-slogan mt-2">
         <h1>SURVIVORS</h1>
         <h3>You deserve <span class="special-word">happiness</span></h3>
@@ -11,14 +13,19 @@
       </div>
       <div class="homepage-button mt-3">
         <%= link_to "Find support", "/activities/", class: "btn btn-primary" %>
+
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-sm-12 col-lg-6">
+      <div class="homepage-pink-circle"></div>
+      <div class="homepage-black-circle"></div>
       <div class="homepage-image-div position-relative">
+
         <div class="homepage-banner">
           <p><span class="banner-title">Community</span></p>
           <p>By and for survivors around the world.</p>
         </div>
+
       </div>
 
     </div>
