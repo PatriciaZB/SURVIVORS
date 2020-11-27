@@ -70,6 +70,7 @@ yoga2 = Activity.create!(name: 'Yoga for trauma', description: "Achieving stabil
 
 talk2 = Activity.create!(name: 'How to help a friend who is being abused', description: "Whether you suspect that a friend or family member is being abused or you witnessed someone being abused, you can take steps to help.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,29,19,0), end_at: DateTime.new(2020,11,29,21,30), category: 'Talk', presence: 'In-presence', user: user7, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_17_a8bxde.jpg')
 
+talk2 = Activity.create!(name: 'Support group for victims of abuse', description: "Group that offers support for survivors of domestic and sexual assault. The purpose of the education classes is to create an understanding of the dynamics of domestic violence, to look at the self-esteem, self-confidence of victims, and to help victims realize that the abuse is not their fault.", address: 'Frankfurter Tor 5, 10243 Berlin', start_at: DateTime.new(2020,12,1,19,0), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user5, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_15_mkytwf.jpg')
 
 puts 'Activities created'
 
