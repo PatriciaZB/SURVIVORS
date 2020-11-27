@@ -8,10 +8,13 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @activity = Activity.find(params[:activity_id])
     @booking.activity = @activity
-    if @booking.save!
+    if @booking.save
       flash[:notice] = "Booking confirmed!"
       redirect_to dashboard_path
     else
+      if @booking.errors.any?
+        flash[:notice] = "You can't book an activity that you booked already"
+      end
       render "activities/show"
     end
   end
