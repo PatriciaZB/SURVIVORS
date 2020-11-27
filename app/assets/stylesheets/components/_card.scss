@@ -27,12 +27,23 @@
   flex-wrap: wrap;
   padding-top: 1px;
   // font-size: 16px;
+
   h3 {
     font-size: 18px;
+    color: $black;
+    user-select: none;
+  }
+
+  a { color: $black;
+    text-decoration: none;
+    }
+
+  a:hover {
+    color: $pink;
   }
 
   p {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -54,4 +65,16 @@
   max-height: 618px;
   overflow: scroll;
 
+}
+
+@media(max-width: 767px) {
+  .card-image img {
+    max-height: 70px;
+    width: 70px;
+  }
+
+  .cards-list {
+    margin: 30px 0;
+    overflow: auto;
+  }
 }

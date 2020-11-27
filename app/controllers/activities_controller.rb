@@ -2,13 +2,13 @@ class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @activities = Activity.all
+    @activities = Activity.all.order('start_at ASC')
 
     if params[:query].present?
       sql_query = "name ILIKE :query OR address ILIKE :query"
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
     else
-      @activities = Activity.all
+      @activities = Activity.all.order('start_at ASC')
     end
 
     @markers = @activities.geocoded.map do |activity|
@@ -53,7 +53,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path, notice: 'The Activity was successfully deleted.'
   end
 
   # authentication

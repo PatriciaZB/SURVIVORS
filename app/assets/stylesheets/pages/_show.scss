@@ -23,3 +23,17 @@
 .reviews-text {
   font-size: 14px;
 }
+
+@media(max-width: 767px) {
+  .container {
+    padding-right: 0;
+  }
+
+  .row {
+    margin: 0 10px;
+  }
+
+  .reviews {
+    margin-top: 40px;
+  }
+}
