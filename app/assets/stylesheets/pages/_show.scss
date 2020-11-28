@@ -22,7 +22,15 @@
 
 .reviews-text {
   font-size: 14px;
+  p {
+    margin-bottom: 1px;
+  }
 }
+
+.reviews-rating {
+  font-size: 12px;
+}
+
 
 @media(max-width: 767px) {
   .container {
