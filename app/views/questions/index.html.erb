@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-12 mb-3">
+      <div class="activity-title">
+        <div> <h1 class="black">Forum</h1> </div>
+        <div> <h1 class="white">Forum</h1> </div>
+        <div> <h1 class="white2">Forum</h1> </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="questions-container col-sm-12 col-md-4">
+      <div class="questions">
+        <% @questions.each do |question| %>
+        <div class="d-flex align-items-center">
+          <div class="profile-image">
+            <%= image_tag("autumn-woman.png", :alt => "woman") %>
+          </div>
+          <div class="questions-info">
+            <h3 class="nickname"> <%= link_to question.user.nickname, question_path(question) %> </h3>
+            <p style="margin-bottom: 0;"><strong>Posted on <%= question[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
+          </div>
+          </div>
+          <div class="questions-text mt-2">
+            <p> <%= question[:question] %> </p>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="button mt-3">
+        <%= link_to "Add a question", new_question_path(Question.new), method: :get, class: "btn btn-primary" %>
+      </div>
+
+</div>

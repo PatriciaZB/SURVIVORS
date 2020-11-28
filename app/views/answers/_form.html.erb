@@ -1,0 +1,21 @@
+<div class="container">
+
+  <div class="container d-flex flex-row justify-content-between mb-4 mt-4">
+    <div class="activity-title">
+      <div> <h1 class="black pl-4">Add an answer</h1> </div>
+      <div> <h1 class="white pl-4">Add an answer</h1> </div>
+      <div> <h1 class="white2 pl-4">Add an answer</h1> </div>
+    </div>
+
+     <div class="button mt-3">
+      <%= link_to "Back to forum", questions_path, class: "btn btn-success" %>
+    </div>
+  </div>
+
+  <div class="form-text d-flex flex-row justify-content-center">
+    <%= simple_form_for [@question, @answer] do |f| %>
+      <%= f.input :answer, :as => :text, :input_html => {:rows => 15}, label: 'Answer' %>
+      <%= f.submit "Submit answer", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

@@ -9,8 +9,12 @@ require 'open-uri'
 require 'date'
 
 Booking.destroy_all
-
+Review.destroy_all
 Activity.destroy_all
+
+Answer.destroy_all
+Question.destroy_all
+
 User.destroy_all
 
 puts 'Creating users'
@@ -25,126 +29,142 @@ user7 = User.create(nickname: 'Meme', email: 'meme@gmail.com', password:"1234567
 user8 = User.create(nickname: 'Petra', email: 'petra@gmail.com', password:"123456789")
 user9 = User.create(nickname: 'Santa Sofía de la Piedad', email: 'santa@gmail.com', password:"123456789")
 user10 = User.create(nickname: 'F.C.', email: 'fernanda@gmail.com', password:"123456789")
+user11 = User.create(nickname: 'Remedios', email: 'remedios@gmail.com', password:"123456789")
+user12 = User.create(nickname: 'G.G.M.', email: 'gabo@gmail.com', password:"123456789")
+user13 = User.create(nickname: 'Anonymous', email: 'a@gmail.com', password:"123456789")
+user14 = User.create(nickname: 'J.C.B.P.', email: 'jcbp@gmail.com', password:"123456789")
 
 puts 'Users created'
 
 
 puts 'Creating activities'
 
-# image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606305299/healingyoga.jpg')
-yoga1 = Activity.create!(name: 'Healing Yoga', description: 'Most experts agree that trauma’s effects live in the body, and that’s why yoga works. Yoga’s ability to touch us on every level of our being—physical, mental, emotional, and spiritual—makes it a powerful and effective means for trauma victims to reinhabit their bodies safely, calm their minds, experience emotions directly, and begin to feel a sense of strength and control.', address: 'Lübbener Str. 9, 10997 Berlin', start_at: DateTime.new(2020,11,28,16,0), end_at: DateTime.new(2020,11,28,17,0), category: 'Yoga', presence: 'In-presence', user: user7, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606305299/healingyoga.jpg')
-# yoga1.image.attach(io: image, filename: "healingyoga.jpg", content_type: "image/jpg")
+yoga1 = Activity.create!(name: 'Healing Yoga', description: "Most experts agree that trauma’s effects live in the body, and that’s why yoga works. Yoga’s ability to touch us on every level of our being—physical, mental, emotional, and spiritual—makes it a powerful and effective means for trauma victims to reinhabit their bodies safely, calm their minds, experience emotions directly, and begin to feel a sense of strength and control. It’s widely known that yoga is not just a physical practice, but few people know that outside of its centering and calming benefits, yoga can also be an intensely emotional journey. Your deeper mind now has the opportunity to process issues that you’ve been holding below the surface of your immediate consciousness, whether that is stress or anger or intense sadness—or maybe a confusing mix of many things.", address: 'Lübbener Str. 9, 10997 Berlin', start_at: DateTime.new(2020,11,28,16,0), end_at: DateTime.new(2020,11,28,17,0), category: 'Yoga', presence: 'In-presence', user: user7, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606305299/healingyoga.jpg')
 
-# image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606311381/defense.jpg')
-defense = Activity.create(name: 'Pretty Deadly Self Defense', description: 'Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care.', address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,4,19,0), end_at: DateTime.new(2020,12,4,21,0), category: 'Self defense', presence: 'In-presence', user: user2, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606311381/defense.jpg')
-# defense.image.attach(io: image, filename: "defense.jpg", content_type: "image/jpg")
+defense = Activity.create(name: 'Pretty Deadly Self Defense', description: "Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care. Learning self defense is more than just learning how to punch and kick. It's about learning where your boundaries are, learning how to trust yourself, and learning what your body can really do, When you learn what options you really have, you have hope. And when you have hope, you can change your life. And maybe even the world.", address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,4,19,0), end_at: DateTime.new(2020,12,4,21,0), category: 'Self defense', presence: 'In-presence', user: user2, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606311381/defense.jpg')
 
-# image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606312440/lotus.jpg')
-lotus_dance = Activity.create(name: 'Lotus Dance', description: "As we tap into the deep sources of bodily wisdom through creative art expression, we dance the renewal, recreation, and healing of ourselves and our world. We truly believe that movement makes people more resilient physically and emotionally.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,1,20,0), end_at: DateTime.new(2020,12,1,21,30), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606312440/lotus.jpg')
-# lotus_dance.image.attach(io: image, filename: "lotus.jpg", content_type: "image/jpg")
+lotus_dance = Activity.create(name: 'Lotus Dance', description: "As we tap into the deep sources of bodily wisdom through creative art expression, we dance the renewal, recreation, and healing of ourselves and our world. We truly believe that movement makes people more resilient physically and emotionally. Dance movement is a therapeutic form of exercise which is great not only for physical health but also mental and emotional health. Music itself can be very powerful. It can affect our moods and our state of well-being by triggering memories and other emotional experiences. Just hearing a song from our childhood can create a sensation in our entire bodies that can instantly affect our mood and trigger memories in just a matter of seconds. When dance or any movement is set to music it can create a stress relieving, joyful and sometimes healing moment for those involved as well as increasing/releasing endorphins in the brain.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,1,20,0), end_at: DateTime.new(2020,12,1,21,30), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606312440/lotus.jpg')
 
-# image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606313032/kunda.jpg')
-kundalini = Activity.create(name: 'Kundalini Yoga', description: "Kundalini Yoga is a magical science that uses sound, mantra, energy healing, exercises and meditations to release trauma from the energetic body, which surrounds the physical body. It is this field, known as the aura, that holds wounds. When those wounds are healed, radiance can occur.", address: 'Segitzdamm 48, 10969 Berlin', start_at: DateTime.new(2020,11,29,14,0), end_at: DateTime.new(2020,11,29,15,0), category: 'Yoga', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606313032/kunda.jpg')
-# kundalini.image.attach(io: image, filename: "kunda.jpg", content_type: "image/jpg")
+kundalini = Activity.create(name: 'Kundalini Yoga', description: "Kundalini Yoga is a magical science that uses sound, mantra, energy healing, exercises and meditations to release trauma from the energetic body, which surrounds the physical body. It is this field, known as the aura, that holds wounds. When those wounds are healed, radiance can occur. While yoga can be a physically intense activity, the poses and asanas of a practice can bring your brain into a deeply focused, neutral state. This helps you process anything that is bothering you subconsciously, but that you’ve been unable or unwilling to access directly. Yoga gives your mind a way to process the feelings we bury and push aside.", address: 'Segitzdamm 48, 10969 Berlin', start_at: DateTime.new(2020,11,29,14,0), end_at: DateTime.new(2020,11,29,15,0), category: 'Yoga', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606313032/kunda.jpg')
 
-# image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606313807/exp.jpg')
-dance_movement = Activity.create(name: 'Dance Movement Therapy', description: "This kind of therapy can be particularly useful in the area of physical trauma, physical abuse, and body-image disturbances or in conditions where certain physical or sensory limitations inhibit the realization of emotional or social needs. Namely, in various traumas body is often the victim of injuries, ailments and disasters and because of that it can be associated with pain, trauma, hurt, helplessness and fear. In those cases it is logical that body should be involved in the therapeutic process.", address: 'Friedrichstraße 47, 10117 Berlin', start_at: DateTime.new(2020,12,2,18,30), end_at: DateTime.new(2020,12,2,20,0), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606313807/exp.jpg')
-# dance_movement.image.attach(io: image, filename: "exp.jpg", content_type: "image/jpg")
+dance_movement = Activity.create(name: 'Dance Movement Therapy', description: "This kind of therapy can be particularly useful in the area of physical trauma, physical abuse, and body-image disturbances or in conditions where certain physical or sensory limitations inhibit the realization of emotional or social needs. Namely, in various traumas body is often the victim of injuries, ailments and disasters and because of that it can be associated with pain, trauma, hurt, helplessness and fear. In those cases it is logical that body should be involved in the therapeutic process. Dance therapy is a great way to express emotions that are sometimes not easily expressed verbally. We believe that environment is your body.", address: 'Friedrichstraße 47, 10117 Berlin', start_at: DateTime.new(2020,12,2,18,30), end_at: DateTime.new(2020,12,2,20,0), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606313807/exp.jpg')
 
-# image = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606314334/move.jpg')
-transformative_dance = Activity.create(name: 'Transformative Dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606314334/move.jpg')
-# transformative_dance.image.attach(io: image, filename: "move.jpg", content_type: "image/jpg")
+transformative_dance = Activity.create(name: 'Transformative Dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected. Any form of exercise is great for relieving stress in the mind and body. Dance is no different. Dance therapy is a great stress reliever, not only because it is great physically for the body but it is also emotionally therapeutic. Since movement can be related to thoughts and feelings, dancing can bring changes to emotions and attitudes almost instantly. We want everyone to have the tools to live their lives as they choose for themselves, free of fear and full of joy.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606314334/move.jpg')
 
+painting = Activity.create!(name: 'Painting to Heal', description: "This activity is an opportunity for self discovery by tapping into your creativity as a way of healing yourself and others. It is a sacred space to thrive and explore expressions of creativity in a small, supportive community. The brain is stimulated by art therapy. The traumatic memories are stored on the right hemisphere of the brain and speech is positioned on the left. Interestingly enough, art is a right-brain activity that helps connect the dots between trauma and art. A person with trauma may find that an activity such as drawing is much easier than talking about what happened. When words are not sufficient, art can push someone to find coping strategies and progressively get grounded in therapy.", address: 'Okerstraße 42, 12049 Berlin', start_at: DateTime.new(2020,11,29,17,0), end_at: DateTime.new(2020,11,29,20,0), category: 'Painting', presence: 'In-presence', user: user1, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606399166/paint.jpg')
 
-painting = Activity.create!(name: 'Painting to Heal', description: 'This activity is an opportunity for self discovery by tapping into your creativity as a way of healing yourself and others. It is a sacred space to thrive and explore expressions of creativity in a small, supportive community.', address: 'Okerstraße 42, 12049 Berlin', start_at: DateTime.new(2020,11,29,17,0), end_at: DateTime.new(2020,11,29,20,0), category: 'Painting', presence: 'In-presence', user: user1, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606399166/paint.jpg')
+art = Activity.create!(name: 'Art therapy', description: "Art therapy allows people to externalize what is occurring inside of them. As they put together the pieces of their trauma story their physical experience starts to change. Just as art therapy bridges feelings and words it also can bridge back into feeling grounded and safe in one's body. As trauma continues to remain a prevalent influence in an individual’s life, they may find it necessary to want to alleviate the symptoms. Depending on the depth and weight of the trauma, some therapeutic outlets have enormous potential to heal the pain. Art therapy is an approach that has shown excellent results for someone who has post-traumatic stress disorder (PTSD) and quite honestly could become the relief they need.", address: 'Sonnenallee 106, 12045 Berlin', start_at: DateTime.new(2020,12,2,19,0), end_at: DateTime.new(2020,12,2,21,30), category: 'Art', presence: 'In-presence', user: user2, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606400695/art.jpg')
 
-art = Activity.create!(name: 'Art therapy', description: "Art therapy allows people to externalize what is occurring inside of them. As they put together the pieces of their trauma story their physical experience starts to change. Just as art therapy bridges feelings and words it also can bridge back into feeling grounded and safe in one's body.", address: 'Sonnenallee 106, 12045 Berlin', start_at: DateTime.new(2020,12,2,19,0), end_at: DateTime.new(2020,12,2,21,30), category: 'Art', presence: 'In-presence', user: user2, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606400695/art.jpg')
+self_def = Activity.create!(name: 'Self defense Berlin', description: "All the courses are walk-in courses, so you can come and go as you like. All the coaches and trainers are very caring: ask how you feel constantly and worry about every each person. When you feel safe, grounded and can trust your environment, you have the confidence to explore, to adventure, to grow. Giving yourself tools you can rely on frees up that time and energy to focus on the things that really matter. We want everyone to have the tools to live their lives as they choose for themselves, free of fear and full of joy. Come learn self defense with us!", address: 'Hasenheide 10, 10967 Berlin', start_at: DateTime.new(2020,12,5,19,0), end_at: DateTime.new(2020,12,5,21,30), category: 'Self defense', presence: 'In-presence', user: user9, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_14_caoxdq.jpg')
 
-self_def = Activity.create!(name: 'Self defense Berlin', description: "All the courses are walk-in courses, so you can come and go as you like. All the coaches and trainers are very caring: ask how you feel constantly and worry about every each person. Come learn self defense with us!", address: 'Hasenheide 10, 10967 Berlin', start_at: DateTime.new(2020,12,5,19,0), end_at: DateTime.new(2020,12,5,21,30), category: 'Self defense', presence: 'In-presence', user: user9, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_14_caoxdq.jpg')
+cook = Activity.create!(name: 'Cooking together', description: "The emotional benefits of cooking are myriad; many programs around the world help people with mood disorders and other issues get into the kitchen as part of their treatment, a practice known as 'therapeutic cooking'. And it's something you can replicate in your own home, with a bit of effort and an ingredient or two.Come try our community cooking classes. We will discuss several topics about gender while improving our cooking skills. No previous experience needed!", address: 'Oranienstraße 106, 10969 Berlin', start_at: DateTime.new(2020,12,3,20,0), end_at: DateTime.new(2020,12,3,22,30), category: 'Cooking', presence: 'In-presence', user: user6, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_10_ty2acc.jpg')
 
-cook = Activity.create!(name: 'Cooking together', description: "Come try our community cooking classes. We will discuss several topics about gender while improving our cooking skills. No previous experience needed!", address: 'Oranienstraße 106, 10969 Berlin', start_at: DateTime.new(2020,12,3,20,0), end_at: DateTime.new(2020,12,3,22,30), category: 'Cooking', presence: 'In-presence', user: user6, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_10_ty2acc.jpg')
+talk1 = Activity.create!(name: 'How to recognize an abuser', description: "There are a few common questions we get from victims and survivors regarding how to communicate in their abusive relationships and how to recognize an abuser. There is no one typical, detectable personality of an abuser. However, they do often display common characteristics. We will discuss some of these topics in this talk. Our counsellors provide women with confidential support and if needed can help them find appropriate local support options in their area. This new support service thus caters to a concrete social need and plays an important role in directing victims, relatives of victims, friends and professionals to appropriate support resources.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,30,17,0), end_at: DateTime.new(2020,11,30,18,30), category: 'Talk', presence: 'In-presence', user: user5, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_16_xbo6th.jpg')
 
-talk1 = Activity.create!(name: 'How to recognize an abuser', description: "There are a few common questions we get from victims and survivors regarding how to communicate in their abusive relationships and how to recognize an abuser. We will discuss some of these issues in this talk.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,30,17,0), end_at: DateTime.new(2020,11,30,18,30), category: 'Talk', presence: 'In-presence', user: user5, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_16_xbo6th.jpg')
+yoga2 = Activity.create!(name: 'Yoga for trauma', description: "Achieving stabilization of the autonomic nervous system (ANS) through yoga can help people engage with counselling and psychotherapy, allowing them to begin to process their trauma. Yoga therapy may help people return to a baseline physiological state more quickly after a distressing memory is triggered. Yoga gives your mind a way to process the feelings we bury and push aside. This results in the confusion you experience when suddenly overwhelmed by emotion on the mat, and it can take anywhere from moments to days to search through yourself and consciously pinpoint the original source of the emotion.", address: 'Danziger Str. 44, 10435 Berlin', start_at: DateTime.new(2020,12,6,17,0), end_at: DateTime.new(2020,12,6,18,30), category: 'Yoga', presence: 'In-presence', user: user6, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_13_n91ap8.jpg')
 
-yoga2 = Activity.create!(name: 'Yoga for trauma', description: "Achieving stabilization of the autonomic nervous system (ANS) through yoga can help people engage with counselling and psychotherapy, allowing them to begin to process their trauma. Yoga therapy may help people return to a baseline physiological state more quickly after a distressing memory is triggered.", address: 'Danziger Str. 44, 10435 Berlin', start_at: DateTime.new(2020,12,6,17,0), end_at: DateTime.new(2020,12,6,18,30), category: 'Yoga', presence: 'In-presence', user: user6, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_13_n91ap8.jpg')
+talk2 = Activity.create!(name: 'How to help a friend who is being abused', description: "Whether you suspect that a friend or family member is being abused or you witnessed someone being abused, you can take steps to help. Knowing or thinking that someone you care about is in a violent relationship can be very hard. You may fear for her safety — and maybe for good reason. You may want to rescue her or insist she leave, but every adult must make her own decisions. Each situation is different, and the people involved are all different too. We will discuss some ways to help a loved one who is being abused.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,29,19,0), end_at: DateTime.new(2020,11,29,21,30), category: 'Talk', presence: 'In-presence', user: user7, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_17_a8bxde.jpg')
 
-talk2 = Activity.create!(name: 'How to help a friend who is being abused', description: "Whether you suspect that a friend or family member is being abused or you witnessed someone being abused, you can take steps to help.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,29,19,0), end_at: DateTime.new(2020,11,29,21,30), category: 'Talk', presence: 'In-presence', user: user7, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_17_a8bxde.jpg')
+therapy1 = Activity.create!(name: 'Support group for victims of abuse', description: "This group offers support for survivors of domestic and sexual assault. The purpose of the education classes is to create an understanding of the dynamics of domestic violence, to look at the self-esteem, self-confidence of victims, and to help victims realize that the abuse is not their fault. In addition, victims can learn about various community resources that can offer assistance and support with issues related to domestic violence. It is a place where victims/survivors can share their inner feelings with others that are going through the same experiences. Survivors lean on each other for support, advice, guidance and encouragement.", address: 'Frankfurter Tor 5, 10243 Berlin', start_at: DateTime.new(2020,12,1,19,0), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user5, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_15_mkytwf.jpg')
 
-talk3 = Activity.create!(name: 'Support group for victims of abuse', description: "Group that offers support for survivors of domestic and sexual assault. The purpose of the education classes is to create an understanding of the dynamics of domestic violence, to look at the self-esteem, self-confidence of victims, and to help victims realize that the abuse is not their fault.", address: 'Frankfurter Tor 5, 10243 Berlin', start_at: DateTime.new(2020,12,1,19,0), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user5, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_15_mkytwf.jpg')
-
-talk4 = Activity.create!(name: 'Transcending Trauma', description: "This workshop examines trauma from a new and encouraging perspective—suggesting that post-traumatic growth (PTG) and even thriving are possible after experiencing painful events.", address: 'Tempelhofer Ufer 25, 10963 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user10, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_19_poxagr.jpg')
+talk4 = Activity.create!(name: 'Transcending Trauma', description: "This workshop examines trauma from a new and encouraging perspective—suggesting that post-traumatic growth (PTG) and even thriving are possible after experiencing painful events. When bad things happen, it can take a while to get over the pain and feel safe again. But with these self-help strategies and support, you can speed up your recovery. Emotional and psychological trauma is the result of extraordinarily stressful events that shatter your sense of security, making you feel helpless in a dangerous world. Psychological trauma can leave you struggling with upsetting emotions, memories, and anxiety that won’t go away. It can also leave you feeling numb, disconnected, and unable to trust other people.", address: 'Tempelhofer Ufer 25, 10963 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user10, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_19_poxagr.jpg')
 
 puts 'Activities created'
 
 
 puts 'Creating bookings'
 
-booking1 = Booking.create(user: user1, activity: yoga1)
+booking1 = Booking.create(user: user6, activity: yoga1)
 booking2 = Booking.create(user: user1, activity: dance_movement)
-booking3 = Booking.create(user: user1, activity: painting)
+booking3 = Booking.create(user: user5, activity: painting)
 booking4 = Booking.create(user: user2, activity: yoga1)
 booking5 = Booking.create(user: user3, activity: yoga1)
 booking6 = Booking.create(user: user4, activity: yoga1)
+booking7 = Booking.create(user: user1, activity: therapy1)
 
 puts 'Bookings created'
-
 
 
 
 puts 'Creating reviews'
 
 review1 = Review.create(user: user10, activity: yoga1, description:'Comforted. Supported. Beautiful community of women healing together.', rating: 5)
-review2 = Review.create(user: user3, activity: yoga1, description:'The best yoga session of my life. Highly recommended!', rating: 5)
-review3 = Review.create(user: user2, activity: yoga1, description:'Beautiful healing session where I could really reconnect with my body.', rating: 4)
-review4 = Review.create(user: user2, activity: defense, description:'The best part of Pretty Deadly Self Defense this is having found a community of women helping each other.', rating: 5)
-review5 = Review.create(user: user3, activity: defense, description:'I finally feel more confident and secure in my daily life. It is an impressive class!', rating: 5)
-review6 = Review.create(user: user3, activity: kundalini, description:'Relaxed, down to earth and welcoming. Class was challenging but with different options to suit different people.', rating: 5)
-review7 = Review.create(user: user4, activity: yoga1, description:'Everyone is so wonderful and supportive. I love it!', rating: 5)
-review8 = Review.create(user: user5, activity: yoga1, description:'Healing Yoga has done a lot for me in a few weeks. Staff is great and the classes never the same', rating: 5)
+review2 = Review.create(user: user13, activity: yoga1, description:'The best yoga session of my life. Highly recommended!', rating: 5)
+review3 = Review.create(user: user12, activity: yoga1, description:'Beautiful healing session where I could really reconnect with my body.', rating: 4)
+review7 = Review.create(user: user5, activity: yoga1, description:'Everyone is so wonderful and supportive. I love it!', rating: 5)
+review8 = Review.create(user: user4, activity: yoga1, description:'Healing Yoga has done a lot for me in a few weeks. Staff is great and the classes never the same', rating: 5)
 review9 = Review.create(user: user9, activity: yoga1, description:'I was nervous but the knowledgeable and compassionate teachers gave me the tools and encouragement I needed to develop a yoga practice that has helped me heal and regain my strength. I look forward to every class!', rating: 5)
 review10 = Review.create(user: user8, activity: yoga1, description:'This studio is fantastic! It has a great vibe and all the instructors are knowledgeable, as well as really care about guiding the participants in their classes.', rating: 5)
-review11 = Review.create(user: user7, activity: defense, description:'This is a great space. The staff and owners are very caring. They offer great classes and give a sense of acceptance so that you feel free to try things outside of your comfort zone. And isn’t that the best way to grow!', rating: 4)
-review12 = Review.create(user: user6, activity: defense, description:'They really make you feel like you are part of a tribe: supportive, loving, respectful, encouraging. I really needed this in my life and will soon be going back.', rating: 5)
-review13 = Review.create(user: user5, activity: defense, description:'My first class was amazing! This is exactly what I needed!', rating: 5)
 review14 = Review.create(user: user7, activity: yoga1, description:'Such a great place to heal and meet people. I always leave feeling calm and positive.', rating: 5)
+
+review11 = Review.create(user: user7, activity: defense, description:'This is a great space. The staff and owners are very caring. They offer great classes and give a sense of acceptance so that you feel free to try things outside of your comfort zone. And isn’t that the best way to grow!', rating: 4)
+review12 = Review.create(user: user11, activity: defense, description:'They really make you feel like you are part of a tribe: supportive, loving, respectful, encouraging. I really needed this in my life and will soon be going back.', rating: 5)
+review13 = Review.create(user: user5, activity: defense, description:'My first class was amazing! This is exactly what I needed!', rating: 5)
 review15 = Review.create(user: user10, activity: defense, description:'I feel so much more confident walking at night now that I know how to defend myself. Susie was an incredibly knowledgeable and supportive teacher, and the class was so much fun!', rating: 5)
-review16 = Review.create(user: user10, activity: defense, description:'I would recommend this to any one I know. I primarily wanted to learn self defense to help me develop confidence and boundaries in my daily life, and I am already seeing the payoff.', rating: 5)
+review16 = Review.create(user: user14, activity: defense, description:'I would recommend this to any one I know. I primarily wanted to learn self defense to help me develop confidence and boundaries in my daily life, and I am already seeing the payoff.', rating: 5)
+review4 = Review.create(user: user2, activity: defense, description:'The best part of Pretty Deadly Self Defense this is having found a community of women helping each other.', rating: 5)
+review5 = Review.create(user: user13, activity: defense, description:'I finally feel more confident and secure in my daily life. It is an impressive class!', rating: 5)
+
+review21 = Review.create(user: user2, activity: kundalini, description:"I love this class! I now do yoga multiple times per week and feel a greater connection between my mind and body.", rating: 4)
+review22 = Review.create(user: user14, activity: kundalini, description:"Amazing experience! I totally recommend it!", rating: 4)
+review23 = Review.create(user: user8, activity: kundalini, description:"Such a great place to heal and meet people. I always leave feeling calm and positive.", rating: 5)
+review24 = Review.create(user: user9, activity: kundalini, description:"I have finally found the community of women that I needed. Thanks a lot for this space!", rating: 5)
+review25 = Review.create(user: user10, activity: kundalini, description:"Beautiful group of people helping each other heal and recover from trauma.", rating: 4)
+review6 = Review.create(user: user3, activity: kundalini, description:'Relaxed, down to earth and welcoming. Class was challenging but with different options to suit different people.', rating: 5)
+
 review17 = Review.create(user: user6, activity: art, description:'Practical use of art to bring emotional healing. It is really helping me!', rating: 5)
 review18 = Review.create(user: user9, activity: art, description:"It's really helping me express emotions that I've been holding onto for a long time. I really recommend it!", rating: 2)
 review19 = Review.create(user: user2, activity: art, description:"Such an amazing and helpful experience. I am definitely doing it again.", rating: 5)
 review20 = Review.create(user: user4, activity: art, description:"Beautiful group of people helping each other heal and recover from trauma. Art definitely helps. Thank you!", rating: 5)
-review21 = Review.create(user: user2, activity: kundalini, description:"I love this class! I now do yoga multiple times per week and feel a greater connection between my mind and body.", rating: 4)
-review22 = Review.create(user: user4, activity: kundalini, description:"Amazing experience! I totally recommend it!", rating: 4)
-review23 = Review.create(user: user8, activity: kundalini, description:"Such a great place to heal and meet people. I always leave feeling calm and positive.", rating: 5)
-review24 = Review.create(user: user9, activity: kundalini, description:"I have finally found the community of women that I needed. Thanks a lot for this space!", rating: 5)
-review25 = Review.create(user: user10, activity: kundalini, description:"Beautiful group of people helping each other heal and recover from trauma.", rating: 4)
-review26 = Review.create(user: user6, activity: painting, description:"I really needed something like this! Painting is a powerful way to express emotions.", rating: 5)
-review27 = Review.create(user: user5, activity: painting, description:"This class is really helpimg me build a community and recover from trauma.", rating: 5)
-review28 = Review.create(user: user9, activity: painting, description:"I have been feeling better since I started this class. Thanks for everything!", rating: 4)
-review29 = Review.create(user: user2, activity: cook, description:"I have been feeling better since I started this class. Thanks for everything!", rating: 5)
+review26 = Review.create(user: user13, activity: art, description:"I really needed something like this! Painting is a powerful way to express emotions.", rating: 5)
+review27 = Review.create(user: user5, activity: art, description:"This class is really helpimg me build a community and recover from trauma.", rating: 5)
+review28 = Review.create(user: user14, activity: art, description:"I have been feeling better since I started this class. Thanks for everything!", rating: 4)
+
+review29 = Review.create(user: user2, activity: cook, description:"I have been feeling better since I started this class. Thanks for everything!", rating: 3)
+
 review30 = Review.create(user: user3, activity: yoga2, description:"I have been feeling better since I started this class. Thanks for everything!", rating: 5)
-review31 = Review.create(user: user4, activity: self_def, description:"I have been feeling better since I started this class. Thanks for everything!", rating: 5)
-review32 = Review.create(user: user5, activity: talk2, description:"Very helpful talk!", rating: 5)
-review33 = Review.create(user: user6, activity: talk3, description:"I totally recommend it. Amazing talk!", rating: 5)
 review34 = Review.create(user: user8, activity: yoga2, description:'This studio is fantastic! It has a great vibe and all the instructors are knowledgeable, as well as really care about guiding the participants in their classes.', rating: 4)
 review35 = Review.create(user: user9, activity: yoga2, description:"I love this class! I now do yoga multiple times per week and feel a greater connection between my mind and body.", rating: 4)
+
+review31 = Review.create(user: user4, activity: self_def, description:"I have been feeling better since I started this class. Thanks for everything!", rating: 5)
+review50 = Review.create(user: user11, activity: self_def, description:"I learned a lot about how to think more intuitively about defending my own space.", rating: 4)
+review51 = Review.create(user: user2, activity: self_def, description:"Not only did it open my eyes to a whole new world, it also helped me understand I am already defending myself everyday in so many little ways.", rating: 3)
+review55 = Review.create(user: user8, activity: self_def, description:"Today I was verbally attacked by a man on the bus. I was surprised at how good I managed the conflict and stayed calm and de escalated.", rating: 4)
+
+review32 = Review.create(user: user5, activity: talk2, description:"Very helpful talk!", rating: 5)
+
+review33 = Review.create(user: user6, activity: therapy1, description:"I really needed something like this! I feel so empowered!", rating: 5)
+review57 = Review.create(user: user12, activity: therapy1, description:"Beautiful people. Thank you very much for your support!", rating: 4)
+review58 = Review.create(user: user9, activity: therapy1, description:"Best support group I have ever attented. I am definitely coming back.", rating: 4)
+
 review36 = Review.create(user: user5, activity: transformative_dance, description:"I love this class! I now do it multiple times per week and feel a greater connection between my mind and body.", rating: 4)
-review37 = Review.create(user: user5, activity: transformative_dance, description:"Beautiful group of people helping each other heal and recover from trauma. Dance definitely helps. Thank you!", rating: 5)
+review37 = Review.create(user: user10, activity: transformative_dance, description:"Beautiful group of people helping each other heal and recover from trauma. Dance definitely helps. Thank you!", rating: 5)
+review54 = Review.create(user: user12, activity: transformative_dance, description:"Really love the creativity behind how it's taught and it's inspiring for my own work. But also like that I've got sweet moves. It's been nice chatting with the other ladies, too. We keep bonding each week.", rating: 5)
+
 review38 = Review.create(user: user7, activity: lotus_dance, description:"Thank you so much for this space!", rating: 4)
 review39 = Review.create(user: user2, activity: lotus_dance, description:"Thanks to this class I finally feel free and confident. The teacher is so powerful!", rating: 3)
-review40 = Review.create(user: user4, activity: painting, description:"Such an amazing and helpful experience. I am definitely doing it again.", rating: 5)
-review41 = Review.create(user: user2, activity: lotus_dance, description:
-"I really needed something like this! I feel so empowered!", rating: 5)
+review41 = Review.create(user: user10, activity: lotus_dance, description:"I really needed something like this! I feel so empowered!", rating: 5)
+review52 = Review.create(user: user11, activity: lotus_dance, description:"What a fun way to build confidence! The moves were so natural! Can't wait to take the next course level.", rating: 5)
+
 review42 = Review.create(user: user8, activity: talk1, description:"I totally recommend it. Amazing talk!", rating: 5)
 review43 = Review.create(user: user6, activity: talk1, description:"A lot of very important and helpful information. I am glad I went. Thank you again!", rating: 5)
 
 review44 = Review.create(user: user10, activity: talk4, description:"A lot of very important and helpful information. I am glad I went. Thank you again!", rating: 4)
+review56 = Review.create(user: user4, activity: talk4, description:"In addition to learning about different tools to continue on the long road of recovery from trauma, I found a beautiful community of women who are on the same road as me.", rating: 4)
+review6 = Review.create(user: user7, activity: talk4, description:"I loved this workshop. Very useful and satisfactory. I will definitely invite my best friend for the next one.", rating: 5)
+review12 = Review.create(user: user13, activity: talk4, description:"Amazing talk and beautiful people. Thank you very much for your support!", rating: 4)
+review59 = Review.create(user: user14, activity: talk4, description:"I don't know how to explain how this workshop has helped me. Very fulfilling and empowering!", rating: 4)
 
 puts 'Reviews created'
 
 
+puts 'Creating questions'
 
+question1 = Question.create!(question: "My older sister is in an abusive relationship. She wants to get out of it but she is very scared. What can we do? What support centers exist in Berlin?", user: user12)
 
+question2 = Question.create!(question: "Hi! I am new to this platform. I still have a hard time talking about what happened to me. What activities do you recommend me to start with?", user: user11)
+
+puts 'Questions created'
 
 
 
