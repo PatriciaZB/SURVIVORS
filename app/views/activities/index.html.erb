@@ -35,7 +35,7 @@
                   <h3> <%= link_to activity.name.capitalize, activity_path(activity) %> </h3>
                   <% if !activity.reviews.empty? %>
                   <p style="text-align:left">
-                    <strong> <i class=“fas fa-heart”></i> <%= activity.reviews.average(:rating).round(1) %> / 5 </strong>
+                    <strong> <i class="fas fa-heart"></i> <span> <%= activity.reviews.average(:rating).round(1) %> / 5 </span> </strong>
                   </p>
                   <% end %>
                 </div>
