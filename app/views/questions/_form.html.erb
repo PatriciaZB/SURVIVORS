@@ -9,9 +9,11 @@
   </div>
 
   <div class="form-text d-flex flex-row justify-content-center">
-    <%= simple_form_for [@question] do |f| %>
-      <%= f.input :question, :as => :text, :input_html => {:rows => 5}, label: 'Question' %>
-      <%= f.submit "Submit question", class: "btn btn-success" %>
-    <% end %>
+    <div class="question-form" style="width: 50%">
+      <%= simple_form_for [@question] do |f| %>
+        <%= f.input :question, :as => :text, :input_html => {:rows => 10}, label: 'Question' %>
+        <%= f.submit "Post", class: "btn btn-success" %>
+      <% end %>
+    </div>
   </div>
 </div>
