@@ -11,7 +11,7 @@
   <div class="form-text d-flex flex-row justify-content-center">
     <%= simple_form_for [@activity, @review] do |f| %>
       <%= f.input :description, :as => :text, :input_html => {:rows => 5}, label: 'Review' %>
-      <%= f.input :rating, collection: 0..5, label: 'Rating' %>
+      <%= f.input :rating, collection: 1..5, label: 'Rating' %>
       <%= f.submit "Submit review", class: "btn btn-success" %>
     <% end %>
   </div>
