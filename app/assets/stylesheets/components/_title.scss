@@ -8,47 +8,36 @@
   text-transform: uppercase;
   margin: 30px 0px 30px 10px;
   text-decoration: none;
-
-  .black {
-    color: black;
-    font-family: 'Oxygen', sans-serif;
   }
 
-  .white {
-    font-family: 'Oxygen', sans-serif;
-    position: absolute;
-    color: $white;
-    top: 0;
-    clip-path: circle(60px at 40px 25px);
-      &:before {
-        content: '';
-        width: 120px;
-        height: 120px;
-        position: absolute;
-        border-radius: 50%;
-        background-color: $pink;
-        z-index: -1;
-        top: -35px;
-        left: -20px;
-      }
-  }
+  $height: 120px;
 
-  .white2 {
-    font-family: 'Oxygen', sans-serif;
-    position: absolute;
-    color: $white;
-    top: 0;
-    clip-path: circle(45px at 86px 25px);
-    &:before {
+  .title {
+  position: relative;
+  font-size: 42px;
+  margin: 30px 0 60px;
+  line-height: $height;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  &:before {
     content: '';
-    width: 85px;
-    height: 85px;
     position: absolute;
+    width: 120px;
+    height: $height;
+    top: 0;
+    left: -25px;
     border-radius: 50%;
-    background-color: #0C151D;
+    background-color: #CE796B;
     z-index: -1;
-    top: -16px;
-    left: 46px;
   }
+
+  &:after {
+    content: attr(data-content);
+    position: absolute;
+    left: 0;
+    color: white;
+    background-color: #0C151D;
+    clip-path: circle(40px at 85px 60px);
   }
 }

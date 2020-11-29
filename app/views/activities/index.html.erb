@@ -1,23 +1,22 @@
-
 <div class="container">
-  <div class="searchbar">
-    <%= form_tag activities_path, class: "form-horizontal", method: :get do %>
+
+  <div class="d-flex flex-row justify-content-between align-items-baseline">
+    <div class=" col-sm-12 col-md-4 mb-3">
+      <div class="activity-title">
+        <div> <h2 class="title" data-content="Activities">Activities</h2></div>
+      </div>
+    </div>
+    <div class="searchbar col-sm-12 col-md-8">
+    <%= form_tag activities_path, class: "form-horizontal pr-0", method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find an Activity" %>
       <%= submit_tag "Search", class: "btn btn-primary ml-3" %>
     <% end %>
-  </div>
-  <div class="row">
-    <div class="col-12 mb-3">
-      <div class="activity-title">
-        <div> <h1 class="black">Activities</h1> </div>
-        <div> <h1 class="white">Activities</h1> </div>
-        <div> <h1 class="white2">Activities</h1> </div>
-      </div>
     </div>
   </div>
+
   <div class="row">
     <div class="cards-list col-sm-12 col-md-7" style=" margin-top: 30px;">
       <% @activities.each do |activity| %>
