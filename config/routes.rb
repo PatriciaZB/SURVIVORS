@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :bookings, only: :create
     resources :reviews, only: [:new, :create]
   end
+
+
   resources :reviews, only: :destroy
   resources :bookings, only: :destroy
   get '/dashboard', to: 'pages#dashboard'

@@ -1,15 +1,27 @@
+require "date"
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @activities = Activity.all.order('start_at ASC')
-
-    if params[:query].present?
+    if params[:query].present? && params[:starts_at].present?
+      search_date = params[:starts_at]
+      sql_query = "start_at >= :date AND name ILIKE :query OR address ILIKE :query"
+      @activities = Activity.where(sql_query, date: "%#{search_date}%", query: "%#{params[:query]}%").order('start_at ASC')
+    elsif params[:query].present?
       sql_query = "name ILIKE :query OR address ILIKE :query"
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:starts_at].present?
+      search_date = params[:starts_at]
+      sql_query = "start_at >= :date"
+      @activities = Activity.where(sql_query, date: "%#{search_date}%").order('start_at ASC')
     else
       @activities = Activity.all.order('start_at ASC')
     end
+
+    # if params[:starts_at].present?
+    #  search_date = params[:starts_at]
+    #  @activities = Activity.where(start_at: DateTime.parse(search_date).beginning_of_day..DateTime.parse(search_date).end_of_day)
+
 
     @markers = @activities.geocoded.map do |activity|
       {
@@ -18,7 +30,9 @@ class ActivitiesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
       }
     end
+
   end
+
 
   def show
     @activity = Activity.find(params[:id])
