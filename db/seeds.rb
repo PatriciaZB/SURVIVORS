@@ -160,9 +160,11 @@ puts 'Reviews created'
 
 puts 'Creating questions'
 
-question1 = Question.create!(question: "My older sister is in an abusive relationship. She wants to get out of it but she is very scared. What can we do? What support centers exist in Berlin?", user: user12)
+question1 = Question.create!(title: "How can I help someone close to me who is in an abusive relationship?", question: "My older sister is in an abusive relationship. She wants to get out of it but she is very scared because the guy is threatening her. What can we do? What support centers exist in Berlin?", user: user12)
 
-question2 = Question.create!(question: "Hi! I am new to this platform. I still have a hard time talking about what happened to me. What activities do you recommend me to start with?", user: user11)
+question2 = Question.create!(title: "What kind of activities do you recommend to get started in the process of recovery from trauma?", question: "Hi! I am new to this platform. I still have a hard time talking about what happened to me but I am learning to open up about my emotions and want to try different alternatives. What activities do you recommend me to start with?", user: user11)
+
+question3 = Question.create!(title: "I was sexually assaulted 2 days ago, what should I do now? I don't speak any German,where can I get help in English?", user: user9)
 
 puts 'Questions created'
 

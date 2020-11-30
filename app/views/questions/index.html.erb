@@ -19,7 +19,7 @@
             <h3 class="nickname"> <%= link_to question.user.nickname, question_path(question) %> </h3>
           </div> -->
           <div class="questions-question col-8">
-            <p> <%= question[:question] %> </p>
+            <p> <%= question[:title] %> </p>
           </div>
           <div class="questions-view-icon col-1">
             <%= link_to '<i class="far fa-eye"></i>'.html_safe, question_path(question), method: :get %>
