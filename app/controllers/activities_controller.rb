@@ -17,6 +17,7 @@ class ActivitiesController < ApplicationController
     else
       @activities = Activity.all.order('start_at ASC')
     end
+
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
