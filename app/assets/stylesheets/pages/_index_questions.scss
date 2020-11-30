@@ -1,0 +1,39 @@
+.row-questions {
+  width: 0 auto;
+  margin-left: 180px;
+  margin-right: 180px;
+}
+
+.questions {
+  margin-top: 38px;
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.each-question {
+ border-top: 1px solid $pink;
+ padding-top: 18px;
+ padding-bottom: 10px;
+ font-family: $headers-font;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.questions-profile-image {
+  padding-right: 2px;
+  align-items: center;
+}
+
+.questions-question {
+  align-items: center;
+}
+
+.questions-view-icon {
+  font-size: 20px;
+  align-items: center;
+}
+
+.questions-button {
+  padding-top: 20px;
+}
