@@ -2,12 +2,14 @@
 
   <div class="col-12 mb-3">
     <div class="activity-title">
-      <div><h2 class="title" data-content= 'Question by' <%= @question.user.nickname %> > Question by <%= @question.user.nickname %></h2></div>
+      <div> <h2 class="title" data-content="Forum">Forum</h2> </div>
     </div>
   </div>
 
-  <div class="reviews-container col-sm-12 col-md-4">
-    <%= @question.question %>
+  <div class="reviews-container col-12 col-sm-12">
+    <h1> <%= @question.title %> </h1>
+    <br>
+    <p> <%= @question.question %> </p>
   </div>
 
   <div class="reviews-container col-sm-12 col-md-4">
@@ -28,12 +30,17 @@
       <% end %>
     </div>
 
-  <div class="button mt-3">
-    <%= link_to "Add an answer", new_question_answer_path(@question, Answer.new), method: :get, class: "btn btn-primary" %>
-  </div>
+    <div class="form-text d-flex flex-row justify-content-center">
+      <%= simple_form_for [@question, @answer], remote: true do |f| %>
 
-  <div class="button mt-3">
-    <%= link_to "Back to forum", questions_path, class: "btn btn-primary" %>
-  </div>
+        <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, label: false, placeholder: "add an answer" %>
+        <%= f.submit "Post", class: "btn btn-success post" %>
+
+      <% end %>
+    </div>
+
+    <div class="button mt-3">
+      <%= link_to "Back to forum", questions_path, class: "btn btn-primary" %>
+    </div>
 
 </div>
