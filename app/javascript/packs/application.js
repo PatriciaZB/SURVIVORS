@@ -31,12 +31,9 @@ import { initMapbox } from '../plugins/map';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  flatpickr('.datepicker',{});
 })
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  flatpickr('.your-selector');
-})

@@ -17,12 +17,6 @@ class ActivitiesController < ApplicationController
     else
       @activities = Activity.all.order('start_at ASC')
     end
-
-    # if params[:starts_at].present?
-    #  search_date = params[:starts_at]
-    #  @activities = Activity.where(start_at: DateTime.parse(search_date).beginning_of_day..DateTime.parse(search_date).end_of_day)
-
-
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
@@ -30,9 +24,7 @@ class ActivitiesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
       }
     end
-
   end
-
 
   def show
     @activity = Activity.find(params[:id])
