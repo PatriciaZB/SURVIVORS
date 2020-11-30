@@ -10,26 +10,31 @@
     </div>
   </div>
 
-  <div class="questions-container col-sm-12 col-md-4">
+  <div class="row-questions">
       <div class="questions">
         <% @questions.each do |question| %>
-        <div class="d-flex align-items-center">
-          <div class="profile-image">
+        <div class="each-question">
+          <div class="questions-profile-image col-1">
             <%= image_tag("autumn-woman.png", :alt => "woman") %>
           </div>
-          <div class="questions-info">
+         <!--  <div class="questions-info">
             <h3 class="nickname"> <%= link_to question.user.nickname, question_path(question) %> </h3>
-            <p style="margin-bottom: 0;"><strong>Posted on <%= question[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
-          </div>
-          </div>
-          <div class="questions-text mt-2">
+          </div> -->
+          <div class="questions-question col-8">
             <p> <%= question[:question] %> </p>
           </div>
+          <div class="questions-view-icon col-1">
+            <%= link_to '<i class="far fa-eye"></i>'.html_safe, question_path(question), method: :get %>
+          </div>
+
+        </div>
         <% end %>
       </div>
 
-      <div class="button mt-3">
-        <%= link_to "Add a question", new_question_path(Question.new), method: :get, class: "btn btn-primary" %>
+      <div class="questions-button mt-4">
+        <%= link_to "Add a question", new_question_path(Question.new), method: :get, class: "btn btn-success" %>
       </div>
 
+  </div>
 </div>
+
