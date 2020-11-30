@@ -6,14 +6,21 @@
   background-color: #f7f6f4;
   border: 1px solid $pink;
   border-radius: 5px;
+  margin-right: 16px;
 }
 
 .form-horizontal {
   display:flex;
-  padding-left: 160px;
   padding-right: 160px;
 }
 
 .new_review {
   width: 500px;
+}
+
+.form-data {
+  background-color: #f7f6f4;
+  border: 1px solid $pink;
+  border-radius: 5px;
+  width: 170px;
 }
