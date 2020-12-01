@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.all
     end
-
   end
 
   def show
