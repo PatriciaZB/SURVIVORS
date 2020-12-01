@@ -346,7 +346,7 @@ question1 = Question.create!(title: "How can I help someone close to me who is i
 
 question2 = Question.create!(title: "What kind of activities do you recommend to get started in the process of recovery from trauma?", question: "Hi! I am new to this platform. I still have a hard time talking about what happened to me but I am learning to open up about my emotions and want to try different alternatives. What activities do you recommend me to start with?", user: user11)
 
-question3 = Question.create!(title: "I was sexually assaulted 2 days ago, what should I do now? I don't speak any German,where can I get help in English?", user: user9)
+question3 = Question.create!(title: "I was sexually assaulted 2 days ago, what should I do now? I don't speak any German, where can I get help in English?", user: user9)
 
 question4 = Question.create!(title: "I think my friend is in an abusive relationship. Suggestions for me to approach her and talk?", user: user8)
 
@@ -362,7 +362,7 @@ answer2 = Answer.create!(answer: "Hey! If your friend is in immediate danger, yo
 
 answer3 = Answer.create!(answer: "In Berlin you can go to Frauen für Frauen. They offer help and support to women.", question: question1, user: user7)
 
-answer4 = Answer.create!(answer: "Try the protection from violence national telephone helpline for violence against women – 08000 116 016", question: question1, user: user8)
+answer4 = Answer.create!(answer: "Try the protection from violence national telephone helpline for violence against women – 08000 116 016.", question: question1, user: user8)
 
 
 
