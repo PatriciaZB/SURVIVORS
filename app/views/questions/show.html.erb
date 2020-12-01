@@ -57,6 +57,9 @@
               <p style="margin-bottom: 0;"><strong>Posted on <%= answer[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
             </div>
         </div>
+
+      <% end %>
+
         <div class="reviews-text mt-1">
           <p> <%= answer[:answer] %> </p>
         </div>
@@ -66,7 +69,9 @@
   </div>
 
   <div class="form-text d-flex flex-row justify-content-center col-12 mb-4 ml-6">
-    <%= simple_form_for [@question, @answer], remote: true do |f| %>
+    <%= simple_form_for [@question, @answer], remote: true 
+    
+    |f| %>
 
     <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, label: false %>
     <%= f.submit "Post", class: "btn btn-success post" %>

@@ -9,7 +9,7 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12 col-md-5">
+    <div class="col-sm-12 col-md-5 offset-md-1">
       <div class= "d-flex justify-content-baseline my-3  help-text">
         <h3><%= link_to "Legal Information - What are your rights?" %></h3>
       </div>
@@ -23,6 +23,22 @@
         <h3><%= link_to "How can I help other survivors" %></h3>
       </div>
     </div>
-  </div>
 
+    <form action="https://formspree.io/mnqondjk" method="POST" class="form-container col-md-5 offset-md-1">
+      <p> If you have further question you can contact us directly above.  We will be grateful to help you!</p>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Your Email</label>
+          <input type="email" name="_replyto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Your Message</label>
+          <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+  </div>
 </div>
