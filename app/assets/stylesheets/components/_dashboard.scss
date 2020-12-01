@@ -4,6 +4,33 @@
   margin: auto;
 }
 
+.far:after {
+  color: $pink;
+}
+
+.fas {
+  color: $pink;
+}
+
+.icon-hover:hover {
+  cursor: pointer;
+  color: #b34c3b;
+}
+
+.modal-content {
+  background-color: $beige;
+  border-radius: 4px;
+  border: 3px solid $pink;
+}
+
+.modal-header {
+  border-bottom: 0px solid $pink !important;
+}
+
+.modal-footer {
+  border-top: 0px solid $pink !important;
+}
+
 .column-item {
   margin: auto;
   display: block;
@@ -43,5 +70,7 @@ hr {
   border-radius: 4px;
   object-fit: cover;
   margin-left: 8px;
+  margin: auto;
+  display: block;
 }
 
