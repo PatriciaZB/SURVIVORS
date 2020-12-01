@@ -241,12 +241,16 @@ meditation3.save
 
 protest = Activity.create!(name: 'Elimination of violence against women', description: "Violence against women and girls (VAWG) is one of the most widespread, persistent and devastating human rights violations in our world today remains largely unreported due to the impunity, silence, stigma and shame surrounding it. Violence against women continues to be an obstacle to achieving equality, development, peace as well as to the fulfillment of women and girls’ human rights. We must eliminate violence against women. Come join us in the streets!", address: 'Alexanderstraße 9, 10178 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Protest', presence: 'In-presence', user: user3)
 
-community = Activity.create!(name: 'Building a community', description: "By joining our community, you can connect with others with similar experiences, and support each other on this unique path.", address: 'Yorckstraße 15, 10965 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user11)
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606663466/Untitled_design_10_g70g29.jpg')
+protest.image.attach(io: file, filename: 'protest.jpg', content_type: 'image/jpg')
+protest.save
 
+
+com = Activity.create!(name: 'Building a community', description: "By joining our community, you can connect with others with similar experiences, and support each other on this unique path. Come meet us!", address: 'Storkower Str. 135, 10407 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user13)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606663543/Untitled_design_5_sojbng.jpg')
-community.image.attach(io: file, filename: 'community.jpg', content_type: 'image/jpg')
-community.save
+com.image.attach(io: file, filename: 'com.jpg', content_type: 'image/jpg')
+com.save
 
 
 
