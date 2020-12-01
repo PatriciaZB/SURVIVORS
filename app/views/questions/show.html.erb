@@ -57,9 +57,6 @@
               <p style="margin-bottom: 0;"><strong>Posted on <%= answer[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
             </div>
         </div>
-
-      <% end %>
-
         <div class="reviews-text mt-1">
           <p> <%= answer[:answer] %> </p>
         </div>
@@ -68,16 +65,14 @@
     </div>
   </div>
 
-  <div class="form-text d-flex flex-row justify-content-center col-12 mb-4 ml-6">
-    <%= simple_form_for [@question, @answer], remote: true 
-    
-    |f| %>
+    <div class="form-text d-flex flex-row justify-content-center col-12 mb-4 ml-6">
+      <%= simple_form_for [@question, @answer], remote: true do |f| %>
 
-    <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, placeholder: " Write a comment", label: false %>
-    <%= f.submit "Post", class: "btn btn-success post" %>
+      <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, placeholder: " Write a comment", label: false %>
+      <%= f.submit "Post", class: "btn btn-success post" %>
 
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
 <!--     <div class="col-sm-12 col-md-8 offset-md-2 ml-0 pl-0" id="accordion">
 
@@ -97,7 +92,7 @@
       </div>
     </div> -->
 
-  <div class="button mt-3">
-    <%= link_to "<< Back to forum", questions_path, class: "btn btn-link" %>
-  </div>
+    <div class="button mt-3">
+      <%= link_to "<< Back to forum", questions_path, class: "btn btn-link" %>
+    </div>
 </div>
