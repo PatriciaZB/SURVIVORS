@@ -14,20 +14,22 @@
   <div class="question-container col-sm-12 col-md-8 offset-md-2">
     <div class="question">
       <% @question.answers.each do |answer| %>
+
         <div class="d-flex align-items-center">
           <div class="profile-image">
-            <%= image_tag("autumn-woman.png", :alt => "woman") %>
+            <%= cl_image_tag(answer.user.avatar.key, class: "avatar") %>
+            <div class="reviews-info">
+              <h3 class="nickname"> <%= answer.user.nickname %> </h3>
+                <%#= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, answer_path(answer), method: :delete %>
+              <p style="margin-bottom: 0;"><strong>Posted on <%= answer[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
+            </div>
           </div>
-          <div class="reviews-info">
-            <h3 class="nickname"> <%= answer.user.nickname %> </h3>
-            <%#= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, answer_path(answer), method: :delete %>
-            <p style="margin-bottom: 0;"><strong>Posted on <%= answer[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
+          <div class="reviews-text mt-2">
+            <p> <%= answer[:answer] %> </p>
           </div>
         </div>
-        <div class="reviews-text mt-2">
-          <p> <%= answer[:answer] %> </p>
-        </div>
-      <% end %>
+      
+        <% end %>
     </div>
 
     <div class="col-sm-12 col-md-8 offset-md-2" id="accordion">

@@ -28,8 +28,12 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    @question.destroy
-    redirect_to questions_path, notice: 'Your question was successfully deleted.'
+    if @question.user == current_user
+      @question.destroy
+      redirect_to questions_path, notice: 'Your question was successfully deleted.'
+    else
+      redirect_to question_path(@question), notice: "You can't delete this question"
+    end
   end
 
   private

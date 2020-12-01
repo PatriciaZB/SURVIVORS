@@ -20,56 +20,191 @@ User.destroy_all
 puts 'Creating users'
 
 user1 = User.create(nickname: 'Rebeca Buendia', email: 'rebecabuendia@gmail.com', password:'123456')
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606822224/Untitled_design_muahys.png')
+user1.avatar.attach(io: file, filename: 'user1.png', content_type: 'image/png')
+user1.save
+
 user2 = User.create(nickname: 'Pilar Ternera', email: 'pilarternera@gmail.com', password:"654321")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606822977/Untitled_design_1_up6vqw.png')
+user2.avatar.attach(io: file, filename: 'user2.png', content_type: 'image/png')
+user2.save
+
 user3 = User.create(nickname: 'Amaranta', email: 'amaranta@gmail.com', password:"1234567")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606823580/Untitled_design_2_w3atfk.png')
+user3.avatar.attach(io: file, filename: 'user3.png', content_type: 'image/png')
+user3.save
+
+
 user4 = User.create(nickname: 'Aureliana', email: 'aureliana@gmail.com', password:"12345678")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824545/Untitled_design_7_rbiubq.png')
+user4.avatar.attach(io: file, filename: 'user4.png', content_type: 'image/png')
+user4.save
+
+
 user5 = User.create(nickname: 'Ursula', email: 'ursula@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824547/Untitled_design_8_utfvjh.png')
+user5.avatar.attach(io: file, filename: 'user5.png', content_type: 'image/png')
+user5.save
+
+
 user6 = User.create(nickname: 'Renata', email: 'renata@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824547/Untitled_design_5_wnjxxc.png')
+user6.avatar.attach(io: file, filename: 'user6.png', content_type: 'image/png')
+user6.save
+
+
 user7 = User.create(nickname: 'Meme', email: 'meme@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824547/Untitled_design_4_avo9uo.png')
+user7.avatar.attach(io: file, filename: 'user7.png', content_type: 'image/png')
+user7.save
+
+
 user8 = User.create(nickname: 'Petra', email: 'petra@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824548/Untitled_design_3_ugl8d5.png')
+user8.avatar.attach(io: file, filename: 'user8.png', content_type: 'image/png')
+user8.save
+
+
 user9 = User.create(nickname: 'Santa Sofía de la Piedad', email: 'santa@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824549/Untitled_design_9_vlb5sj.png')
+user9.avatar.attach(io: file, filename: 'user9.png', content_type: 'image/png')
+user9.save
+
+
 user10 = User.create(nickname: 'F.C.', email: 'fernanda@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824550/Untitled_design_6_aqru0h.png')
+user10.avatar.attach(io: file, filename: 'user10.png', content_type: 'image/png')
+user10.save
+
+
 user11 = User.create(nickname: 'Remedios', email: 'remedios@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824552/Untitled_design_12_ospjgd.png')
+user11.avatar.attach(io: file, filename: 'user11.png', content_type: 'image/png')
+user11.save
+
+
 user12 = User.create(nickname: 'G.G.M.', email: 'gabo@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824551/Untitled_design_10_elr2v7.png')
+user12.avatar.attach(io: file, filename: 'user12.png', content_type: 'image/png')
+user12.save
+
+
 user13 = User.create(nickname: 'Anonymous', email: 'a@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824553/Untitled_design_11_d4xmtv.png')
+user13.avatar.attach(io: file, filename: 'user13.png', content_type: 'image/png')
+user13.save
+
+
 user14 = User.create(nickname: 'J.C.B.P.', email: 'jcbp@gmail.com', password:"123456789")
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606824552/Untitled_design_13_gjduyw.png')
+user14.avatar.attach(io: file, filename: 'user14.png', content_type: 'image/png')
+user14.save
 
 puts 'Users created'
 
 
 puts 'Creating activities'
 
-yoga1 = Activity.create!(name: 'Healing Yoga', description: "Most experts agree that trauma’s effects live in the body, and that’s why yoga works. Yoga’s ability to touch us on every level of our being—physical, mental, emotional, and spiritual—makes it a powerful and effective means for trauma victims to reinhabit their bodies safely, calm their minds, experience emotions directly, and begin to feel a sense of strength and control. It’s widely known that yoga is not just a physical practice, but few people know that outside of its centering and calming benefits, yoga can also be an intensely emotional journey. Your deeper mind now has the opportunity to process issues that you’ve been holding below the surface of your immediate consciousness, whether that is stress or anger or intense sadness—or maybe a confusing mix of many things.", address: 'Lübbener Str. 9, 10997 Berlin', start_at: DateTime.new(2020,11,28,16,0), end_at: DateTime.new(2020,11,28,17,0), category: 'Yoga', presence: 'In-presence', user: user7, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606305299/healingyoga.jpg')
+yoga1 = Activity.create!(name: 'Healing Yoga', description: "Most experts agree that trauma’s effects live in the body, and that’s why yoga works. Yoga’s ability to touch us on every level of our being—physical, mental, emotional, and spiritual—makes it a powerful and effective means for trauma victims to reinhabit their bodies safely, calm their minds, experience emotions directly, and begin to feel a sense of strength and control. It’s widely known that yoga is not just a physical practice, but few people know that outside of its centering and calming benefits, yoga can also be an intensely emotional journey. Your deeper mind now has the opportunity to process issues that you’ve been holding below the surface of your immediate consciousness, whether that is stress or anger or intense sadness—or maybe a confusing mix of many things.", address: 'Lübbener Str. 9, 10997 Berlin', start_at: DateTime.new(2020,11,28,16,0), end_at: DateTime.new(2020,11,28,17,0), category: 'Yoga', presence: 'In-presence', user: user7)
 
-defense = Activity.create(name: 'Pretty Deadly Self Defense', description: "Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care. Learning self defense is more than just learning how to punch and kick. It's about learning where your boundaries are, learning how to trust yourself, and learning what your body can really do, When you learn what options you really have, you have hope. And when you have hope, you can change your life. And maybe even the world.", address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,4,19,0), end_at: DateTime.new(2020,12,4,21,0), category: 'Self defense', presence: 'In-presence', user: user2, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606311381/defense.jpg')
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_13_n91ap8.jpg')
+yoga1.image.attach(io: file, filename: 'yoga1.jpg', content_type: 'image/jpg')
+yoga1.save
 
-lotus_dance = Activity.create(name: 'Lotus Dance', description: "As we tap into the deep sources of bodily wisdom through creative art expression, we dance the renewal, recreation, and healing of ourselves and our world. We truly believe that movement makes people more resilient physically and emotionally. Dance movement is a therapeutic form of exercise which is great not only for physical health but also mental and emotional health. Music itself can be very powerful. It can affect our moods and our state of well-being by triggering memories and other emotional experiences. Just hearing a song from our childhood can create a sensation in our entire bodies that can instantly affect our mood and trigger memories in just a matter of seconds. When dance or any movement is set to music it can create a stress relieving, joyful and sometimes healing moment for those involved as well as increasing/releasing endorphins in the brain.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,1,20,0), end_at: DateTime.new(2020,12,1,21,30), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606312440/lotus.jpg')
+defense = Activity.create(name: 'Pretty Deadly Self Defense', description: "Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care. Learning self defense is more than just learning how to punch and kick. It's about learning where your boundaries are, learning how to trust yourself, and learning what your body can really do, When you learn what options you really have, you have hope. And when you have hope, you can change your life. And maybe even the world.", address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,4,19,0), end_at: DateTime.new(2020,12,4,21,0), category: 'Self defense', presence: 'In-presence', user: user2)
 
-kundalini = Activity.create(name: 'Kundalini Yoga', description: "Kundalini Yoga is a magical science that uses sound, mantra, energy healing, exercises and meditations to release trauma from the energetic body, which surrounds the physical body. It is this field, known as the aura, that holds wounds. When those wounds are healed, radiance can occur. While yoga can be a physically intense activity, the poses and asanas of a practice can bring your brain into a deeply focused, neutral state. This helps you process anything that is bothering you subconsciously, but that you’ve been unable or unwilling to access directly. Yoga gives your mind a way to process the feelings we bury and push aside.", address: 'Segitzdamm 48, 10969 Berlin', start_at: DateTime.new(2020,11,29,14,0), end_at: DateTime.new(2020,11,29,15,0), category: 'Yoga', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606313032/kunda.jpg')
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606311381/defense.jpg')
+defense.image.attach(io: file, filename: 'defense.jpg', content_type: 'image/jpg')
+defense.save
 
-dance_movement = Activity.create(name: 'Dance Movement Therapy', description: "This kind of therapy can be particularly useful in the area of physical trauma, physical abuse, and body-image disturbances or in conditions where certain physical or sensory limitations inhibit the realization of emotional or social needs. Namely, in various traumas body is often the victim of injuries, ailments and disasters and because of that it can be associated with pain, trauma, hurt, helplessness and fear. In those cases it is logical that body should be involved in the therapeutic process. Dance therapy is a great way to express emotions that are sometimes not easily expressed verbally. We believe that environment is your body.", address: 'Friedrichstraße 47, 10117 Berlin', start_at: DateTime.new(2020,12,2,18,30), end_at: DateTime.new(2020,12,2,20,0), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606313807/exp.jpg')
+lotus_dance = Activity.create(name: 'Lotus Dance', description: "As we tap into the deep sources of bodily wisdom through creative art expression, we dance the renewal, recreation, and healing of ourselves and our world. We truly believe that movement makes people more resilient physically and emotionally. Dance movement is a therapeutic form of exercise which is great not only for physical health but also mental and emotional health. Music itself can be very powerful. It can affect our moods and our state of well-being by triggering memories and other emotional experiences. Just hearing a song from our childhood can create a sensation in our entire bodies that can instantly affect our mood and trigger memories in just a matter of seconds. When dance or any movement is set to music it can create a stress relieving, joyful and sometimes healing moment for those involved as well as increasing/releasing endorphins in the brain.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,1,20,0), end_at: DateTime.new(2020,12,1,21,30), category: 'Dance', presence: "In-presence", user: user3)
 
-transformative_dance = Activity.create(name: 'Transformative Dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected. Any form of exercise is great for relieving stress in the mind and body. Dance is no different. Dance therapy is a great stress reliever, not only because it is great physically for the body but it is also emotionally therapeutic. Since movement can be related to thoughts and feelings, dancing can bring changes to emotions and attitudes almost instantly. We want everyone to have the tools to live their lives as they choose for themselves, free of fear and full of joy.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "In-presence", user: user3, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606314334/move.jpg')
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606312440/lotus.jpg')
+lotus_dance.image.attach(io: file, filename: 'lotus_dance.jpg', content_type: 'image/jpg')
+lotus_dance.save
 
-painting = Activity.create!(name: 'Painting to Heal', description: "This activity is an opportunity for self discovery by tapping into your creativity as a way of healing yourself and others. It is a sacred space to thrive and explore expressions of creativity in a small, supportive community. The brain is stimulated by art therapy. The traumatic memories are stored on the right hemisphere of the brain and speech is positioned on the left. Interestingly enough, art is a right-brain activity that helps connect the dots between trauma and art. A person with trauma may find that an activity such as drawing is much easier than talking about what happened. When words are not sufficient, art can push someone to find coping strategies and progressively get grounded in therapy.", address: 'Okerstraße 42, 12049 Berlin', start_at: DateTime.new(2020,11,29,17,0), end_at: DateTime.new(2020,11,29,20,0), category: 'Painting', presence: 'In-presence', user: user1, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606399166/paint.jpg')
+kundalini = Activity.create(name: 'Kundalini Yoga', description: "Kundalini Yoga is a magical science that uses sound, mantra, energy healing, exercises and meditations to release trauma from the energetic body, which surrounds the physical body. It is this field, known as the aura, that holds wounds. When those wounds are healed, radiance can occur. While yoga can be a physically intense activity, the poses and asanas of a practice can bring your brain into a deeply focused, neutral state. This helps you process anything that is bothering you subconsciously, but that you’ve been unable or unwilling to access directly. Yoga gives your mind a way to process the feelings we bury and push aside.", address: 'Segitzdamm 48, 10969 Berlin', start_at: DateTime.new(2020,11,29,14,0), end_at: DateTime.new(2020,11,29,15,0), category: 'Yoga', presence: "In-presence", user: user3)
 
-art = Activity.create!(name: 'Art therapy', description: "Art therapy allows people to externalize what is occurring inside of them. As they put together the pieces of their trauma story their physical experience starts to change. Just as art therapy bridges feelings and words it also can bridge back into feeling grounded and safe in one's body. As trauma continues to remain a prevalent influence in an individual’s life, they may find it necessary to want to alleviate the symptoms. Depending on the depth and weight of the trauma, some therapeutic outlets have enormous potential to heal the pain. Art therapy is an approach that has shown excellent results for someone who has post-traumatic stress disorder (PTSD) and quite honestly could become the relief they need.", address: 'Sonnenallee 106, 12045 Berlin', start_at: DateTime.new(2020,12,2,19,0), end_at: DateTime.new(2020,12,2,21,30), category: 'Art', presence: 'In-presence', user: user2, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606400695/art.jpg')
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_11_rym19e.jpg')
+kundalini.image.attach(io: file, filename: 'kundalini.jpg', content_type: 'image/jpg')
+kundalini.save
 
-self_def = Activity.create!(name: 'Self defense Berlin', description: "All the courses are walk-in courses, so you can come and go as you like. All the coaches and trainers are very caring: ask how you feel constantly and worry about every each person. When you feel safe, grounded and can trust your environment, you have the confidence to explore, to adventure, to grow. Giving yourself tools you can rely on frees up that time and energy to focus on the things that really matter. We want everyone to have the tools to live their lives as they choose for themselves, free of fear and full of joy. Come learn self defense with us!", address: 'Hasenheide 10, 10967 Berlin', start_at: DateTime.new(2020,12,5,19,0), end_at: DateTime.new(2020,12,5,21,30), category: 'Self defense', presence: 'In-presence', user: user9, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_14_caoxdq.jpg')
 
-cook = Activity.create!(name: 'Cooking together', description: "The emotional benefits of cooking are myriad; many programs around the world help people with mood disorders and other issues get into the kitchen as part of their treatment, a practice known as 'therapeutic cooking'. And it's something you can replicate in your own home, with a bit of effort and an ingredient or two.Come try our community cooking classes. We will discuss several topics about gender while improving our cooking skills. No previous experience needed!", address: 'Oranienstraße 106, 10969 Berlin', start_at: DateTime.new(2020,12,3,20,0), end_at: DateTime.new(2020,12,3,22,30), category: 'Cooking', presence: 'In-presence', user: user6, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_10_ty2acc.jpg')
+dance_movement = Activity.create(name: 'Dance Movement Therapy', description: "This kind of therapy can be particularly useful in the area of physical trauma, physical abuse, and body-image disturbances or in conditions where certain physical or sensory limitations inhibit the realization of emotional or social needs. Namely, in various traumas body is often the victim of injuries, ailments and disasters and because of that it can be associated with pain, trauma, hurt, helplessness and fear. In those cases it is logical that body should be involved in the therapeutic process. Dance therapy is a great way to express emotions that are sometimes not easily expressed verbally. We believe that environment is your body.", address: 'Friedrichstraße 47, 10117 Berlin', start_at: DateTime.new(2020,12,2,18,30), end_at: DateTime.new(2020,12,2,20,0), category: 'Dance', presence: "In-presence", user: user3)
 
-talk1 = Activity.create!(name: 'How to recognize an abuser', description: "There are a few common questions we get from victims and survivors regarding how to communicate in their abusive relationships and how to recognize an abuser. There is no one typical, detectable personality of an abuser. However, they do often display common characteristics. We will discuss some of these topics in this talk. Our counsellors provide women with confidential support and if needed can help them find appropriate local support options in their area. This new support service thus caters to a concrete social need and plays an important role in directing victims, relatives of victims, friends and professionals to appropriate support resources.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,30,17,0), end_at: DateTime.new(2020,11,30,18,30), category: 'Talk', presence: 'In-presence', user: user5, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_16_xbo6th.jpg')
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606313807/exp.jpg')
+dance_movement.image.attach(io: file, filename: 'dance_movement.jpg', content_type: 'image/jpg')
+dance_movement.save
 
-yoga2 = Activity.create!(name: 'Yoga for trauma', description: "Achieving stabilization of the autonomic nervous system (ANS) through yoga can help people engage with counselling and psychotherapy, allowing them to begin to process their trauma. Yoga therapy may help people return to a baseline physiological state more quickly after a distressing memory is triggered. Yoga gives your mind a way to process the feelings we bury and push aside. This results in the confusion you experience when suddenly overwhelmed by emotion on the mat, and it can take anywhere from moments to days to search through yourself and consciously pinpoint the original source of the emotion.", address: 'Danziger Str. 44, 10435 Berlin', start_at: DateTime.new(2020,12,6,17,0), end_at: DateTime.new(2020,12,6,18,30), category: 'Yoga', presence: 'In-presence', user: user6, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_13_n91ap8.jpg')
+transformative_dance = Activity.create(name: 'Transformative Dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected. Any form of exercise is great for relieving stress in the mind and body. Dance is no different. Dance therapy is a great stress reliever, not only because it is great physically for the body but it is also emotionally therapeutic. Since movement can be related to thoughts and feelings, dancing can bring changes to emotions and attitudes almost instantly. We want everyone to have the tools to live their lives as they choose for themselves, free of fear and full of joy.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "In-presence", user: user3)
 
-talk2 = Activity.create!(name: 'How to help a friend who is being abused', description: "Whether you suspect that a friend or family member is being abused or you witnessed someone being abused, you can take steps to help. Knowing or thinking that someone you care about is in a violent relationship can be very hard. You may fear for her safety — and maybe for good reason. You may want to rescue her or insist she leave, but every adult must make her own decisions. Each situation is different, and the people involved are all different too. We will discuss some ways to help a loved one who is being abused.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,29,19,0), end_at: DateTime.new(2020,11,29,21,30), category: 'Talk', presence: 'In-presence', user: user7, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_17_a8bxde.jpg')
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606314334/move.jpg')
+transformative_dance.image.attach(io: file, filename: 'transformative_dance.jpg', content_type: 'image/jpg')
+transformative_dance.save
 
-therapy1 = Activity.create!(name: 'Support group for victims of abuse', description: "This group offers support for survivors of domestic and sexual assault. The purpose of the education classes is to create an understanding of the dynamics of domestic violence, to look at the self-esteem, self-confidence of victims, and to help victims realize that the abuse is not their fault. In addition, victims can learn about various community resources that can offer assistance and support with issues related to domestic violence. It is a place where victims/survivors can share their inner feelings with others that are going through the same experiences. Survivors lean on each other for support, advice, guidance and encouragement.", address: 'Frankfurter Tor 5, 10243 Berlin', start_at: DateTime.new(2020,12,1,19,0), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user5, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_15_mkytwf.jpg')
+painting = Activity.create!(name: 'Painting to Heal', description: "This activity is an opportunity for self discovery by tapping into your creativity as a way of healing yourself and others. It is a sacred space to thrive and explore expressions of creativity in a small, supportive community. The brain is stimulated by art therapy. The traumatic memories are stored on the right hemisphere of the brain and speech is positioned on the left. Interestingly enough, art is a right-brain activity that helps connect the dots between trauma and art. A person with trauma may find that an activity such as drawing is much easier than talking about what happened. When words are not sufficient, art can push someone to find coping strategies and progressively get grounded in therapy.", address: 'Okerstraße 42, 12049 Berlin', start_at: DateTime.new(2020,11,29,17,0), end_at: DateTime.new(2020,11,29,20,0), category: 'Painting', presence: 'In-presence', user: user1)
 
-talk4 = Activity.create!(name: 'Transcending Trauma', description: "This workshop examines trauma from a new and encouraging perspective—suggesting that post-traumatic growth (PTG) and even thriving are possible after experiencing painful events. When bad things happen, it can take a while to get over the pain and feel safe again. But with these self-help strategies and support, you can speed up your recovery. Emotional and psychological trauma is the result of extraordinarily stressful events that shatter your sense of security, making you feel helpless in a dangerous world. Psychological trauma can leave you struggling with upsetting emotions, memories, and anxiety that won’t go away. It can also leave you feeling numb, disconnected, and unable to trust other people.", address: 'Tempelhofer Ufer 25, 10963 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user10, Altimage: 'https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_19_poxagr.jpg')
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606399166/paint.jpg')
+painting.image.attach(io: file, filename: 'painting.jpg', content_type: 'image/jpg')
+painting.save
+
+art = Activity.create!(name: 'Art therapy', description: "Art therapy allows people to externalize what is occurring inside of them. As they put together the pieces of their trauma story their physical experience starts to change. Just as art therapy bridges feelings and words it also can bridge back into feeling grounded and safe in one's body. As trauma continues to remain a prevalent influence in an individual’s life, they may find it necessary to want to alleviate the symptoms. Depending on the depth and weight of the trauma, some therapeutic outlets have enormous potential to heal the pain. Art therapy is an approach that has shown excellent results for someone who has post-traumatic stress disorder (PTSD) and quite honestly could become the relief they need.", address: 'Sonnenallee 106, 12045 Berlin', start_at: DateTime.new(2020,12,2,19,0), end_at: DateTime.new(2020,12,2,21,30), category: 'Art', presence: 'In-presence', user: user2)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606400695/art.jpg')
+art.image.attach(io: file, filename: 'art.jpg', content_type: 'image/jpg')
+art.save
+
+self_def = Activity.create!(name: 'Self defense Berlin', description: "All the courses are walk-in courses, so you can come and go as you like. All the coaches and trainers are very caring: ask how you feel constantly and worry about every each person. When you feel safe, grounded and can trust your environment, you have the confidence to explore, to adventure, to grow. Giving yourself tools you can rely on frees up that time and energy to focus on the things that really matter. We want everyone to have the tools to live their lives as they choose for themselves, free of fear and full of joy. Come learn self defense with us!", address: 'Hasenheide 10, 10967 Berlin', start_at: DateTime.new(2020,12,5,19,0), end_at: DateTime.new(2020,12,5,21,30), category: 'Self defense', presence: 'In-presence', user: user9)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_14_caoxdq.jpg')
+self_def.image.attach(io: file, filename: 'self_def.jpg', content_type: 'image/jpg')
+self_def.save
+
+
+cook = Activity.create!(name: 'Cooking together', description: "The emotional benefits of cooking are myriad; many programs around the world help people with mood disorders and other issues get into the kitchen as part of their treatment, a practice known as 'therapeutic cooking'. And it's something you can replicate in your own home, with a bit of effort and an ingredient or two.Come try our community cooking classes. We will discuss several topics about gender while improving our cooking skills. No previous experience needed!", address: 'Oranienstraße 106, 10969 Berlin', start_at: DateTime.new(2020,12,3,20,0), end_at: DateTime.new(2020,12,3,22,30), category: 'Cooking', presence: 'In-presence', user: user6)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_10_ty2acc.jpg')
+cook.image.attach(io: file, filename: 'cook.jpg', content_type: 'image/jpg')
+cook.save
+
+talk1 = Activity.create!(name: 'How to recognize an abuser', description: "There are a few common questions we get from victims and survivors regarding how to communicate in their abusive relationships and how to recognize an abuser. There is no one typical, detectable personality of an abuser. However, they do often display common characteristics. We will discuss some of these topics in this talk. Our counsellors provide women with confidential support and if needed can help them find appropriate local support options in their area. This new support service thus caters to a concrete social need and plays an important role in directing victims, relatives of victims, friends and professionals to appropriate support resources.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,30,17,0), end_at: DateTime.new(2020,11,30,18,30), category: 'Talk', presence: 'In-presence', user: user5)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_17_a8bxde.jpg')
+talk1.image.attach(io: file, filename: 'talk1.jpg', content_type: 'image/jpg')
+talk1.save
+
+
+yoga2 = Activity.create!(name: 'Yoga for trauma', description: "Achieving stabilization of the autonomic nervous system (ANS) through yoga can help people engage with counselling and psychotherapy, allowing them to begin to process their trauma. Yoga therapy may help people return to a baseline physiological state more quickly after a distressing memory is triggered. Yoga gives your mind a way to process the feelings we bury and push aside. This results in the confusion you experience when suddenly overwhelmed by emotion on the mat, and it can take anywhere from moments to days to search through yourself and consciously pinpoint the original source of the emotion.", address: 'Danziger Str. 44, 10435 Berlin', start_at: DateTime.new(2020,12,6,17,0), end_at: DateTime.new(2020,12,6,18,30), category: 'Yoga', presence: 'In-presence', user: user6)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_12_qlxwza.jpg')
+yoga2.image.attach(io: file, filename: 'yoga2.jpg', content_type: 'image/jpg')
+yoga2.save
+
+
+
+talk2 = Activity.create!(name: 'How to help a friend who is being abused', description: "Whether you suspect that a friend or family member is being abused or you witnessed someone being abused, you can take steps to help. Knowing or thinking that someone you care about is in a violent relationship can be very hard. You may fear for her safety — and maybe for good reason. You may want to rescue her or insist she leave, but every adult must make her own decisions. Each situation is different, and the people involved are all different too. We will discuss some ways to help a loved one who is being abused.", address: 'Templiner Str. 7, 10119 Berlin', start_at: DateTime.new(2020,11,29,19,0), end_at: DateTime.new(2020,11,29,21,30), category: 'Talk', presence: 'In-presence', user: user7)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_18_gfg5hl.jpg')
+talk2.image.attach(io: file, filename: 'talk2.jpg', content_type: 'image/jpg')
+talk2.save
+
+
+
+therapy1 = Activity.create!(name: 'Support group for victims of abuse', description: "This group offers support for survivors of domestic and sexual assault. The purpose of the education classes is to create an understanding of the dynamics of domestic violence, to look at the self-esteem, self-confidence of victims, and to help victims realize that the abuse is not their fault. In addition, victims can learn about various community resources that can offer assistance and support with issues related to domestic violence. It is a place where victims/survivors can share their inner feelings with others that are going through the same experiences. Survivors lean on each other for support, advice, guidance and encouragement.", address: 'Frankfurter Tor 5, 10243 Berlin', start_at: DateTime.new(2020,12,1,19,0), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user5)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_16_xbo6th.jpg')
+therapy1.image.attach(io: file, filename: 'therapy1.jpg', content_type: 'image/jpg')
+therapy1.save
+
+
+talk4 = Activity.create!(name: 'Transcending Trauma', description: "This workshop examines trauma from a new and encouraging perspective—suggesting that post-traumatic growth (PTG) and even thriving are possible after experiencing painful events. When bad things happen, it can take a while to get over the pain and feel safe again. But with these self-help strategies and support, you can speed up your recovery. Emotional and psychological trauma is the result of extraordinarily stressful events that shatter your sense of security, making you feel helpless in a dangerous world. Psychological trauma can leave you struggling with upsetting emotions, memories, and anxiety that won’t go away. It can also leave you feeling numb, disconnected, and unable to trust other people.", address: 'Tempelhofer Ufer 25, 10963 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user10)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_19_poxagr.jpg')
+talk4.image.attach(io: file, filename: 'talk4.jpg', content_type: 'image/jpg')
+talk4.save
 
 puts 'Activities created'
+
 
 
 puts 'Creating bookings'

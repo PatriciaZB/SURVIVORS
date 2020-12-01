@@ -5,6 +5,10 @@
   margin-right: 100px;
 }
 
+.content-about-us {
+  margin-left: 150px;
+}
+
 .card-about-us {
   background: transparent;
   display:flex;
@@ -17,6 +21,7 @@
   }
   p {
     font-size:18px;
+    margin: 0px;
   }
 }
 
@@ -24,4 +29,9 @@
     border-radius: 50px;
     width: 70px;
     height: 70px;
+    border: 10px
+}
+
+.info {
+  margin-left: 20px;
 }

@@ -1,7 +1,7 @@
 <div class="container">
 
-  <div class="row" style= "margin-bottom: -30px;">
-    <div class="col-12 mb-3">
+  <div class="row" style= "margin-bottom: -140px;">
+    <div class="col-12">
       <div class="activity-title">
         <div> <h2 class="title" data-content="Forum">Forum</h2> </div>
       </div>
@@ -9,20 +9,21 @@
   </div>
 
   <div class="row-questions">
-      <div class="questions">
+      <div class="form-forum mx-6">
         <%= form_tag questions_path, class: "form-horizontal pr-0", method: :get do %>
           <%= text_field_tag :title, params[:title],class: "form-control mb-3",
             placeholder: "Search for a question" %>
           <%= submit_tag "Search", class: "btn btn-primary mb-3 ml-3" %>
         <% end %>
+      </div>
+
+        <div class="questions">
         <% @questions.each do |question| %>
         <div class="each-question">
           <div class="questions-profile-image col-1">
-            <%= image_tag("autumn-woman.png", :alt => "woman") %>
+            <%= cl_image_tag(question.user.avatar.key, class: "avatar") %>
           </div>
-         <!--  <div class="questions-info">
-            <h3 class="nickname"> <%= link_to question.user.nickname, question_path(question) %> </h3>
-          </div> -->
+
           <div class="questions-question col-8">
             <p> <%= question[:title] %> </p>
           </div>

@@ -13,7 +13,7 @@
         <h2>How it can help you </h2>
         <p>
           <% if !@activity.reviews.empty? %>
-            <i class="fas fa-heart"></i> <%= @activity.reviews.average(:rating).round(1) %> / 5
+            <i class="fas fa-heart" ></i><strong> <%=  @activity.reviews.average(:rating).round(1) %> / 5</strong>
             <% else %>
             <%= %>
             <% end %>
@@ -35,7 +35,7 @@
       </div>
 
       <div class="button mt-3">
-        <%= link_to "Book Now", activity_bookings_path(@activity, Booking.new), method: :post, class: "btn btn-primary" %>
+        <%= link_to "Book Now", activity_bookings_path(@activity, Booking.new), method: :post, class: "btn btn-success" %>
       </div>
     </div>
 
@@ -44,13 +44,13 @@
         <% @activity.reviews.each do |review| %>
         <div class="d-flex align-items-center">
           <div class="profile-image">
-            <%= image_tag("autumn-woman.png", :alt => "woman") %>
+            <%= cl_image_tag(review.user.avatar.key, class: "avatar") %>
           </div>
           <div class="reviews-info">
             <div class="name-rating d-flex justify-content-between align-items-center">
               <h3 class="nickname"> <%= review.user.nickname %> </h3>
               <div class="reviews-rating mb-2 mr-1">
-              <i class="fas fa-heart"></i><span> <%= review[:rating] %> </span>
+              <i class="fas fa-heart"></i><strong><span> <%= review[:rating] %> </span></strong>
           </div>
             </div>
             <p style="margin-bottom: 0;"><strong>Posted on <%= review[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
