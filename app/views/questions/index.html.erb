@@ -18,11 +18,9 @@
         <% @questions.each do |question| %>
         <div class="each-question">
           <div class="questions-profile-image col-1">
-            <%= image_tag("autumn-woman.png", :alt => "woman") %>
+            <%= cl_image_tag(question.user.avatar.key, class: "avatar") %>
           </div>
-         <!--  <div class="questions-info">
-            <h3 class="nickname"> <%= link_to question.user.nickname, question_path(question) %> </h3>
-          </div> -->
+
           <div class="questions-question col-8">
             <p> <%= question[:title] %> </p>
           </div>
