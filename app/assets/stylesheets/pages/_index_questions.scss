@@ -10,7 +10,7 @@
 }
 
 .each-question {
- border-top: 1px solid $pink;
+ border-bottom: 1px solid $pink;
  padding-top: 18px;
  padding-bottom: 10px;
  font-family: $headers-font;
@@ -39,4 +39,10 @@
 
 .questions-button {
   padding-top: 20px;
+}
+
+.form-forum {
+  margin-bottom: 65px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
