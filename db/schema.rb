@@ -45,10 +45,12 @@ ActiveRecord::Schema.define(version: 2020_11_30_095306) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
     t.float "latitude"
     t.float "longitude"
     t.string "category"
     t.string "presence"
+    t.string "Altimage"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
