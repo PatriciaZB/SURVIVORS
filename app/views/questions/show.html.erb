@@ -30,17 +30,33 @@
       <% end %>
     </div>
 
-    <div class="form-text d-flex flex-row justify-content-center">
+
+
+    <div id="accordion">
+ <!--  <div class="card"> -->
+    <!-- <div class="card-header" id="headingOne"> -->
+      <!-- <h5 class="mb-0"> -->
+        <button class="btn btn-primary mb-3" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Post an answer
+        </button>
+      <!-- </h5> -->
+    <!-- </div> -->
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="form-text d-flex flex-row justify-content-center">
       <%= simple_form_for [@question, @answer], remote: true do |f| %>
 
-        <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, label: false, placeholder: "add an answer" %>
+        <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, label: false %>
         <%= f.submit "Post", class: "btn btn-success post" %>
 
       <% end %>
     </div>
+    </div>
+<!--   </div> -->
+</div>
+
 
     <div class="button mt-3">
-      <%= link_to "Back to forum", questions_path, class: "btn btn-primary" %>
+      <%= link_to "<< Back to forum", questions_path, class: "btn btn-link" %>
     </div>
-
 </div>
