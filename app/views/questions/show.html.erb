@@ -7,40 +7,78 @@
   </div>
 
   <div class="reviews-container col-sm-12 col-md-8 offset-md-2 mb-4">
-    <h1> <%= @question.title.upcase %> </h1>
-    <p> <%= @question.question %> </p>
+    <h3> <%= @question.title.upcase %> </h3>
+    <p class="mt-2"> <%= @question.question %> </p>
   </div>
 
-  <div class="question-container col-sm-12 col-md-8 offset-md-2">
-    <div class="question">
+
+
+  <div class="question-container col-sm-12 col-md-8 col-lg-8 col-xl-8 offset-md-2">
+    <div class="question col-12">
       <% @question.answers.each do |answer| %>
 
         <div class="d-flex align-items-center">
           <div class="profile-image">
             <%= cl_image_tag(answer.user.avatar.key, class: "avatar") %>
+          </div>
             <div class="reviews-info">
-              <h3 class="nickname"> <%= answer.user.nickname %> </h3>
+              <div class="nickname-delete d-flex justify-content-between">
+                <h3 class="nickname"> <%= answer.user.nickname %> </h3>
+                <% if answer.user == current_user %>
+                  <i class="fas fa-trash-alt icon-hover" data-toggle="modal" data-target="#modalAnswer-<%= answer.id %>"></i>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalAnswer-<%= answer.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Delete confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Are you sure you want to delete this answer?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                            <%= link_to 'Delete', answer_path(answer), method: :delete, class: "btn btn-primary" %>
+                            <!-- <button type="button" class="btn btn-primary">Delete</button> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% else %>
+                    <%=  %>
+                  <% end %>
+
+              </div>
                 <%#= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, answer_path(answer), method: :delete %>
               <p style="margin-bottom: 0;"><strong>Posted on <%= answer[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
             </div>
-          </div>
-          <div class="reviews-text mt-2">
-            <p> <%= answer[:answer] %> </p>
-          </div>
         </div>
-      
+        <div class="reviews-text mt-1">
+          <p> <%= answer[:answer] %> </p>
+        </div>
+
         <% end %>
     </div>
+  </div>
 
-    <div class="col-sm-12 col-md-8 offset-md-2" id="accordion">
- <!--  <div class="card"> -->
-    <!-- <div class="card-header" id="headingOne"> -->
-      <!-- <h5 class="mb-0"> -->
-        <button class="btn btn-primary mb-3" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+  <div class="form-text d-flex flex-row justify-content-center col-12 mb-4 ml-6">
+    <%= simple_form_for [@question, @answer], remote: true do |f| %>
+
+    <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, label: false %>
+    <%= f.submit "Post", class: "btn btn-success post" %>
+
+    <% end %>
+  </div>
+
+<!--     <div class="col-sm-12 col-md-8 offset-md-2 ml-0 pl-0" id="accordion">
+
+        <button class="btn btn-link mb-3" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Post an answer
         </button>
-      <!-- </h5> -->
-    <!-- </div> -->
 
       <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="form-text d-flex flex-row justify-content-center">
@@ -52,10 +90,9 @@
           <% end %>
         </div>
       </div>
-<!--   </div> -->
-    </div>
+    </div> -->
 
-    <div class="button mt-3">
-      <%= link_to "<< Back to forum", questions_path, class: "btn btn-link" %>
-    </div>
+  <div class="button mt-3">
+    <%= link_to "<< Back to forum", questions_path, class: "btn btn-link" %>
+  </div>
 </div>

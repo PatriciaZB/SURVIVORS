@@ -32,6 +32,11 @@ textarea.form-control {
   // margin-left: 255px;
 }
 
+textarea#answer_answer.form-control {
+  width: 43vw !important;
+  background-color: $beige;
+}
+
 .rating {
   select.form-control {
     width: 100% !important;
