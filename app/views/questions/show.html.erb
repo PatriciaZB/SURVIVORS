@@ -2,37 +2,37 @@
 
   <div class="col-12 mb-3">
     <div class="activity-title">
-      <div> <h2 class="title" data-content="Forum">Forum</h2> </div>
+      <div> <h2 class="title" data-content="Forum"> Forum</h2> </div>
     </div>
   </div>
 
-  <div class="reviews-container col-12 col-sm-12">
+  <div class="reviews-container col-sm-12 col-md-8 offset-md-2 mb-4">
     <h1> <%= @question.title.upcase %> </h1>
-    <br>
     <p> <%= @question.question %> </p>
   </div>
 
-  <div class="reviews-container col-sm-12 col-md-4">
-    <div class="reviews">
+  <div class="question-container col-sm-12 col-md-8 offset-md-2">
+    <div class="question">
       <% @question.answers.each do |answer| %>
-      <div class="d-flex align-items-center">
-        <div class="profile-image">
-          <%= cl_image_tag(answer.user.avatar.key, class: "avatar") %>
+
+        <div class="d-flex align-items-center">
+          <div class="profile-image">
+            <%= cl_image_tag(answer.user.avatar.key, class: "avatar") %>
+            <div class="reviews-info">
+              <h3 class="nickname"> <%= answer.user.nickname %> </h3>
+                <%#= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, answer_path(answer), method: :delete %>
+              <p style="margin-bottom: 0;"><strong>Posted on <%= answer[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
+            </div>
+          </div>
+          <div class="reviews-text mt-2">
+            <p> <%= answer[:answer] %> </p>
+          </div>
         </div>
-        <div class="reviews-info">
-          <h3 class="nickname"> <%= answer.user.nickname %> </h3>
-          <p style="margin-bottom: 0;"><strong>Posted on <%= answer[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
-        </div>
-      </div>
-      <div class="reviews-text mt-2">
-        <p> <%= answer[:answer] %> </p>
-      </div>
-      <% end %>
+      
+        <% end %>
     </div>
 
-
-
-    <div id="accordion">
+    <div class="col-sm-12 col-md-8 offset-md-2" id="accordion">
  <!--  <div class="card"> -->
     <!-- <div class="card-header" id="headingOne"> -->
       <!-- <h5 class="mb-0"> -->
@@ -42,19 +42,18 @@
       <!-- </h5> -->
     <!-- </div> -->
 
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="form-text d-flex flex-row justify-content-center">
-      <%= simple_form_for [@question, @answer], remote: true do |f| %>
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="form-text d-flex flex-row justify-content-center">
+          <%= simple_form_for [@question, @answer], remote: true do |f| %>
 
-        <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, label: false %>
-        <%= f.submit "Post", class: "btn btn-success post" %>
+          <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, label: false %>
+          <%= f.submit "Post", class: "btn btn-success post" %>
 
-      <% end %>
-    </div>
-    </div>
+          <% end %>
+        </div>
+      </div>
 <!--   </div> -->
-</div>
-
+    </div>
 
     <div class="button mt-3">
       <%= link_to "<< Back to forum", questions_path, class: "btn btn-link" %>
