@@ -4,7 +4,7 @@ class Activity < ApplicationRecord
 
   belongs_to :user
 
-  CATEGORIES = ["Yoga", "Art", "Dance", "Painting", "Self defense", "Group therapy", "Talk", "Cooking", "Workshop", "Theater", "Movement", "Sports", "Other"]
+  CATEGORIES = ["Yoga", "Art", "Dance", "Painting", "Self defense", "Group therapy", "Talk", "Cooking", "Workshop", "Theater", "Movement", "Sports", "Protest", "Music", "Meditation", "Other"]
   PRESENCE = ["In-presence", "Online"]
 
   geocoded_by :address

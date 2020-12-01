@@ -105,44 +105,44 @@ puts 'Users created'
 
 puts 'Creating activities'
 
-yoga1 = Activity.create!(name: 'Healing Yoga', description: "Most experts agree that trauma’s effects live in the body, and that’s why yoga works. Yoga’s ability to touch us on every level of our being—physical, mental, emotional, and spiritual—makes it a powerful and effective means for trauma victims to reinhabit their bodies safely, calm their minds, experience emotions directly, and begin to feel a sense of strength and control. It’s widely known that yoga is not just a physical practice, but few people know that outside of its centering and calming benefits, yoga can also be an intensely emotional journey. Your deeper mind now has the opportunity to process issues that you’ve been holding below the surface of your immediate consciousness, whether that is stress or anger or intense sadness—or maybe a confusing mix of many things.", address: 'Lübbener Str. 9, 10997 Berlin', start_at: DateTime.new(2020,11,28,16,0), end_at: DateTime.new(2020,11,28,17,0), category: 'Yoga', presence: 'In-presence', user: user7)
+yoga1 = Activity.create!(name: 'Healing yoga', description: "Most experts agree that trauma’s effects live in the body, and that’s why yoga works. Yoga’s ability to touch us on every level of our being—physical, mental, emotional, and spiritual—makes it a powerful and effective means for trauma victims to reinhabit their bodies safely, calm their minds, experience emotions directly, and begin to feel a sense of strength and control. It’s widely known that yoga is not just a physical practice, but few people know that outside of its centering and calming benefits, yoga can also be an intensely emotional journey. Your deeper mind now has the opportunity to process issues that you’ve been holding below the surface of your immediate consciousness, whether that is stress or anger or intense sadness—or maybe a confusing mix of many things.", address: 'Lübbener Str. 9, 10997 Berlin', start_at: DateTime.new(2020,11,28,16,0), end_at: DateTime.new(2020,11,28,17,0), category: 'Yoga', presence: 'In-presence', user: user7)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_13_n91ap8.jpg')
 yoga1.image.attach(io: file, filename: 'yoga1.jpg', content_type: 'image/jpg')
 yoga1.save
 
-defense = Activity.create(name: 'Pretty Deadly Self Defense', description: "Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care. Learning self defense is more than just learning how to punch and kick. It's about learning where your boundaries are, learning how to trust yourself, and learning what your body can really do, When you learn what options you really have, you have hope. And when you have hope, you can change your life. And maybe even the world.", address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,4,19,0), end_at: DateTime.new(2020,12,4,21,0), category: 'Self defense', presence: 'In-presence', user: user2)
+defense = Activity.create(name: 'Pretty deadly self defense', description: "Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care. Learning self defense is more than just learning how to punch and kick. It's about learning where your boundaries are, learning how to trust yourself, and learning what your body can really do, When you learn what options you really have, you have hope. And when you have hope, you can change your life. And maybe even the world.", address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,4,19,0), end_at: DateTime.new(2020,12,4,21,0), category: 'Self defense', presence: 'In-presence', user: user2)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606311381/defense.jpg')
 defense.image.attach(io: file, filename: 'defense.jpg', content_type: 'image/jpg')
 defense.save
 
-lotus_dance = Activity.create(name: 'Lotus Dance', description: "As we tap into the deep sources of bodily wisdom through creative art expression, we dance the renewal, recreation, and healing of ourselves and our world. We truly believe that movement makes people more resilient physically and emotionally. Dance movement is a therapeutic form of exercise which is great not only for physical health but also mental and emotional health. Music itself can be very powerful. It can affect our moods and our state of well-being by triggering memories and other emotional experiences. Just hearing a song from our childhood can create a sensation in our entire bodies that can instantly affect our mood and trigger memories in just a matter of seconds. When dance or any movement is set to music it can create a stress relieving, joyful and sometimes healing moment for those involved as well as increasing/releasing endorphins in the brain.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,1,20,0), end_at: DateTime.new(2020,12,1,21,30), category: 'Dance', presence: "In-presence", user: user3)
+lotus_dance = Activity.create(name: 'Lotus dance', description: "As we tap into the deep sources of bodily wisdom through creative art expression, we dance the renewal, recreation, and healing of ourselves and our world. We truly believe that movement makes people more resilient physically and emotionally. Dance movement is a therapeutic form of exercise which is great not only for physical health but also mental and emotional health. Music itself can be very powerful. It can affect our moods and our state of well-being by triggering memories and other emotional experiences. Just hearing a song from our childhood can create a sensation in our entire bodies that can instantly affect our mood and trigger memories in just a matter of seconds. When dance or any movement is set to music it can create a stress relieving, joyful and sometimes healing moment for those involved as well as increasing/releasing endorphins in the brain.", address: 'Gerichtstraße 23, 13347 Berlin', start_at: DateTime.new(2020,12,1,20,0), end_at: DateTime.new(2020,12,1,21,30), category: 'Dance', presence: "In-presence", user: user3)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606312440/lotus.jpg')
 lotus_dance.image.attach(io: file, filename: 'lotus_dance.jpg', content_type: 'image/jpg')
 lotus_dance.save
 
-kundalini = Activity.create(name: 'Kundalini Yoga', description: "Kundalini Yoga is a magical science that uses sound, mantra, energy healing, exercises and meditations to release trauma from the energetic body, which surrounds the physical body. It is this field, known as the aura, that holds wounds. When those wounds are healed, radiance can occur. While yoga can be a physically intense activity, the poses and asanas of a practice can bring your brain into a deeply focused, neutral state. This helps you process anything that is bothering you subconsciously, but that you’ve been unable or unwilling to access directly. Yoga gives your mind a way to process the feelings we bury and push aside.", address: 'Segitzdamm 48, 10969 Berlin', start_at: DateTime.new(2020,11,29,14,0), end_at: DateTime.new(2020,11,29,15,0), category: 'Yoga', presence: "In-presence", user: user3)
+kundalini = Activity.create(name: 'Kundalini yoga', description: "Kundalini Yoga is a magical science that uses sound, mantra, energy healing, exercises and meditations to release trauma from the energetic body, which surrounds the physical body. It is this field, known as the aura, that holds wounds. When those wounds are healed, radiance can occur. While yoga can be a physically intense activity, the poses and asanas of a practice can bring your brain into a deeply focused, neutral state. This helps you process anything that is bothering you subconsciously, but that you’ve been unable or unwilling to access directly. Yoga gives your mind a way to process the feelings we bury and push aside.", address: 'Segitzdamm 48, 10969 Berlin', start_at: DateTime.new(2020,11,29,14,0), end_at: DateTime.new(2020,11,29,15,0), category: 'Yoga', presence: "In-presence", user: user3)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/SURVIVORS_11_rym19e.jpg')
 kundalini.image.attach(io: file, filename: 'kundalini.jpg', content_type: 'image/jpg')
 kundalini.save
 
 
-dance_movement = Activity.create(name: 'Dance Movement Therapy', description: "This kind of therapy can be particularly useful in the area of physical trauma, physical abuse, and body-image disturbances or in conditions where certain physical or sensory limitations inhibit the realization of emotional or social needs. Namely, in various traumas body is often the victim of injuries, ailments and disasters and because of that it can be associated with pain, trauma, hurt, helplessness and fear. In those cases it is logical that body should be involved in the therapeutic process. Dance therapy is a great way to express emotions that are sometimes not easily expressed verbally. We believe that environment is your body.", address: 'Friedrichstraße 47, 10117 Berlin', start_at: DateTime.new(2020,12,2,18,30), end_at: DateTime.new(2020,12,2,20,0), category: 'Dance', presence: "In-presence", user: user3)
+dance_movement = Activity.create(name: 'Dance movement therapy', description: "This kind of therapy can be particularly useful in the area of physical trauma, physical abuse, and body-image disturbances or in conditions where certain physical or sensory limitations inhibit the realization of emotional or social needs. Namely, in various traumas body is often the victim of injuries, ailments and disasters and because of that it can be associated with pain, trauma, hurt, helplessness and fear. In those cases it is logical that body should be involved in the therapeutic process. Dance therapy is a great way to express emotions that are sometimes not easily expressed verbally. We believe that environment is your body.", address: 'Friedrichstraße 47, 10117 Berlin', start_at: DateTime.new(2020,12,2,18,30), end_at: DateTime.new(2020,12,2,20,0), category: 'Dance', presence: "In-presence", user: user3)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606313807/exp.jpg')
 dance_movement.image.attach(io: file, filename: 'dance_movement.jpg', content_type: 'image/jpg')
 dance_movement.save
 
-transformative_dance = Activity.create(name: 'Transformative Dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected. Any form of exercise is great for relieving stress in the mind and body. Dance is no different. Dance therapy is a great stress reliever, not only because it is great physically for the body but it is also emotionally therapeutic. Since movement can be related to thoughts and feelings, dancing can bring changes to emotions and attitudes almost instantly. We want everyone to have the tools to live their lives as they choose for themselves, free of fear and full of joy.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "In-presence", user: user3)
+transformative_dance = Activity.create(name: 'Transformative dance', description: "Dance therapy is the therapeutic use of movement to further the emotional, cognitive, physical and social integration of the individual, based on the empirically supported premise that the body, mind and spirit are interconnected. Any form of exercise is great for relieving stress in the mind and body. Dance is no different. Dance therapy is a great stress reliever, not only because it is great physically for the body but it is also emotionally therapeutic. Since movement can be related to thoughts and feelings, dancing can bring changes to emotions and attitudes almost instantly. We want everyone to have the tools to live their lives as they choose for themselves, free of fear and full of joy.", address: 'Rosa-Luxemburg-Straße 31, 10178 Berlin', start_at: DateTime.new(2020,12,4,19,30), end_at: DateTime.new(2020,12,4,21,0), category: 'Dance', presence: "In-presence", user: user3)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606314334/move.jpg')
 transformative_dance.image.attach(io: file, filename: 'transformative_dance.jpg', content_type: 'image/jpg')
 transformative_dance.save
 
-painting = Activity.create!(name: 'Painting to Heal', description: "This activity is an opportunity for self discovery by tapping into your creativity as a way of healing yourself and others. It is a sacred space to thrive and explore expressions of creativity in a small, supportive community. The brain is stimulated by art therapy. The traumatic memories are stored on the right hemisphere of the brain and speech is positioned on the left. Interestingly enough, art is a right-brain activity that helps connect the dots between trauma and art. A person with trauma may find that an activity such as drawing is much easier than talking about what happened. When words are not sufficient, art can push someone to find coping strategies and progressively get grounded in therapy.", address: 'Okerstraße 42, 12049 Berlin', start_at: DateTime.new(2020,11,29,17,0), end_at: DateTime.new(2020,11,29,20,0), category: 'Painting', presence: 'In-presence', user: user1)
+painting = Activity.create!(name: 'Painting to heal', description: "This activity is an opportunity for self discovery by tapping into your creativity as a way of healing yourself and others. It is a sacred space to thrive and explore expressions of creativity in a small, supportive community. The brain is stimulated by art therapy. The traumatic memories are stored on the right hemisphere of the brain and speech is positioned on the left. Interestingly enough, art is a right-brain activity that helps connect the dots between trauma and art. A person with trauma may find that an activity such as drawing is much easier than talking about what happened. When words are not sufficient, art can push someone to find coping strategies and progressively get grounded in therapy.", address: 'Okerstraße 42, 12049 Berlin', start_at: DateTime.new(2020,11,29,17,0), end_at: DateTime.new(2020,11,29,20,0), category: 'Painting', presence: 'In-presence', user: user1)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606399166/paint.jpg')
 painting.image.attach(io: file, filename: 'painting.jpg', content_type: 'image/jpg')
@@ -197,11 +197,58 @@ therapy1.image.attach(io: file, filename: 'therapy1.jpg', content_type: 'image/j
 therapy1.save
 
 
-talk4 = Activity.create!(name: 'Transcending Trauma', description: "This workshop examines trauma from a new and encouraging perspective—suggesting that post-traumatic growth (PTG) and even thriving are possible after experiencing painful events. When bad things happen, it can take a while to get over the pain and feel safe again. But with these self-help strategies and support, you can speed up your recovery. Emotional and psychological trauma is the result of extraordinarily stressful events that shatter your sense of security, making you feel helpless in a dangerous world. Psychological trauma can leave you struggling with upsetting emotions, memories, and anxiety that won’t go away. It can also leave you feeling numb, disconnected, and unable to trust other people.", address: 'Tempelhofer Ufer 25, 10963 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user10)
+talk4 = Activity.create!(name: 'Transcending trauma', description: "This workshop examines trauma from a new and encouraging perspective—suggesting that post-traumatic growth (PTG) and even thriving are possible after experiencing painful events. When bad things happen, it can take a while to get over the pain and feel safe again. But with these self-help strategies and support, you can speed up your recovery. Emotional and psychological trauma is the result of extraordinarily stressful events that shatter your sense of security, making you feel helpless in a dangerous world. Psychological trauma can leave you struggling with upsetting emotions, memories, and anxiety that won’t go away. It can also leave you feeling numb, disconnected, and unable to trust other people.", address: 'Tempelhofer Ufer 25, 10963 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user10)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416563/SURVIVORS_19_poxagr.jpg')
 talk4.image.attach(io: file, filename: 'talk4.jpg', content_type: 'image/jpg')
 talk4.save
+
+
+music = Activity.create!(name: 'Music, rhythm and trauma', description: "Recent theorizing about the connection between the brain and trauma has led to a burgeoning of interest in the provision of music-based programs with people who have had adverse experiences. Having systematically disentangled the various dimensions, we then constructed a spectrum of approaches that offers a logical categorization of four different ways of using music with people who have had adverse life experiences. These included using music for stabilizing, entrainment, expressive and performative purposes. Specific music-based methods were proposed for those associated with brain-based rationales, and more responsive, multi-method approaches were congruent with recovery and social change models. Come try one of our sessions!", address: 'Goebenstraße 16, 10783 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Music', presence: 'In-presence', user: user10)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606666590/Untitled_design_24_gsoie1.jpg')
+music.image.attach(io: file, filename: 'music.jpg', content_type: 'image/jpg')
+music.save
+
+
+meditation = Activity.create!(name: 'Guided meditation', description: "Overcome anxiety and guide your body to heal itself. Meditation isn’t always about emptying the mind and focusing on the breath alone. This form of meditation is generally known as passive meditation. While it is a good idea to train oneself in passive meditation to experience more control and deeper relaxation, it is only one form in a basket full of meditative practices. The aim of active meditation isn’t to empty the mind, but instead, to focus on one thing intently for a specified block of time. Active meditation can bring about real and positive change in our lives and in our bodies. It doesn’t matter whether you can only spend a couple of minutes a day or 10 times that amount, you’ll see rewards either way.", address: 'Invalidenstraße 50-51, 10557 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Meditation', presence: 'Online', user: user8)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606666167/Untitled_design_19_l1teml.jpg')
+meditation.image.attach(io: file, filename: 'meditation.jpg', content_type: 'image/jpg')
+meditation.save
+
+meditation2 = Activity.create!(name: 'The power of meditation', description: "People struggling with chronic pain or other medical conditions can use healing meditation to feel better in body and spirit. Some report dramatic results from healing meditation, while others simply appreciate the reduction in stress that comes from sitting quietly and focusing the mind. Healing meditation often incorporates visualization techniques. Regular meditation can help relieve stress, improve your ability to focus and lead to a better understanding of your own thought patterns and processes. Some people use meditation to enhance creativity, reduce chronic pain, treat headaches and even improve athletic performance. The best advice for beginners just learning about meditation is to start simple. Quieting your mind for long periods is more difficult than it looks, so just carve out 10 to 20 minutes a day at first. All you'll need is a quiet space where you won't be disturbed.", address: 'Greifswalder Str. 90, 10409 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Meditation', presence: 'Online', user: user9)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606666102/Untitled_design_18_ndgckd.jpg')
+meditation2.image.attach(io: file, filename: 'meditation2.jpg', content_type: 'image/jpg')
+meditation2.save
+
+
+
+teens = Activity.create!(name: 'Talking with teens about violence', description: "If you suspect your teen may be a victim of abuse, you are the most important resource and advisor for your child. If you need support there are people and resources available to help. Remind your teen that he or she deserves a violence free relationship and that abuse is NEVER appropriate and never their fault. If you think your son or daughter may be controlling, abusive, or violent with his or her partner, tell your child that abuse and violence are not acceptable and that violence will not solve problems. If your teen isn’t ready to openly communicate with you about his or her relationship, let him or her know there are confidential resources and trained individuals available to answer questions and help avoid unhealthy relationships. We will discuss some of these topics during the workshop.", address: 'Storkower Str. 160, 10407 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Workshop', presence: 'In-presence', user: user3)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606663692/Untitled_design_15_obcoxz.jpg')
+teens.image.attach(io: file, filename: 'teens.jpg', content_type: 'image/jpg')
+teens.save
+
+
+meditation3 = Activity.create!(name: 'Emotional healing with meditation', description: "Meditation and mindfulness skills and knowledge are highly beneficial for both emotional healing and also emotional resilience. Using meditation techniques and mindfulness knowledge to provide a ‘rapid response’ tool in moments of need (sadness, depression, worry, anger etc.) and to provide skills to enable them to strengthen their ability to avoid getting swept up and overwhelmed by such emotions in the first place. All of this is possible using meditation and mindfulness skills, which enable us to make life richer and more balanced – even the emotionally challenging moments!", address: 'Meinekestraße 22, 10719 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Meditation', presence: 'Online', user: user3)
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606666168/Untitled_design_20_y1fwsm.jpg')
+meditation3.image.attach(io: file, filename: 'meditation3.jpg', content_type: 'image/jpg')
+meditation3.save
+
+
+protest = Activity.create!(name: 'Elimination of violence against women', description: "Violence against women and girls (VAWG) is one of the most widespread, persistent and devastating human rights violations in our world today remains largely unreported due to the impunity, silence, stigma and shame surrounding it. Violence against women continues to be an obstacle to achieving equality, development, peace as well as to the fulfillment of women and girls’ human rights. We must eliminate violence against women. Come join us in the streets!", address: 'Alexanderstraße 9, 10178 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Protest', presence: 'In-presence', user: user3)
+
+community = Activity.create!(name: 'Building a community', description: "By joining our community, you can connect with others with similar experiences, and support each other on this unique path.", address: 'Yorckstraße 15, 10965 Berlin', start_at: DateTime.new(2020,12,1,19,30), end_at: DateTime.new(2020,12,01,21,30), category: 'Group therapy', presence: 'In-presence', user: user11)
+
+
+file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606663543/Untitled_design_5_sojbng.jpg')
+community.image.attach(io: file, filename: 'community.jpg', content_type: 'image/jpg')
+community.save
+
+
 
 puts 'Activities created'
 
@@ -301,13 +348,25 @@ question2 = Question.create!(title: "What kind of activities do you recommend to
 
 question3 = Question.create!(title: "I was sexually assaulted 2 days ago, what should I do now? I don't speak any German,where can I get help in English?", user: user9)
 
+question4 = Question.create!(title: "I think my friend is in an abusive relationship. Suggestions for me to approach her and talk?", user: user8)
+
+
 puts 'Questions created'
 
 
+puts 'Creating answers'
+
+answer1 = Answer.create!(answer: "If you think that a friend or someone you know is in an abusive or unhealthy relationship, it can be difficult to know what to do. You may want to help, but be scared to lose them as a friend or feel as though it is not your place to step in. Find time to talk to your friend one-on-one in a private setting. Listen to your friend and let them open up about the situation on their own terms. Don’t be forceful with the conversation. It may be very hard for your friend to talk about their relationship, but remind them that they are not alone and that you want to help. The focus of the conversation should be on the unhealthy behaviors in the relationship and to provide your friend with a safe space to talk about it. The best way for you to help your friend is to offer them options. Depending on how ready your friend is to open up, they may feel more comfortable vetting the situation with someone anonymously over the phone, or they may want to have the conversation in person with someone who can help.", question: question4, user: user11)
+
+answer2 = Answer.create!(answer: "Hey! If your friend is in immediate danger, you should alert authorities right away. Relationship abuse can be fatal and you should not hesitate to take serious action if you think that anyone is at risk for physical or sexual harm.", question: question1, user: user2)
+
+answer3 = Answer.create!(answer: "In Berlin you can go to Frauen für Frauen. They offer help and support to women.", question: question1, user: user7)
+
+answer4 = Answer.create!(answer: "Try the protection from violence national telephone helpline for violence against women – 08000 116 016", question: question1, user: user8)
 
 
 
-
+puts 'Answers created'
 
 
 
