@@ -24,3 +24,22 @@
   border-radius: 5px;
   width: 170px;
 }
+
+textarea.form-control {
+  width: 100% !important;
+  // height: 40px;
+  // left: 0;
+  // margin-left: 255px;
+}
+
+.rating {
+  select.form-control {
+    width: 100% !important;
+  }
+}
+
+.review {
+  textarea.form-control {
+  width: 100% !important;
+}
+}
