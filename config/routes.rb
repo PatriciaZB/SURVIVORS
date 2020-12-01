@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :reviews, only: :destroy
   resources :bookings, only: :destroy
   get '/dashboard', to: 'pages#dashboard'
+  get "/help", to: "pages#help"
   get '/about_us', to: 'pages#about_us'
 
   resources :questions, only: [:index, :show, :new, :create, :destroy] do
