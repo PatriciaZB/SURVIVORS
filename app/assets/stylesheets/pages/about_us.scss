@@ -1,0 +1,27 @@
+.container-about-us {
+  background-color: transparent;
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.card-about-us {
+  background: transparent;
+  display:flex;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  h3{
+    font-size: 26px;
+    background-color: transparent;
+    color: $pink;
+  }
+  p {
+    font-size:18px;
+  }
+}
+
+.image-about-us {
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+}

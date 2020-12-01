@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="row">
+  <div class="row" style= "margin-bottom: -30px;">
     <div class="col-12 mb-3">
       <div class="activity-title">
         <div> <h2 class="title" data-content="Forum">Forum</h2> </div>
@@ -11,9 +11,9 @@
   <div class="row-questions">
       <div class="questions">
         <%= form_tag questions_path, class: "form-horizontal pr-0", method: :get do %>
-          <%= text_field_tag :title, params[:title],class: "form-control",
+          <%= text_field_tag :title, params[:title],class: "form-control mb-3",
             placeholder: "Search for a question" %>
-          <%= submit_tag "Search", class: "btn btn-primary ml-3" %>
+          <%= submit_tag "Search", class: "btn btn-primary mb-3 ml-3" %>
         <% end %>
         <% @questions.each do |question| %>
         <div class="each-question">
