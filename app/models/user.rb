@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :answers
   has_many :bookings
 
+  has_one_attached :avatar
+
   validates :nickname, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 

@@ -17,7 +17,7 @@
       <% @question.answers.each do |answer| %>
       <div class="d-flex align-items-center">
         <div class="profile-image">
-          <%= image_tag("autumn-woman.png", :alt => "woman") %>
+          <%= cl_image_tag(answer.user.avatar.key, class: "avatar") %>
         </div>
         <div class="reviews-info">
           <h3 class="nickname"> <%= answer.user.nickname %> </h3>

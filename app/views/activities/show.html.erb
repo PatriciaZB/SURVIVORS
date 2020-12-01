@@ -44,7 +44,7 @@
         <% @activity.reviews.each do |review| %>
         <div class="d-flex align-items-center">
           <div class="profile-image">
-            <%= image_tag("autumn-woman.png", :alt => "woman") %>
+            <%= cl_image_tag(review.user.avatar.key, class: "avatar") %>
           </div>
           <div class="reviews-info">
             <div class="name-rating d-flex justify-content-between align-items-center">
