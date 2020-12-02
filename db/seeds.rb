@@ -213,6 +213,7 @@ music.save
 
 meditation = Activity.create!(name: 'Guided meditation', description: "Overcome anxiety and guide your body to heal itself. Meditation isn’t always about emptying the mind and focusing on the breath alone. This form of meditation is generally known as passive meditation. While it is a good idea to train oneself in passive meditation to experience more control and deeper relaxation, it is only one form in a basket full of meditative practices. The aim of active meditation isn’t to empty the mind, but instead, to focus on one thing intently for a specified block of time. Active meditation can bring about real and positive change in our lives and in our bodies. It doesn’t matter whether you can only spend a couple of minutes a day or 10 times that amount, you’ll see rewards either way.", address: 'Invalidenstraße 50-51, 10557 Berlin', start_at: DateTime.new(2020,12,10,19,30), end_at: DateTime.new(2020,12,10,21,30), category: 'Meditation', presence: 'Online', user: user8)
 
+
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606666167/Untitled_design_19_l1teml.jpg')
 meditation.image.attach(io: file, filename: 'meditation.jpg', content_type: 'image/jpg')
 meditation.save
