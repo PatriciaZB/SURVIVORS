@@ -15,7 +15,7 @@
 
   <div class="question-container col-sm-12 col-md-8 col-lg-8 col-xl-8 offset-md-2">
     <div class="question col-12">
-      <% @question.answers.each do |answer| %>
+      <% @question.answers.order("created_at DESC").each do |answer| %>
 
         <div class="d-flex align-items-center">
           <div class="profile-image">
@@ -64,11 +64,10 @@
         <% end %>
     </div>
   </div>
-
     <div class="form-text d-flex flex-row col-sm-12 col-md-8 col-lg-8 col-xl-8 offset-md-2">
       <%= simple_form_for [@question, @answer], remote: true do |f| %>
 
-      <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, placeholder: " Write a comment", label: false %>
+      <%= f.input :answer, :as => :text, :input_html => {:style=> 'width: 100%;', class: "text-area"}, placeholder: " Write a comment", label: false %>
       <%= f.submit "Post", class: "btn btn-success post" %>
 
       <% end %>

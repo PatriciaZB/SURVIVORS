@@ -9,12 +9,13 @@
   width: 100%;
 }
 .card-image img {
-  // width: 150px;
   height: 150px;
   width: 150px;
   object-fit: cover;
   display:wrap;
   border-radius: 5px;
+  box-shadow: 2px 1px 3px rgba(0,0,0,0.4);
+  // border: 2px solid $pink;
 }
 
 .card-body {
