@@ -18,11 +18,11 @@
         <%= f.input :address, label: 'Address' %>
         <%= f.input :start_at, :minute_step => 15, label: 'Start' %>
         <%= f.input :end_at, :minute_step => 15, label: 'End' %>
-        <%= f.input :description, :as => :text, :input_html => {:rows => 10}, label: 'Description' %>
+        <%= f.input :description, as: :text, :input_html => {:style => 'height:200px;'}, label: 'Description' %>
         <%= f.input :category, collection: Activity::CATEGORIES, label: 'Category' %>
         <%= f.input :presence, collection: Activity::PRESENCE, label: 'In-presence / Online' %>
         <%= f.input :image, as: :file, label: 'Upload Image' %>
-        <%= f.submit "Create event", class: "btn btn-block btn-success mb-3" %>
+        <%= f.submit "Create event", class: "btn btn-block btn-success mt-4 mb-3" %>
       <% end %>
     </div>
 

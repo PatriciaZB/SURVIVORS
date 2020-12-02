@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="container d-flex flex-row justify-content-between mb-4 mt-4">
+  <div class="container d-flex flex-row justify-content-between mt-2 mb-4">
     <div class="activity-title">
         <div> <h2 class="title" data-content="Add a question">Add a question</h2></div>
       </div>
@@ -10,8 +10,8 @@
     <div class="question-form" style="width: 50%">
       <%= simple_form_for [@question] do |f| %>
         <%= f.input :title, :as => :text, :input_html => {:rows => 3}, label: 'Title' %>
-        <%= f.input :question, :as => :text, :input_html => {:rows => 15}, label: 'Question' %>
-        <%= f.submit "Post", class: "btn btn-success" %>
+        <%= f.input :question, as: :text, :input_html => {:style => 'height:200px;'}, label: 'Question' %>
+        <%= f.submit "Post", class: "btn btn-block btn-success mt-4" %>
       <% end %>
     </div>
   </div>

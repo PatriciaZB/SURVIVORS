@@ -1,19 +1,23 @@
 <div class="container">
   <div class="row d-flex justify-content-between">
+
     <div class="col-sm-12 col-md-12 col-lg-5 pl-3">
       <div class="text-logo">
-        <%= image_tag("survivors.png", class: "homepage-logo", :alt => "map") %>
+        <%= image_tag("survivors.png", class: "homepage-logo mt-5 pt-4", :alt => "map") %>
 
-      <div class="title-slogan mt-2">
-        <h1>SURVIVORS</h1>
-        <h3>You deserve <span class="special-word">happiness</span></h3>
-      </div>
-      <div class="homepage-text mt-2">
-        <p>Open and free resources and alternatives for healing and recovering from trauma after experienceing sexual and/or physical abuse.</p>
-      </div>
-      <div class="homepage-button mt-3">
-        <%= link_to "Find support", "/activities/", class: "btn btn-primary" %>
-      </div>
+        <div class="title-slogan mt-2">
+          <h1>SURVIVORS</h1>
+          <h3 class="mt-2">You deserve <span class="special-word">happiness</span></h3>
+        </div>
+
+        <div class="homepage-text mt-4">
+          <p>Open and free resources and alternatives for healing and recovering from trauma after experienceing sexual and/or physical abuse.</p>
+        </div>
+
+        <div class="homepage-button">
+          <%= link_to "Find support", "/activities/", class: "btn btn-primary mt-3" %>
+        </div>
+
       </div>
     </div>
 
@@ -21,47 +25,30 @@
       <div class="homepage-pink-circle"></div>
       <div class="homepage-black-circle"></div>
       <div class="homepage-image-div position-relative">
-
-    <div id="carouselExampleIndicators" class="carousel slide homepage-banner" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <!-- <img class="d-block w-100" src="..." alt="First slide"> -->
-      <p><span class="banner-title">Community</span></p>
-      <p class="banner-content">Made by and for survivors around the world. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div class="carousel-item">
-      <!-- <img class="d-block w-100" src="..." alt="Second slide"> -->
-      <p><span class="banner-title">Community 2</span></p>
-      <p class="banner-content">Made by and for survivors around the world. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div class="carousel-item">
-      <!-- <img class="d-block w-100" src="..." alt="Third slide"> -->
-      <p><span class="banner-title">Community 3</span></p>
-      <p class="banner-content">Made by and for survivors around the world. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-  </div>
-</div>
-
-            <!-- <div class="homepage-banner d-flex">
-              <ul class="three-dots" style="padding-bottom: 0px">
-                <li><i class="fas fa-circle"></i></li>
-                <li><i class="fas fa-circle"></i></li>
-                <li><i class="fas fa-circle"></i></li>
-              </ul>
-              <div class="banner-flex">
-                <p><span class="banner-title">Community</span></p>
-                <p class="banner-content">Made by and for survivors around the world. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div id="carouselExampleIndicators" class="carousel slide homepage-banner" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <p><span class="banner-title">What is Women Survivors?</span></p>
+              <p class="banner-content">It is an initiative that offers a solution for the long-term needs of survivors from diverse backgrounds.</p>
             </div>
-          </div> -->
-
+            <div class="carousel-item">
+              <p><span class="banner-title">Who is it for?</span></p>
+              <p class="banner-content">Women Survivors is aimed at women, transgender people, non-binary people, and anyone seeking support to heal after experiencing gender-based violence.  </p>
+            </div>
+            <div class="carousel-item">
+              <p><span class="banner-title">Join our community</span></p>
+              <p class="banner-content">Women supporting women on the journey to recovery after abuse and trauma. Made by and for survivors around the world.</p>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
+
   </div>
 </div>
 
