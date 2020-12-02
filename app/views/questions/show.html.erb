@@ -65,7 +65,7 @@
     </div>
   </div>
 
-    <div class="form-text d-flex flex-row justify-content-center col-12 mb-4 ml-6">
+    <div class="form-text d-flex flex-row justify-content-center col-sm-12 col-md-8 col-lg-8 col-xl-8 offset-md-2 mb-4 ml-6">
       <%= simple_form_for [@question, @answer], remote: true do |f| %>
 
       <%= f.input :answer, :as => :text, :input_html => {:rows => 15, class: "text-area"}, placeholder: " Write a comment", label: false %>
