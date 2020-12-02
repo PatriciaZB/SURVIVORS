@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
+
+  def default_url_options
+    { host: ENV["www.womensurvivors.net"] || "localhost:3000" }
+  end
 end
