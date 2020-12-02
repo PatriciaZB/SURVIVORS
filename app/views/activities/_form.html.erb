@@ -14,14 +14,14 @@
 
     <div class="form-text col-6">
       <%= simple_form_for(@activity) do |f| %>
-        <%= f.input :name, label: 'Activity Name' %>
+        <%= f.input :name, label: 'Activity name' %>
         <%= f.input :address, label: 'Address' %>
         <%= f.input :start_at, :minute_step => 15, label: 'Start' %>
         <%= f.input :end_at, :minute_step => 15, label: 'End' %>
         <%= f.input :description, as: :text, :input_html => {:style => 'height:200px;'}, label: 'Description' %>
         <%= f.input :category, collection: Activity::CATEGORIES, label: 'Category' %>
         <%= f.input :presence, collection: Activity::PRESENCE, label: 'In-presence / Online' %>
-        <%= f.input :image, as: :file, label: 'Upload Image' %>
+        <%= f.input :image, as: :file, label: 'Upload image' %>
         <%= f.submit "Create event", class: "btn btn-block btn-success mt-4 mb-3" %>
       <% end %>
     </div>

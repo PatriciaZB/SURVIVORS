@@ -9,7 +9,7 @@
     <div class="col-7" style="display: flex; align-items: center;">
       <div class="form-forum mx-6">
         <%= form_tag questions_path, class: "form-horizontal pr-0", method: :get do %>
-          <%= text_field_tag :title, params[:title],class: "form-control form-control-question mb-3", placeholder: "Search for a question" %>
+          <%= text_field_tag :title, params[:title],class: "form-control form-control-question mb-3", placeholder: "Search for a topic" %>
           <%= submit_tag "Search", class: "btn btn-primary mb-3 ml-3" %>
         <% end %>
       </div>
