@@ -60,14 +60,15 @@
 
 .carousel-indicators {
   position: absolute;
-  top: 50%;
-  left: -450px;
+  width: 50px;
+  top: 20px;
+  left: -62px;
   transform: rotate(90deg);
   li {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-}
+  }
 }
 
 .homepage-banner {
@@ -101,8 +102,9 @@
 .banner-title {
   font-weight: bold;
   font-size: 1.5vw;
-  padding-bottom: 10px;
   color: white;
+  margin-bottom: 6px;
+  display:block;
 }
 
 .banner-content {
