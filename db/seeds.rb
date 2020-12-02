@@ -385,7 +385,9 @@ answer6 = Answer.create!(answer: "Hi there! You can find some information in the
 
 answer7 = Answer.create!(answer: "Hello! You can also check out this PDF document. It is all in English: https://www.big-berlin.info/sites/default/files/medien/330_ihr_recht_eng_2017_0.pdf. You can find a lot uf useful information about domestic violence and violence against women.", question: question3, user: user5)
 
-answer8 = Answer.create!(answer: "Hey! You can contact the organization Xochicuicatl e.V. Lateinamerikanischer Frauenverein. Here is their webpage: https://www.xochicuicatl.de/language/de/home/. You can look for them in Facebook as well. They speak Spanish and Portuguese.", question: question9, user: user7)
+answer8 = Answer.create!(answer: "Hey! You can contact the organization Xochicuicatl e.V. Lateinamerikanischer Frauenverein. Here is their webpage: https://www.xochicuicatl.de/language/de/home/. You can look for them in Facebook as well. They speak Spanish and Portuguese.", question: question9, user: user12)
+
+answer9 = Answer.create!(answer: "¡Hola! Puedes contactar a la Alianza de feministas internacionalistas. Ellas tienen mucha información al respecto. Búscalas en Facebook. ¡Abrazo fuerte y mucha fuerza!", question: question9, user: user13)
 
 
 puts 'Answers created'
