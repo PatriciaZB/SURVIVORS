@@ -60,7 +60,7 @@
   position: absolute;
   width: 50px;
   top: 20px;
-  left: -62px;
+  left: -95px;
   transform: rotate(90deg);
   li {
     width: 10px;
@@ -111,10 +111,16 @@
   font-size: 1.5vw;
 }
 
+@media (min-width: 1500px) {
+  .carousel-indicators {
+  left: -120px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
   .carousel-indicators {
   top: 50%;
-  left: -340px;
+  left: -60px;
   li {
     width: 6px;
     height: 6px;
@@ -191,7 +197,7 @@
 @include media-breakpoint-down(sm) {
   .carousel-indicators {
   top: 50%;
-  left: -190px;
+  left: -38px;
   li {
     width: 4px;
     height: 4px;
