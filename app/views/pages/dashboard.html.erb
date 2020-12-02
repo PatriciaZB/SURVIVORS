@@ -38,10 +38,10 @@
             <div class="column-item">
               <ul>
                 <li><%= link_to '<i class="far fa-eye"></i>'.html_safe, activity_path(booking.activity), method: :get %>  </li>
-                <li><i class="fas fa-trash-alt icon-hover" data-toggle="modal" data-target="#exampleModalCenter"></i></li>
+                <li><i class="fas fa-trash-alt icon-hover" data-toggle="modal" data-target="#modalDashboard-<%= booking.id %>"></i></li>
 
                   <!-- Modal -->
-                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal fade" id="modalDashboard-<%= booking.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -136,7 +136,7 @@
   </div>
 
   <div class="button mt-3 d-flex justify-content-center">
-    <%= link_to "Create an activity", new_activity_path(@activity, Activity.new), method: :get, class: "btn btn-success" %>
+    <%= link_to "Create activity", new_activity_path(@activity, Activity.new), method: :get, class: "btn btn-success" %>
   </div>
 
 
