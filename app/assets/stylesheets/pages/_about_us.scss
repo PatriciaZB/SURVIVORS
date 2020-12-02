@@ -27,9 +27,10 @@
 
 .image-about-us {
     border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     width: 70px;
     height: 70px;
-    border: 10px
+    border: 1px solid $pink;
 }
 
 .info {
