@@ -6,16 +6,24 @@
 }
 
 .content-about-us {
-  margin-left: 150px;
+  // margin-left: 80px;
+  // padding-left: 100px;
+  text-align: justify;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
 }
+
+
 
 .card-about-us {
   background: transparent;
   display:flex;
   padding-bottom: 20px;
   padding-top: 20px;
+  margin-left: 80px;
   h3{
-    font-size: 26px;
+    font-size: 24px;
     background-color: transparent;
     color: $pink;
   }
