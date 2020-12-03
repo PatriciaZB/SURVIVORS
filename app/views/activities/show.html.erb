@@ -48,7 +48,11 @@
         <% @activity.reviews.each do |review| %>
         <div class="d-flex align-items-center">
           <div class="profile-image">
-            <%= cl_image_tag(review.user.avatar.key, class: "avatar") %>
+            <% if review.user.avatar.attached? %>
+              <%= cl_image_tag(review.user.avatar.key, class: "avatar") %>
+            <% else %>
+              <%= image_tag("rebeca.png", class: "avatar") %>
+            <% end %>
           </div>
           <div class="reviews-info">
             <div class="name-rating d-flex justify-content-between align-items-center">
@@ -78,7 +82,7 @@
           <%= simple_form_for [@activity, @review] do |f| %>
             <%= f.input :rating, collection: 1..5, label: 'Rating', class: "rating" %>
             <%= f.input :description, :as => :text, :input_html => {:rows => 5}, label: 'Review', class: "review" %>
-            <%= f.submit "Submit review", class: "btn btn-success" %>
+            <%= f.submit "Submit review", class: "btn btn-block btn-success" %>
         <% end %>
         </div>
       </div>
