@@ -1,5 +1,5 @@
 meta_product_name: "Survivors"
 meta_title: "Survivors - We offer a long-term solution to support people that have suffered gender-based violence"
 meta_description: "We are a platform that brings together different types of activities and events that help survivors on the journey to recovery and healing after abuse and trauma. Our vision is to create a community of survivors by providing a place where they can connect and support each other"
-meta_image: "logo2.png" # should exist in `app/assets/images/`
+meta_image: "women_survivors.png" # should exist in `app/assets/images/`
 #twitter_account: "@product_twitter_account"   # required for Twitter Cards
