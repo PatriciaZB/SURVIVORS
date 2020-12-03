@@ -38,7 +38,7 @@
             <div class="column-item">
               <ul>
                 <li><%= link_to '<i class="far fa-eye"></i>'.html_safe, activity_path(booking.activity), method: :get %>  </li>
-                <li><i class="fas fa-trash-alt icon-hover" data-toggle="modal" data-target="#modalDashboard-<%= booking.id %>"></i></li>
+                <li><i class="fas fa-trash-alt icon-hover" style="padding-left: 2px;" data-toggle="modal" data-target="#modalDashboard-<%= booking.id %>"></i></li>
 
                   <!-- Modal -->
                   <div class="modal fade" id="modalDashboard-<%= booking.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -105,7 +105,7 @@
               <ul>
                 <li><%= link_to '<i class="far fa-eye"></i>'.html_safe, activity_path(activity), method: :get %>  </li>
                 <li><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_activity_path(activity), method: :get, class: "icon-hover" %></li>
-                <li><i class="fas fa-trash-alt icon-hover" data-toggle="modal" data-target="#modalActivity"></i></li>
+                <li><i class="fas fa-trash-alt icon-hover" style="padding-left: 1px;" data-toggle="modal" data-target="#modalActivity"></i></li>
 
                 <div class="modal fade" id="modalActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
