@@ -19,7 +19,11 @@
 
         <div class="d-flex align-items-center">
           <div class="profile-image">
-            <%= cl_image_tag(answer.user.avatar.key, class: "avatar") %>
+            <% if answer.user.avatar.attached? %>
+              <%= cl_image_tag(answer.user.avatar.key, class: "avatar") %>
+            <% else %>
+              <%= image_tag("rebeca.png", class: "avatar") %>
+            <% end %>
           </div>
             <div class="reviews-info">
               <div class="nickname-delete d-flex justify-content-between">
