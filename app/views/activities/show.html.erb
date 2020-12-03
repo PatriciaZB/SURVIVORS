@@ -1,3 +1,8 @@
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@activity.name} is on #{DEFAULT_META["meta_title"]}" %>
+<% content_for :meta_description, @activity.description %>
+<% content_for :meta_image, image_tag("pexels-anna-shvets-4672553.jpg") %>
+
 <div class="container" style="margin-bottom:-20px;">
   <div class="row mb-3 mt-2">
     <div class="col-12 mb-3">
