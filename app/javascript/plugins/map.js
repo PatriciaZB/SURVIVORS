@@ -22,7 +22,6 @@ const initMapbox = () => {
         .addTo(map);
       mapMarkers.push(newMarker);
     });
-
     fitMapToMarkers(map, markers);
     openInfoWindow(mapMarkers);
   }
