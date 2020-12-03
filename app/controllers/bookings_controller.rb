@@ -12,10 +12,8 @@ class BookingsController < ApplicationController
       flash[:notice] = "Booking confirmed!"
       redirect_to dashboard_path
     else
-      if @booking.errors.any?
-        flash[:notice] = "You can't book an activity that you booked already"
-      end
-      render "activities/show"
+      flash[:notice] = "You can't book an activity that you booked already"
+      redirect_to activity_path(@activity)
     end
   end
 
