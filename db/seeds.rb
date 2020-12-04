@@ -111,7 +111,7 @@ file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606416564/S
 yoga1.image.attach(io: file, filename: 'yoga1.jpg', content_type: 'image/jpg')
 yoga1.save
 
-defense = Activity.create(name: 'Pretty deadly self defense', description: "Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care. Learning self defense is more than just learning how to punch and kick. It's about learning where your boundaries are, learning how to trust yourself, and learning what your body can really do, When you learn what options you really have, you have hope. And when you have hope, you can change your life. And maybe even the world.", address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,5,19,0), end_at: DateTime.new(2020,12,5,21,0), category: 'Self defense', presence: 'In-presence', user: user2)
+defense = Activity.create(name: 'Pretty deadly self defense', description: "Connect to your body and learn self-defense. Pretty Deadly Self Defense is a self-empowerment program through self defense. Designed for women by women, we have used our real-life experiences to develop a program that’s tailored for the way women actually learn, the things we actually face, and that’s actually fun. We are working hard at removing the stigma from learning self defense, and making it part of your self care. Learning self defense is more than just learning how to punch and kick. It's about learning where your boundaries are, learning how to trust yourself, and learning what your body can really do, When you learn what options you really have, you have hope. And when you have hope, you can change your life. And maybe even the world.", address: 'Stromstraße 38, 10551 Berlin', start_at: DateTime.new(2020,12,4,9,0), end_at: DateTime.new(2020,12,4,11,0), category: 'Self defense', presence: 'In-presence', user: user2)
 
 file = URI.open('https://res.cloudinary.com/dylgxsntq/image/upload/v1606311381/defense.jpg')
 defense.image.attach(io: file, filename: 'defense.jpg', content_type: 'image/jpg')
@@ -269,6 +269,7 @@ booking5 = Booking.create(user: user3, activity: yoga1)
 booking6 = Booking.create(user: user1, activity: meditation2)
 booking7 = Booking.create(user: user1, activity: therapy1)
 booking8 = Booking.create(user: user1, activity: talk4)
+booking9 = Booking.create(user: user1, activity: defense)
 
 puts 'Bookings created'
 
