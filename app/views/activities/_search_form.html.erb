@@ -3,6 +3,7 @@
     params[:query],
     class: "form-control",
     placeholder: "Find an activity" %>
-  <%= date_field_tag :starts_at, params[:starts_at], class: "form-data datepicker", placeholder: "Pick a date" %>
+  <%= date_field_tag :starts_at, params[:starts_at], class: "form-data datepicker",
+    placeholder: "Pick a date" %>
   <%= submit_tag "Search", class: "btn btn-success ml-3" %>
 <% end %>
