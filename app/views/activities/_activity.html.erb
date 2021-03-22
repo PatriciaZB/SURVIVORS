@@ -1,0 +1,33 @@
+<div class="card-ws py-3">
+  <div class="card-image">
+    <% if activity.image.attached? %>
+      <%= cl_image_tag activity.image.key, height: 200, width: 200, crop: :fill %>
+    <% end %>
+  </div>
+  <div class="card-body">
+    <div class="card-body-text" style="text-align: justify">
+      <div class="d-flex justify-content-between w-100">
+        <h3><%= link_to activity.name.capitalize, activity_path(activity) %></h3>
+        <% if !activity.reviews.empty? %>
+        <p style="text-align:left">
+          <strong>
+            <i class="fas fa-heart"></i>
+            <span><%= activity.reviews.average(:rating).round(1) %> / 5</span>
+          </strong>
+        </p>
+        <% end %>
+      </div>
+      <p> <%= activity.description.first(100) %>... </p>
+    </div>
+    <p style="font-size:14px"> <strong>  <%= activity.category %></strong></p>
+    <div class="card-location">
+        <%= image_tag("icon-map.png",class: "image-location", :alt => "map") %>
+      <p><%= activity.address %></p>
+      <p class="pl-2">
+        <strong>
+          <%= activity.start_at.strftime("%b %e, %l:%M")%> - <%= activity.end_at.strftime("%l:%M %p") %>
+        </strong>
+      </p>
+    </div>
+  </div>
+</div>

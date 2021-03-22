@@ -1,0 +1,9 @@
+<%= form_tag activities_path, class: "form-horizontal pr-0", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an activity" %>
+  <%= date_field_tag :starts_at, params[:starts_at], class: "form-data datepicker",
+    placeholder: "Pick a date" %>
+  <%= submit_tag "Search", class: "btn btn-success ml-3" %>
+<% end %>

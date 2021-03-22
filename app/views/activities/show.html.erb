@@ -2,27 +2,28 @@
   <div class="row mb-3 mt-2">
     <div class="col-12 mb-3">
       <div class="activity-title">
-        <div> <h2 class="title" data-content= <%= @activity.name %> > <%=@activity.name %></h2> </div>
+        <div>
+          <h2 class="title" data-content= <%= @activity.name %> >
+            <%=@activity.name %>
+          </h2>
+        </div>
       </div>
     </div>
-
-  <div class="row">
-  </div>
     <div class="col-sm-12 col-md-8">
       <div class="title-ratings d-flex justify-content-between pr-5 mb-2">
         <h2>How it can help you </h2>
         <p>
           <% if !@activity.reviews.empty? %>
-            <i class="fas fa-heart" ></i><strong> <%=  @activity.reviews.average(:rating).round(1) %> / 5</strong>
-            <% else %>
-            <%= %>
-            <% end %>
-          </p>
+            <i class="fas fa-heart" ></i>
+            <strong>
+              <%= @activity.reviews.average(:rating).round(1) %> / 5
+            </strong>
+          <% end %>
+        </p>
       </div>
       <div class="description text-justify pr-5">
         <%= @activity.description %>
       </div>
-
       <div class="address d-flex mt-3 mb-3">
         <div class="icon-map">
           <%= image_tag("icon-map.png", :alt => "map") %>
@@ -30,70 +31,43 @@
         <div class="address col-6">
           <%= @activity.address %>
           <br>
-          <p> <%= @activity.start_at.strftime("%b %e, %l:%M")%> <strong>-</strong> <%= @activity.end_at.strftime("%l:%M %p") %> </p>
+          <p>
+            <%= @activity.start_at.strftime("%b %e, %l:%M")%>
+            <strong>-</strong>
+            <%= @activity.end_at.strftime("%l:%M %p") %>
+          </p>
         </div>
       </div>
-
       <div class="button mt-3">
-        <%= link_to "Book now", activity_bookings_path(@activity, Booking.new), method: :post, class: "btn btn-success" %>
+        <%= link_to "Book now", activity_bookings_path(@activity, Booking.new),
+          method: :post, class: "btn btn-success" %>
       </div>
-
       <div class="button mt-5">
         <%= link_to "<< Back to activities", activities_path, class: "btn btn-link" %>
       </div>
     </div>
-
     <div class="reviews-container col-sm-12 col-md-4">
       <div class="reviews ">
-        <% @activity.reviews.each do |review| %>
-        <div class="d-flex align-items-center">
-          <div class="profile-image">
-            <% if review.user.avatar.attached? %>
-              <%= cl_image_tag(review.user.avatar.key, class: "avatar") %>
-            <% else %>
-              <%= image_tag("rebeca.png", class: "avatar") %>
-            <% end %>
-          </div>
-          <div class="reviews-info">
-            <div class="name-rating d-flex justify-content-between align-items-center">
-              <h3 class="nickname"> <%= review.user.nickname %> </h3>
-              <div class="reviews-rating mb-2 mr-1">
-              <i class="fas fa-heart"></i><strong><span> <%= review[:rating] %> </span></strong>
-          </div>
-            </div>
-            <p style="margin-bottom: 0;"><strong>Posted on <%= review[:created_at].strftime('%A, %e %b %Y') %> </strong></p>
-          </div>
-
-
-          </div>
-          <div class="reviews-text mt-1 mb-2">
-            <p> <%= review[:description] %> </p>
-          </div>
-        <% end %>
+        <%= render collection: @activity.reviews, partial: "review", as: :review %>
       </div>
-
       <div id="accordion">
-        <button class="btn btn-block btn-primary mt-2 mb-3" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <button class="btn btn-block btn-primary mt-2 mb-3" data-toggle="collapse"
+          data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Add a review
         </button>
-
-      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="form-text d-flex flex-row justify-content-center">
-          <%= simple_form_for [@activity, @review] do |f| %>
-            <%= f.input :rating, collection: 1..5, label: 'Rating', class: "rating" %>
-            <%= f.input :description, :as => :text, :input_html => {:rows => 5}, label: 'Review', class: "review" %>
-            <%= f.submit "Submit review", class: "btn btn-block btn-success" %>
-        <% end %>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+          data-parent="#accordion">
+          <div class="form-text d-flex flex-row justify-content-center">
+            <%= simple_form_for [@activity, @review] do |f| %>
+              <%= f.input :rating, collection: 1..5, label: 'Rating',
+                class: "rating" %>
+              <%= f.input :description, :as => :text, :input_html => {:rows => 5},
+                label: 'Review', class: "review" %>
+              <%= f.submit "Submit review", class: "btn btn-block btn-success" %>
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
-
-      <!-- <div class="button">
-        <%= link_to "Add a review", new_activity_review_path(@activity, Review.new), method: :get, class: "btn btn-primary" %>
-      </div> -->
-    </div>
-
-
   </div>
 </div>
-
