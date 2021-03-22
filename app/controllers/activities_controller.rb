@@ -1,30 +1,9 @@
-require "date"
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:query].present? && params[:starts_at].present?
-      search_date = params[:starts_at]
-      sql_query = "start_at >= :date AND name ILIKE :query OR address ILIKE :query"
-      @activities = Activity.where(sql_query, date: "%#{search_date}%", query: "%#{params[:query]}%").order('start_at ASC')
-    elsif params[:query].present?
-      sql_query = "name ILIKE :query OR address ILIKE :query"
-      @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
-    elsif params[:starts_at].present?
-      search_date = params[:starts_at]
-      sql_query = "start_at >= :date"
-      @activities = Activity.where(sql_query, date: "%#{search_date}%").order('start_at ASC')
-    else
-      @activities = Activity.all.order('start_at ASC')
-    end
-
-    @markers = @activities.geocoded.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
-      }
-    end
+    @activities = filter_activities(Activity)
+    @markers = set_markers(@activities)
   end
 
   def show
@@ -66,6 +45,40 @@ class ActivitiesController < ApplicationController
   # authentication
 
   private
+
+  def set_markers(relation)
+    relation.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        infoWindow: render_to_string(
+          partial: "info_window",
+          locals: { activity: activity }
+        )
+      }
+    end
+  end
+
+  def filter_activities(scope)
+    if params[:query].present? && params[:starts_at].present?
+      search_date = params[:starts_at]
+      sql_query = "start_at >= :date AND name ILIKE :query OR address ILIKE :query"
+      scope.where(
+        sql_query,
+        date: "%#{search_date}%",
+        query: "%#{params[:query]}%"
+      ).order('start_at ASC')
+    elsif params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      scope.where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:starts_at].present?
+      search_date = params[:starts_at]
+      sql_query = "start_at >= :date"
+      scope.where(sql_query, date: "%#{search_date}%").order('start_at ASC')
+    else
+      scope.all.order('start_at ASC')
+    end
+  end
 
   def activity_params
     params.require(:activity).permit(:name, :description, :address, :start_at, :end_at, :image, :category, :presence)
